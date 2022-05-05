@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		945F7A042822AA5D00D27991 /* instanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F7A022822AA5D00D27991 /* instanceDetailViewController.swift */; };
+		945F7A052822AA5D00D27991 /* instanceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945F7A032822AA5D00D27991 /* instanceDetailViewController.xib */; };
 		948763A128217B960069292E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948763A028217B960069292E /* AppDelegate.swift */; };
 		948763A328217B960069292E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948763A228217B960069292E /* SceneDelegate.swift */; };
 		948763A528217B960069292E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948763A428217B960069292E /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		945F7A022822AA5D00D27991 /* instanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instanceDetailViewController.swift; sourceTree = "<group>"; };
+		945F7A032822AA5D00D27991 /* instanceDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = instanceDetailViewController.xib; sourceTree = "<group>"; };
 		9487639D28217B960069292E /* PassData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948763A028217B960069292E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948763A228217B960069292E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				948763D028217CE80069292E /* DetailViewController.swift */,
 				948763D128217CE80069292E /* DetailViewController.xib */,
 				948763D4282190770069292E /* SegueDetailViewController.swift */,
+				945F7A022822AA5D00D27991 /* instanceDetailViewController.swift */,
+				945F7A032822AA5D00D27991 /* instanceDetailViewController.xib */,
 				948763A628217B960069292E /* Main.storyboard */,
 				948763A928217B970069292E /* Assets.xcassets */,
 				948763AB28217B970069292E /* LaunchScreen.storyboard */,
@@ -240,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945F7A052822AA5D00D27991 /* instanceDetailViewController.xib in Resources */,
 				948763AD28217B970069292E /* LaunchScreen.storyboard in Resources */,
 				948763AA28217B970069292E /* Assets.xcassets in Resources */,
 				948763A828217B960069292E /* Main.storyboard in Resources */,
@@ -272,6 +279,7 @@
 				948763A128217B960069292E /* AppDelegate.swift in Sources */,
 				948763D5282190770069292E /* SegueDetailViewController.swift in Sources */,
 				948763A328217B960069292E /* SceneDelegate.swift in Sources */,
+				945F7A042822AA5D00D27991 /* instanceDetailViewController.swift in Sources */,
 				948763D228217CE80069292E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
