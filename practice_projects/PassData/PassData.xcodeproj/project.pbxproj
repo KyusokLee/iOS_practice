@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9419B4352826E0840086F5F3 /* DelegateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9419B4332826E0840086F5F3 /* DelegateDetailViewController.swift */; };
+		9419B4362826E0840086F5F3 /* DelegateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9419B4342826E0840086F5F3 /* DelegateDetailViewController.xib */; };
 		945F7A042822AA5D00D27991 /* instanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F7A022822AA5D00D27991 /* instanceDetailViewController.swift */; };
 		945F7A052822AA5D00D27991 /* instanceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945F7A032822AA5D00D27991 /* instanceDetailViewController.xib */; };
+		947CE6962858E99F00C52FF4 /* ClosureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947CE6942858E99F00C52FF4 /* ClosureDetailViewController.swift */; };
+		947CE6972858E99F00C52FF4 /* ClosureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947CE6952858E99F00C52FF4 /* ClosureDetailViewController.xib */; };
+		947CE69A2858F99100C52FF4 /* NotiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947CE6982858F99100C52FF4 /* NotiDetailViewController.swift */; };
+		947CE69B2858F99100C52FF4 /* NotiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947CE6992858F99100C52FF4 /* NotiDetailViewController.xib */; };
 		948763A128217B960069292E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948763A028217B960069292E /* AppDelegate.swift */; };
 		948763A328217B960069292E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948763A228217B960069292E /* SceneDelegate.swift */; };
 		948763A528217B960069292E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948763A428217B960069292E /* ViewController.swift */; };
@@ -41,8 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9419B4332826E0840086F5F3 /* DelegateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateDetailViewController.swift; sourceTree = "<group>"; };
+		9419B4342826E0840086F5F3 /* DelegateDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DelegateDetailViewController.xib; sourceTree = "<group>"; };
 		945F7A022822AA5D00D27991 /* instanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instanceDetailViewController.swift; sourceTree = "<group>"; };
 		945F7A032822AA5D00D27991 /* instanceDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = instanceDetailViewController.xib; sourceTree = "<group>"; };
+		947CE6942858E99F00C52FF4 /* ClosureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDetailViewController.swift; sourceTree = "<group>"; };
+		947CE6952858E99F00C52FF4 /* ClosureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosureDetailViewController.xib; sourceTree = "<group>"; };
+		947CE6982858F99100C52FF4 /* NotiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiDetailViewController.swift; sourceTree = "<group>"; };
+		947CE6992858F99100C52FF4 /* NotiDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotiDetailViewController.xib; sourceTree = "<group>"; };
 		9487639D28217B960069292E /* PassData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		948763A028217B960069292E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		948763A228217B960069292E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,12 +124,18 @@
 				948763A028217B960069292E /* AppDelegate.swift */,
 				948763A228217B960069292E /* SceneDelegate.swift */,
 				948763A428217B960069292E /* ViewController.swift */,
+				948763A628217B960069292E /* Main.storyboard */,
 				948763D028217CE80069292E /* DetailViewController.swift */,
 				948763D128217CE80069292E /* DetailViewController.xib */,
 				948763D4282190770069292E /* SegueDetailViewController.swift */,
 				945F7A022822AA5D00D27991 /* instanceDetailViewController.swift */,
 				945F7A032822AA5D00D27991 /* instanceDetailViewController.xib */,
-				948763A628217B960069292E /* Main.storyboard */,
+				9419B4332826E0840086F5F3 /* DelegateDetailViewController.swift */,
+				9419B4342826E0840086F5F3 /* DelegateDetailViewController.xib */,
+				947CE6942858E99F00C52FF4 /* ClosureDetailViewController.swift */,
+				947CE6952858E99F00C52FF4 /* ClosureDetailViewController.xib */,
+				947CE6982858F99100C52FF4 /* NotiDetailViewController.swift */,
+				947CE6992858F99100C52FF4 /* NotiDetailViewController.xib */,
 				948763A928217B970069292E /* Assets.xcassets */,
 				948763AB28217B970069292E /* LaunchScreen.storyboard */,
 				948763AE28217B970069292E /* Info.plist */,
@@ -246,6 +264,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947CE6972858E99F00C52FF4 /* ClosureDetailViewController.xib in Resources */,
+				947CE69B2858F99100C52FF4 /* NotiDetailViewController.xib in Resources */,
+				9419B4362826E0840086F5F3 /* DelegateDetailViewController.xib in Resources */,
 				945F7A052822AA5D00D27991 /* instanceDetailViewController.xib in Resources */,
 				948763AD28217B970069292E /* LaunchScreen.storyboard in Resources */,
 				948763AA28217B970069292E /* Assets.xcassets in Resources */,
@@ -276,8 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				948763A528217B960069292E /* ViewController.swift in Sources */,
+				947CE6962858E99F00C52FF4 /* ClosureDetailViewController.swift in Sources */,
+				9419B4352826E0840086F5F3 /* DelegateDetailViewController.swift in Sources */,
 				948763A128217B960069292E /* AppDelegate.swift in Sources */,
 				948763D5282190770069292E /* SegueDetailViewController.swift in Sources */,
+				947CE69A2858F99100C52FF4 /* NotiDetailViewController.swift in Sources */,
 				948763A328217B960069292E /* SceneDelegate.swift in Sources */,
 				945F7A042822AA5D00D27991 /* instanceDetailViewController.swift in Sources */,
 				948763D228217CE80069292E /* DetailViewController.swift in Sources */,
