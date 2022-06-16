@@ -2,8 +2,9 @@
 //  ViewController.swift
 //  QueueExample
 //
-//  Created by Kyus'lee on 2022/06/15.
 //
+
+// DispatchQueueの理解、Threadの理解, asyncとsyncの差異と理解
 
 import UIKit
 
