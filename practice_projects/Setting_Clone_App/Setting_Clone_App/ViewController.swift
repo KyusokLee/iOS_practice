@@ -21,6 +21,8 @@ import UIKit
 // extensionを用いてclassのコードが長くなることを防ぐと同時に、読み手(自分を含めて)にとってわかりやすくする
 // sectionであることをわかりやすくするために、sectionごとの間隔を入れたい -> tableViewのstyleを plain　から　groupedに変更すればいい
 
+//
+
 class ViewController: UIViewController {
     // ⁉️Outlet Objectの変数名をrenameするときは、必ず referencing outletsで既存に作成したやつを削除すること!
     // ⁉️NSUnknownKeyExceptionエラーの解決方
@@ -109,7 +111,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // クリックするとき、提供される(実行される)メソッド (didSelectRowAt)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 {
+        // ボタンが押されたとたんに、クリックされているactionを解除したい
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+        // nibファイルを持ってくる方法
+        if indexPath.section == 0 && indexPath.row == 0 {
+            // MyIDViewControllerがメモリからnibファイル基盤に読み込み、インスタンスを用いてpresentする
+            // viewControllerは基本的にpresentメソッドを持っている
+            let myIDVC = MyIDViewController(nibName: "MyIDViewController", bundle: nil)
+            self.present(myIDVC, animated: true, completion: nil)
+            //表示されてから(completion)、何かをclosureでしたい? -> animated:まで書いて、その後ろをclosureでくくる
+            // なかったら、nil
+                
+                
+        } else if indexPath.section == 1 && indexPath.row == 0 {
             // Storyboard基盤でコードを持ってくるのが可能
             //意味説明: name: ~ になっているStoryboardから identifier ~ の名前になっているViewControllerを持ってこい！って意味
             // 今回は、Optional Unwrappingを用いて Unwrappingした
