@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94404E0C285C8E5C007B4A0C /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94404E0B285C8E5C007B4A0C /* GeneralViewController.swift */; };
+		94404E10285C965E007B4A0C /* GeneralViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94404E0F285C965E007B4A0C /* GeneralViewController.storyboard */; };
 		94505279285A0B8C00A72689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94505278285A0B8C00A72689 /* AppDelegate.swift */; };
 		9450527B285A0B8C00A72689 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450527A285A0B8C00A72689 /* SceneDelegate.swift */; };
 		9450527D285A0B8C00A72689 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450527C285A0B8C00A72689 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 		9450529C285A0B8D00A72689 /* Setting_Clone_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450529B285A0B8D00A72689 /* Setting_Clone_AppUITestsLaunchTests.swift */; };
 		945052AE285A138000A72689 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945052AC285A138000A72689 /* ProfileCell.swift */; };
 		945052AF285A138000A72689 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945052AD285A138000A72689 /* ProfileCell.xib */; };
+		94B786ED285DCCA0004CB39F /* MyIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B786EB285DCCA0004CB39F /* MyIDViewController.swift */; };
+		94B786EE285DCCA0004CB39F /* MyIDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B786EC285DCCA0004CB39F /* MyIDViewController.xib */; };
 		94D7983A285B9E41000513C0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D79838285B9E41000513C0 /* MenuCell.swift */; };
 		94D7983B285B9E41000513C0 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D79839285B9E41000513C0 /* MenuCell.xib */; };
 		94D7983D285BA679000513C0 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7983C285BA679000513C0 /* SettingModel.swift */; };
@@ -41,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94404E0B285C8E5C007B4A0C /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		94404E0F285C965E007B4A0C /* GeneralViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeneralViewController.storyboard; sourceTree = "<group>"; };
 		94505275285A0B8C00A72689 /* Setting_Clone_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setting_Clone_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94505278285A0B8C00A72689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9450527A285A0B8C00A72689 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,8 @@
 		9450529B285A0B8D00A72689 /* Setting_Clone_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting_Clone_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		945052AC285A138000A72689 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		945052AD285A138000A72689 /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		94B786EB285DCCA0004CB39F /* MyIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIDViewController.swift; sourceTree = "<group>"; };
+		94B786EC285DCCA0004CB39F /* MyIDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIDViewController.xib; sourceTree = "<group>"; };
 		94D79838285B9E41000513C0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		94D79839285B9E41000513C0 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		94D7983C285BA679000513C0 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
@@ -118,6 +126,10 @@
 				945052AC285A138000A72689 /* ProfileCell.swift */,
 				945052AD285A138000A72689 /* ProfileCell.xib */,
 				9450527E285A0B8C00A72689 /* Main.storyboard */,
+				94404E0B285C8E5C007B4A0C /* GeneralViewController.swift */,
+				94404E0F285C965E007B4A0C /* GeneralViewController.storyboard */,
+				94B786EB285DCCA0004CB39F /* MyIDViewController.swift */,
+				94B786EC285DCCA0004CB39F /* MyIDViewController.xib */,
 				94505281285A0B8D00A72689 /* Assets.xcassets */,
 				94505283285A0B8D00A72689 /* LaunchScreen.storyboard */,
 				94505286285A0B8D00A72689 /* Info.plist */,
@@ -246,9 +258,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94404E10285C965E007B4A0C /* GeneralViewController.storyboard in Resources */,
 				94505285285A0B8D00A72689 /* LaunchScreen.storyboard in Resources */,
 				945052AF285A138000A72689 /* ProfileCell.xib in Resources */,
 				94D7983B285B9E41000513C0 /* MenuCell.xib in Resources */,
+				94B786EE285DCCA0004CB39F /* MyIDViewController.xib in Resources */,
 				94505282285A0B8D00A72689 /* Assets.xcassets in Resources */,
 				94505280285A0B8C00A72689 /* Main.storyboard in Resources */,
 			);
@@ -276,9 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9450527D285A0B8C00A72689 /* ViewController.swift in Sources */,
+				94404E0C285C8E5C007B4A0C /* GeneralViewController.swift in Sources */,
 				94D7983A285B9E41000513C0 /* MenuCell.swift in Sources */,
 				94D7983D285BA679000513C0 /* SettingModel.swift in Sources */,
 				945052AE285A138000A72689 /* ProfileCell.swift in Sources */,
+				94B786ED285DCCA0004CB39F /* MyIDViewController.swift in Sources */,
 				94505279285A0B8C00A72689 /* AppDelegate.swift in Sources */,
 				9450527B285A0B8C00A72689 /* SceneDelegate.swift in Sources */,
 			);

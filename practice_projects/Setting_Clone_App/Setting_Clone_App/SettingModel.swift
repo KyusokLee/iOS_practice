@@ -16,7 +16,7 @@ struct SettingModel {
     var menuTitle: String = ""
     //subTitleは指定cellによってあるかもしれないし、ないかもしれない
     //そのため、
-    var subTile: String?
+    var subTitle: String?
     // menuTitleの理由と一緒
     var rightImageName: String?
     
