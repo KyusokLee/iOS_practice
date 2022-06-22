@@ -31,37 +31,49 @@ class MyIDViewController: UIViewController {
 //    }
     
     @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var customNameTextField: UITextField!
+    
+    var activateTextField: UITextField!
+    
     @IBAction func doCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTextfieldDelegate()
+        addKeyboardNotifications()
+        
+        
+        
 //        // next Button Debugging Way1:
 //        // 最初から不可とする
 //        nextButton.isEnabled = false
         
-
         // target: 実行すべきfunctionをどこで探すか?
         // ここのClassで探すから、self
         // 後ろのfor: UIControlのeventを起こすパラメータ
         // editingChanged -> 文字が新しく入力されたり、消されたいするたびにEventを与えるという意味
         // そのeventをselectorで選んだfuncに与える!という仕様になっている
         // ここでは、emailTextFieldのclassである UITextField!typeをそのままselectorのメソッドに引き渡す
-        
         emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         // next Button Debugging Way2:
         // eventの条件checkを用いる
         // 作ったlogicをReuseする方法
         textFieldDidChange(sender: emailTextField)
-        
+        customNameTextField.addTarget(self, action: #selector(customNameCheckerTextField), for: .editingChanged)
+        customNameCheckerTextField(sender: customNameTextField)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     //#selectorは @objc　(objective-Cのkeyword)が一緒になければならない
-    
     @objc func textFieldDidChange(sender: UITextField) {
 //        // textField.textは書かれているtextを指す
-//        print(sender.text ?? "")
+        print(sender.text ?? "")
         
         // 以下のコードだと、一番最初に表示されるとき、textFieldに何も入力されてないのに、next Buttonが押せるようになっている (Bug発生❗️)
         // なぜ？: viedDidLoad()で、emailTextFieldのコードで何もしてないからevent自体も引き渡されてない状態だから
@@ -72,6 +84,55 @@ class MyIDViewController: UIViewController {
             nextButton.isEnabled = true
         }
     }
+    
+    @objc func customNameCheckerTextField(sender: UITextField) {
+        if sender.text?.isEmpty == true {
+            print("Please enter text.")
+        } else {
+            if sender.text == "KyuLee" {
+                print("He is the owner of this App!!")
+            }
+        }
+    }
 
     
+}
+
+extension MyIDViewController: UITextFieldDelegate {
+    func setTextfieldDelegate() {
+        emailTextField.delegate = self
+        customNameTextField.delegate = self
+        emailTextField.tag = 1
+        customNameTextField.tag = 2
+    }
+    
+    // textField 複数の場合 処理を行うtextfieldを指定する
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activateTextField = textField
+        print(activateTextField.tag)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        activateTextField.resignFirstResponder()
+        return true
+    }
+    
+    func addKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        self.view.transform = CGAffineTransform(translationX: 0, y: -50)
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        self.view.transform = .identity
+    }
+
+    func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 }

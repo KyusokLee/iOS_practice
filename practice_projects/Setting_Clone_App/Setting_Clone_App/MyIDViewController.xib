@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyIDViewController" customModule="Setting_Clone_App" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="7Lb-0k-rfb" id="DPZ-9v-ps2"/>
+                <outlet property="customNameTextField" destination="Dty-jM-CcH" id="fzK-cz-5cO"/>
                 <outlet property="emailTextField" destination="STc-Km-C0k" id="fyd-66-xmu"/>
                 <outlet property="nextButton" destination="Z69-Rn-S0X" id="pK7-qP-R22"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -81,23 +82,18 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jbs-KL-53q">
                             <rect key="frame" x="0.0" y="1" width="64.5" height="56.5"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mkX-It-1zf">
                             <rect key="frame" x="72.5" y="1.5" width="64.5" height="57.5"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="externaldrive" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nc8-IZ-mZ0">
                             <rect key="frame" x="145" y="1.5" width="64" height="56.5"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-z8-6I2">
                             <rect key="frame" x="217" y="1" width="64.5" height="57.5"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DHa-oq-Mpm">
                             <rect key="frame" x="289.5" y="0.5" width="64.5" height="59"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -120,6 +116,11 @@
                         </mask>
                     </variation>
                 </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dty-jM-CcH">
+                    <rect key="frame" x="40" y="512.5" width="334" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -133,13 +134,17 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z69-Rn-S0X" secondAttribute="trailing" constant="20" id="8fI-18-2Th"/>
                 <constraint firstItem="tBE-J6-HVQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BA4-A2-RbK"/>
                 <constraint firstAttribute="trailing" secondItem="cG4-eS-loE" secondAttribute="trailing" id="BAn-GR-a0W"/>
+                <constraint firstItem="Dty-jM-CcH" firstAttribute="top" secondItem="tBE-J6-HVQ" secondAttribute="bottom" constant="40" id="Ba1-b1-E5E"/>
                 <constraint firstItem="JHc-4o-atX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CHY-ay-DIq"/>
                 <constraint firstItem="tBE-J6-HVQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="JZJ-yI-25R"/>
                 <constraint firstAttribute="trailing" secondItem="vzS-S4-CRS" secondAttribute="trailing" constant="20" id="KBZ-Nq-Vop"/>
+                <constraint firstItem="Dty-jM-CcH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Nmd-mx-lsy"/>
                 <constraint firstItem="JHc-4o-atX" firstAttribute="top" secondItem="QNR-2w-PCl" secondAttribute="bottom" constant="30" id="PlO-KU-dad"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dty-jM-CcH" secondAttribute="trailing" constant="40" id="QJI-p2-sM4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="STc-Km-C0k" secondAttribute="trailing" constant="20" id="T4N-5Z-htw"/>
                 <constraint firstItem="STc-Km-C0k" firstAttribute="top" secondItem="cG4-eS-loE" secondAttribute="bottom" constant="10" id="U6a-P7-lgp"/>
                 <constraint firstItem="tBE-J6-HVQ" firstAttribute="top" secondItem="JHc-4o-atX" secondAttribute="bottom" constant="40" id="VbP-gV-4S7"/>
+                <constraint firstItem="Dty-jM-CcH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YP6-8E-svN"/>
                 <constraint firstAttribute="trailing" secondItem="QNR-2w-PCl" secondAttribute="trailing" id="alt-zI-upr"/>
                 <constraint firstItem="STc-Km-C0k" firstAttribute="leading" secondItem="2Dt-PE-brv" secondAttribute="trailing" constant="10" id="mas-Th-nHi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tBE-J6-HVQ" secondAttribute="trailing" constant="30" id="nSu-0c-maM"/>
@@ -162,9 +167,6 @@
         <image name="icloud" catalog="system" width="128" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

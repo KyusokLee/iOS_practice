@@ -120,6 +120,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             // MyIDViewControllerがメモリからnibファイル基盤に読み込み、インスタンスを用いてpresentする
             // viewControllerは基本的にpresentメソッドを持っている
             let myIDVC = MyIDViewController(nibName: "MyIDViewController", bundle: nil)
+            //presentは画面を下から上に表示させるメソッド.
+            // しかし、fullScreenで表示させるのではなく、上の部分との少しの隙間が存在する
             self.present(myIDVC, animated: true, completion: nil)
             //表示されてから(completion)、何かをclosureでしたい? -> animated:まで書いて、その後ろをclosureでくくる
             // なかったら、nil
@@ -170,9 +172,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         
         cell.leftImageView.image = UIImage(systemName:settingModel[indexPath.section][indexPath.row].leftImageName)
-        cell.leftImageView.tintColor = .red
+        cell.leftImageView.tintColor = .systemBlue
         cell.middleTitle.text = settingModel[indexPath.section][indexPath.row].menuTitle
         cell.rightImageView.image = UIImage(systemName: settingModel[indexPath.section][indexPath.row].rightImageName ?? "")
+        cell.rightImageView.tintColor = .lightGray
         
         
         return cell

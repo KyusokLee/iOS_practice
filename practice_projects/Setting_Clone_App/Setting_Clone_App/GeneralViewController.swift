@@ -20,7 +20,7 @@ class GeneralCell: UITableViewCell {
             rightImageView.image = UIImage(systemName: "chevron.right")
             // chevron.rightの基本tintColor = blueである
             rightImageView.backgroundColor = .clear
-            rightImageView.tintColor = .orange
+            rightImageView.tintColor = .lightGray
         }
     }
 }
