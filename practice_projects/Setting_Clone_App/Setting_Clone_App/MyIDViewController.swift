@@ -43,7 +43,7 @@ class MyIDViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextfieldDelegate()
-        addKeyboardNotifications()
+//        addKeyboardNotifications()
         
         
         
@@ -64,6 +64,16 @@ class MyIDViewController: UIViewController {
         textFieldDidChange(sender: emailTextField)
         customNameTextField.addTarget(self, action: #selector(customNameCheckerTextField), for: .editingChanged)
         customNameCheckerTextField(sender: customNameTextField)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardNotifications()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,8 +104,6 @@ class MyIDViewController: UIViewController {
             }
         }
     }
-
-    
 }
 
 extension MyIDViewController: UITextFieldDelegate {
@@ -109,29 +117,79 @@ extension MyIDViewController: UITextFieldDelegate {
     // textField 複数の場合 処理を行うtextfieldを指定する
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activateTextField = textField
+        // 確認のためのtag
         print(activateTextField.tag)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //return ボタン押すと仮面から消える
         activateTextField.resignFirstResponder()
         return true
     }
     
     func addKeyboardNotifications() {
+        // イベント処理のobserver 登録
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //　⚠️問題: keyboardを入力すると黒い画面が上に上げる現象が生じた --> 解決!!!⭐️
     @objc func keyboardWillShow(notification: Notification) {
-        self.view.transform = CGAffineTransform(translationX: 0, y: -50)
+        //下の方にあるtextField -> keyboardにviewが隠されてしまう
+        // その現象を解決するために、textFieldの条件分岐を用いて、keyboardのheight分ほどviewを上に上げる処理をする
+        
+        if activateTextField.tag == 2 {
+            //keyboardのheightまで上げるのではなく、適切に上げる
+            if let keyboardFrame:NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                //withDuration: 時間の間隔を設定
+                UIView.animate(withDuration: 0.3, animations: {
+                    // textFieldのheightを調査して適切に調査した方法
+                            self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight + 200)
+                    })
+                }
+        }
+//
+//        else {
+        // 少しの間の画面の揺れができちゃう
+        // y方向に上に50ほどviewを移動させるということ
+        // しかし、viewはここで、決まっているので上に行かない
+//            self.view.transform = CGAffineTransform(translationX: 0, y: -50)
+//        }
+        
+//        if activateTextField.tag == 2 {
+//            if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//                let keyboardRectangle = keyboardFrame.cgRectValue
+//                let keyboardHeight = keyboardRectangle.height
+//                self.view.frame.origin.y -= keyboardHeight
+//            }
+//        } else {
+//            self.view.transform = CGAffineTransform(translationX: 0, y: -50)
+//        }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         self.view.transform = .identity
+//        //上にあげたviewを元に戻す
+//        if activateTextField.tag == 2 {
+//            if self.view.window?.frame.origin.y != 0 {
+//                if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+//                    let keyboardRectangle = keyboardFrame.cgRectValue
+//                    let keyboardHeight = keyboardRectangle.height
+//                    UIView.animate(withDuration: 1, animations: {
+//                        self.view.window?.frame.origin.y += keyboardHeight
+//                    })
+//                }
+//            }
+//        } else {
+//            self.view.transform = .identity
+//        }
     }
 
     func removeKeyboardNotifications() {
+        //observer解除することで、メモリを効率的に削除できる
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
