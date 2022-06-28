@@ -7,6 +7,9 @@
 
 import UIKit
 
+
+//ここは、一つのPage Viewを modelingしたclass扱い
+// pageが複数の場合、このような仕様のVCを作成すればいい
 class OnboardingItemViewController: UIViewController {
     
     var mainText = ""
