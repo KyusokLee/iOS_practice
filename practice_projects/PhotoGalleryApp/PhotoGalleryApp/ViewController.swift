@@ -13,6 +13,8 @@ import PhotosUI //photogalleryを表示させるPHPickerメソッドを使うた
 
 class ViewController: UIViewController {
 
+//    var images = [UIImage?]()
+    var fetchResults: PHFetchResult<PHAsset>?
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
@@ -166,8 +168,9 @@ class ViewController: UIViewController {
         
     }
     
+    //このボタンを押すと、低画質から高画質になる一連の動きが見えるようにした
     @objc func refresh() {
-        
+        self.photoCollectionView.reloadData()
     }
 
 
@@ -178,7 +181,7 @@ extension ViewController: UICollectionViewDataSource {
     
     // cellの数を表すメソッド
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.fetchResults?.count ?? 0
     }
     
     //sizeに関するメソッド --> 必ずlayoutに関する設定をしなければ、sizeに関する設定ができるわけがない
@@ -194,7 +197,11 @@ extension ViewController: UICollectionViewDataSource {
         // 見える範囲を超えたcellを再利用queueに入れ、また、そのcellが見える範囲にもどったとき(scrollなどをとおして、前の位置にあったものを再び表示させるとき)、dequeueして、そのcellに入れる
         
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+        
+        if let asset = self.fetchResults?[indexPath.row] {
+            cell.loadImage(asset: asset)
+        }
         
         return cell
     }
@@ -205,6 +212,21 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         //didFinishPicking: クリックして選んだものをreturnにする
+        // Debugging: breakPointを設定し、コンソールにpo resultsを入力して何を書く必要があるかを自ら探し出そう
+        
+        //固有IDを読み込む
+        // 固有IDだけを、mappingしてデータ処理する
+        let identifiers = results.map {
+            $0.assetIdentifier ?? ""
+        }
+        
+        //logic: 固有IDをチェックしてimageを持ってくる仕様
+        // fetch: 持ってくる, 読み込むという意味
+        //　そのため、withLocalIdentifiersを用いる
+        self.fetchResults = PHAsset.fetchAssets(withLocalIdentifiers: identifiers, options: nil)
+        
+        //データに合わせて、個数とかを正しく載せるためには、reloadしないといけない
+        self.photoCollectionView.reloadData()
         
         //cancelやaddは以下のdismissに渡される
         self.dismiss(animated: true, completion: nil)
