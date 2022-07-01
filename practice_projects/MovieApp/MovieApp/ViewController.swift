@@ -31,10 +31,17 @@ import UIKit
 // 1. Json parsingを行うmodel
 // 2. Network Accessに関するlogic構成
 
+//📮MARK: JSON Decodingから得られたvalueを好きなように変更して使いたい場合
+
+// DateFormatの場合は、ISO8601の規約で定められた formatがある
+//
+
+
 class ViewController: UIViewController {
     // 最初に生成をして、値が入力されるべきだから、単に値を生成できるわけではない
     // そのため、Optional wrappingをした
     var movieModel: MovieModel?
+    var term = ""
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -102,7 +109,7 @@ class ViewController: UIViewController {
         var components = URLComponents(string: "https://itunes.apple.com/search")
         
         //Query Stringを使って、target要素を指定
-        let term = URLQueryItem(name: "term", value: "marvel")
+        let term = URLQueryItem(name: "term", value: term)
         let media = URLQueryItem(name: "media", value: "movie")
         
         // queryItemsは、配列型である [URLQueryItem]
@@ -188,7 +195,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     //MARK: 昔のiosでは、下記のfuncを使ってcellの高さを調整する必要があった
     // 昔のiosも対応させるため、もしくは、社内で決まっているDesign Guideがあるときは、cellのheightを決めるのが拡張性の面で正しいと思われる
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
+//
 ////        // cellの高さをそれぞれ150にしておく場合
 ////        return 150
 //        // contentsのサイズに合わせて、sizeを表示させたい場合
@@ -198,6 +205,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     //ここで決めたなら、上のfuncは要らない
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    //クリック(select)に関するfunc
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        //ここまでは、storyboardのファイルにアクセスした状態
+//        let detailVC = UIStoryboard(name: "DetailMovieViewController", bundle: nil)
+        // storyboardファイルにアクセスし、そこにあるviewControllerにアクセスしなきゃいけない
+        let detailVC = UIStoryboard(name: "DetailMovieViewController", bundle: nil).instantiateViewController(withIdentifier: "DetailMovieViewController") as! DetailMovieViewController
+        
+        detailVC.movieResult = self.movieModel?.results[indexPath.row]
+        self.present(detailVC, animated: true, completion: nil)
     }
     
     //数
@@ -243,6 +261,32 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        // Optional Unwrapping
+        if let dateString = self.movieModel?.results[indexPath.row].releaseDate {
+            // formatterの指定: dateをいじりたいときは、ISO8601DateFormatter()
+            let formatter = ISO8601DateFormatter()
+            // formatterから何年, 何月, 何日, 秒単位までの時刻 dateを読み込み、そのデータを持ってくるメソッド
+            if let isoDate = formatter.date(from: dateString) {
+                //📮MARK: 好きなフォーマットに変えたい場合 (🎖日付に関しての場合🎖)
+                //1. custom Formatの指定: DateFormatter()の変数作成
+                //2. 指定したformatterにあるメソッドを使う
+                // .dateFormat: 日付を好きなスタイルにcustomize
+                // ❗️ただし、yyyy: 年度, MM: 月, dd: 日は決まっている
+                let myFormatter = DateFormatter()
+                myFormatter.dateFormat = "公開日: yyyy年 MM月 dd日"
+                
+                // 上記で読み込んだデータごとのisoDateを自分が作成したformatに適応させたい
+                let myDateString = myFormatter.string(from: isoDate)
+                
+                cell.dateLabel.text = myDateString
+            }
+            
+        
+
+        }
+        
+        
+        
         return cell
     }
     
@@ -250,7 +294,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        guard let hasText = searchBar.text else {
+            return
+        }
+        term = hasText
+        requestMovieAPI()
+        //keyboard　下ろす
+        self.view.endEditing(true)
     }
     
     

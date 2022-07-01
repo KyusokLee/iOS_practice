@@ -16,11 +16,11 @@ struct MovieModel: Codable {
     let resultCount: Int
 //    let results: [XXXXX] 配列model
     // ここで、作ると少し見にくいので、新しいmodelを作成した
-    let results: [Result]
+    let results: [MovieResult]
     
 }
 
-struct Result: Codable {
+struct MovieResult: Codable {
     let trackName: String
     let previewUrl: String
     let image: String
@@ -28,6 +28,7 @@ struct Result: Codable {
     let longDescription: String
     let trackPrice: Double
     let currency: String
+    let releaseDate: String
     
     // URL Requestから得られたkeyをそのまま使うのではなく、変更して使いたい!
     // その場合は、CodingKeyを使って、名前を変更できる
@@ -40,5 +41,6 @@ struct Result: Codable {
         case longDescription
         case trackPrice
         case currency
+        case releaseDate
     }
 }
