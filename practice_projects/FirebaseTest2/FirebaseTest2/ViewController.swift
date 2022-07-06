@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    // 요소 내용 설정
+    // UI要素の内容設定
     func setUpValue() {
         nameLabel.text = "Label"
         nameTextField.backgroundColor = .gray
