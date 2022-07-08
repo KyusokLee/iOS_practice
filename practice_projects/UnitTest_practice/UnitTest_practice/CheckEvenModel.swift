@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Even {
+    let number: Int
+    var isEven: Bool {
+        get {
+            return number % 2 == 0
+        }
+    }
+}

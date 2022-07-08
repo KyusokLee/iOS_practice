@@ -7,7 +7,8 @@
 
 import UIKit
 
-//MARK: Detail View: Movie Clip Video, Movie title, Movie Description (longer one)
+//MARK: Detail View
+// Main ViewからのクリックによるMovie Clip Video, Movie title, Movie Description (longer one)を表示する場所
 //映像を載せるUIは、libraryにないため、直接コードで実装してみる
 
 

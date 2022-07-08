@@ -7,6 +7,8 @@
 
 import UIKit
 
+//Unit Testに関する練習
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

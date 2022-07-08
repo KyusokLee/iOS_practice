@@ -16,6 +16,7 @@
 		94CF15E52877219A0008BB3B /* UnitTest_practiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF15E42877219A0008BB3B /* UnitTest_practiceTests.swift */; };
 		94CF15EF2877219A0008BB3B /* UnitTest_practiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF15EE2877219A0008BB3B /* UnitTest_practiceUITests.swift */; };
 		94CF15F12877219A0008BB3B /* UnitTest_practiceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF15F02877219A0008BB3B /* UnitTest_practiceUITestsLaunchTests.swift */; };
+		94CF15FE287723950008BB3B /* CheckEvenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF15FD287723950008BB3B /* CheckEvenModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		94CF15EA2877219A0008BB3B /* UnitTest_practiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest_practiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CF15EE2877219A0008BB3B /* UnitTest_practiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTest_practiceUITests.swift; sourceTree = "<group>"; };
 		94CF15F02877219A0008BB3B /* UnitTest_practiceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTest_practiceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		94CF15FD287723950008BB3B /* CheckEvenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEvenModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				94CF15CD287721970008BB3B /* AppDelegate.swift */,
 				94CF15CF287721970008BB3B /* SceneDelegate.swift */,
 				94CF15D1287721970008BB3B /* ViewController.swift */,
+				94CF15FD287723950008BB3B /* CheckEvenModel.swift */,
 				94CF15D3287721970008BB3B /* Main.storyboard */,
 				94CF15D6287721990008BB3B /* Assets.xcassets */,
 				94CF15D8287721990008BB3B /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CF15FE287723950008BB3B /* CheckEvenModel.swift in Sources */,
 				94CF15D2287721970008BB3B /* ViewController.swift in Sources */,
 				94CF15CE287721970008BB3B /* AppDelegate.swift in Sources */,
 				94CF15D0287721970008BB3B /* SceneDelegate.swift in Sources */,
