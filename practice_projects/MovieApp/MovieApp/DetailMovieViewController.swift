@@ -11,18 +11,21 @@ import UIKit
 // Main ViewからのクリックによるMovie Clip Video, Movie title, Movie Description (longer one)を表示する場所
 //映像を載せるUIは、libraryにないため、直接コードで実装してみる
 
-
 class DetailMovieViewController: UIViewController {
     
-    var movieResult: MovieResult? {
-        //値を受け取って、画面に載せる
-        didSet {
-            titleLabel.text = movieResult?.trackName
-            descriptionLabel.text = movieResult?.longDescription
-        }
-    }
+    // 📚解決方法2
+    // 🔥-> 値を受け取るとたんに、画面と連動されたIBOutletの変数にlogicを与えるのでなく、viewDidLoad()でlogicを反映すればいい
+    var movieResult: MovieResult?
     
-    
+    // 📚解決方法1で用いた方法
+//    var movieResult: MovieResult? {
+//        //値を受け取って、画面に載せる
+//        //つまり、値を入れたときのみ、didSetが実行される
+//        didSet {
+//            titleLabel.text = movieResult?.trackName
+//            descriptionLabel.text = movieResult?.longDescription
+//        }
+//    }
     
     @IBOutlet weak var movieContainer: UIView!
     @IBOutlet weak var titleLabel: UILabel! {
@@ -37,12 +40,14 @@ class DetailMovieViewController: UIViewController {
     }
     
     
-    
-
+    //🔥 画面に表示させるよりも、早く実行されるメソッドだから、IBOutletへのlogicを与えてもcrashにならない
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        titleLabel.text = movieResult?.trackName
+        descriptionLabel.text = movieResult?.longDescription
+        
+        
     }
     
 

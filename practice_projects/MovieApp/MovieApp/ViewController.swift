@@ -216,6 +216,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         detailVC.movieResult = self.movieModel?.results[indexPath.row]
         self.present(detailVC, animated: true, completion: nil)
+        
+        // self.presentでcompletionをnilにして、detailVCを開こうとすると、画面と連動されたIBOutletを扱うただの変数 movieResultでcrashになってしまう。
+        // 理由: IBOutletの変数の定義が、detailVCのviewDidLoad()メソッドの前に書かれているし、viewDidLoad()の前にmovieResult変数を通してアクセスしようとしたからだ。そうすると、その時点では何も作られていないから、titleLabelとdescriptionlabelはnilである。
+        
+//        // 📚解決方法1
+//        // 🔥-> completionを用いて、追加的なlogicを書く必要がある
+//        // この方法を用いると、ほんの少しの間に detailVCで受け取ったデータが正しく反映されないviewが見える
+//
+//        self.present(detailVC, animated: true) {
+//            //画面が開かれたら追加的に処理したいlogic
+//            detailVC.movieResult = self.movieModel?.results[indexPath.row]
+//        }
+        
+        
     }
     
     //数
