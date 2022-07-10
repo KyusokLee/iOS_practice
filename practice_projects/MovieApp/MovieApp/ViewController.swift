@@ -138,6 +138,7 @@ class ViewController: UIViewController {
             
             // ここでは、強制typeCastingをしたが、Optional Unwrappingの方がおすすめ
             print((response as! HTTPURLResponse).statusCode)
+            // ⚠️response: iron manm harry porter でない
             
             //ここで、作ったととしても、自動的にアプリに更新されるわけではない
             // -> delegate, datasourceの方で処理のlogicを実装する必要がある
@@ -214,7 +215,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // storyboardファイルにアクセスし、そこにあるviewControllerにアクセスしなきゃいけない
         let detailVC = UIStoryboard(name: "DetailMovieViewController", bundle: nil).instantiateViewController(withIdentifier: "DetailMovieViewController") as! DetailMovieViewController
         
+        //選択したrowが、ずっとgray色で表示されるのを防ぐ
+        // つまり、クリックしたとたんに、クリックが解除されるanimation効果を与える
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         detailVC.movieResult = self.movieModel?.results[indexPath.row]
+//        //🌱FullScreenでviewをpresentしたいとき
+//        //　FullScreenでpresentしたときは、dragでviewを下ろすことが不可能である -> 必ず、buttonが必要
+//        detailVC.modalPresentationStyle = .fullScreen
+        
         self.present(detailVC, animated: true, completion: nil)
         
         // self.presentでcompletionをnilにして、detailVCを開こうとすると、画面と連動されたIBOutletを扱うただの変数 movieResultでcrashになってしまう。
