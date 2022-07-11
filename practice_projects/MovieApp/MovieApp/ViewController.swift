@@ -7,6 +7,18 @@
 
 import UIKit
 
+// itunes　API: 1分で20回のAPI Requestしかできないので、testするときは、相応しいと思うが、実際のサービスを作るときに使うのは適切でないと思う
+
+
+// ‼️追加したい機能: ボタンを用いて国を設定し、英語のデータ、韓国のデータ、日本のデータをそれぞれ受け取り、viewに表示するものも設定した言語通りに受け取るようにしたい
+
+// ⚠️boringssl_metrics_log_metric_block_invoke(153)のエラーがconsoleで表示される
+// -> 色々調べてみたが、これはXcodeのバージョンアップに伴うエラーであり、無視しても大丈夫だと言っている人が多数であった。(stackoverflowなど)
+// このエラーが常時されていても、アプリは正常に動いている!
+// ⚠️途中の段階: 既存の session.dataTask() -> URLSession.shared.dataTaskに変更したら、detailVCに入る前に出たblock_invoke(153)エラーは出なくなったが、detailVCに入ると、また同じエラーが出る -> DI(依存性注入)を使うとより効率的な処理が可能らしい
+
+
+
 //MARK: 📝知識復習
 //delegate: 普段、Eventを連動させるfuncが存在する
 //dataSource: 普段、Dataを連動させるfuncが存在する (cellの形式の調整なども含む)
@@ -42,6 +54,7 @@ class ViewController: UIViewController {
     // そのため、Optional wrappingをした
     var movieModel: MovieModel?
     var term = ""
+    var networkLayer = NetworkLayer()
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -51,144 +64,191 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         movieTableView.delegate = self
         movieTableView.dataSource = self
+        movieTableView.keyboardDismissMode = .onDrag
         searchBar.delegate = self
         
         requestMovieAPI()
-        
     }
     
-    //URLアドレスを用いて、imageを持ってくるfuncを生成
-    // funcの中のclosureをreturnとして返したい場合: closure typeをparameterで設ける
-    // ここでは、UIImageを渡したいから、(UIImage) -> Voidに設定
-    
+    //MARK: DataModelを分離した方法
     func loadImage(urlString: String, completion: @escaping (UIImage?) -> Void ) {
-        let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig)
-        
-        // URL(): url型に変換する
-        if let hasURL = URL(string: urlString) {
-            var request = URLRequest(url: hasURL)
-            request.httpMethod = "GET"
+        networkLayer.request(type: .justURL(urlString: urlString)) { data, response, error in
             
-            // networkを通して生成されているあるlogicによって、data, response, errorが生成される
-            session.dataTask(with: request) { data, response, error in
-                print((response as! HTTPURLResponse).statusCode)
-                //dataをimageに変換する
-                if let hasData = data {
-                    //⚠️このままだと、errorになる
-                    // なぜ？: 正常にimageへの変換ができるかどうかは試してみないとわからないので、Optionalになっている
-                    // そのため、funcのparameterに UIImage?にしておく
-                    completion(UIImage(data: hasData))
-                    return
-                    //‼️closure中で提供する値(data, response, errorのようなもの)は、closureを抜け出す瞬間、値が消えるlife cycleになっている
-                    // 🔥そのため、escapingする必要がある
-                    // funcのparameterで　escapingをしておくこと
-                }
-                // closureの中でreturnしても、funcのreturnに反映されない
-                // ->理由: threadが異なる ->そのため、closure をparameterにするなどの工夫が必要
-            }.resume()
+            if let hasData = data {
+                completion(UIImage(data: hasData))
+                return
+                //‼️closure中で提供する値(data, response, errorのようなもの)は、closureを抜け出す瞬間、値が消えるlife cycleになっている
+                // 🔥そのため、escapingする必要がある
+                // funcのparameterで　escapingをしておくこと
+            }
+            completion(nil)
         }
-        
-        
-        // ‼️funcのparameterので定めたclosureは、呼び出されなかったら、このfuncはずっとメモリのどこかを占めることになる
-        // そのため、urlへの変換やimageへの変換(上記で記入したコード)で失敗したとき(if let の中を通さずにここにくるとき)に備えて、completionに(nil)を格納したまま返す作業をする
-        completion(nil)
     }
     
+    // MARK: DataModelを分類しない方法
+//    //URLアドレスを用いて、imageを持ってくるfuncを生成
+//    // funcの中のclosureをreturnとして返したい場合: closure typeをparameterで設ける
+//    // ここでは、UIImageを渡したいから、(UIImage) -> Voidに設定
+//
+//    func loadImage(urlString: String, completion: @escaping (UIImage?) -> Void ) {
+//        let sessionConfig = URLSessionConfiguration.default
+//        let session = URLSession(configuration: sessionConfig)
+//
+//        // URL(): url型に変換する
+//        if let hasURL = URL(string: urlString) {
+//            var request = URLRequest(url: hasURL)
+//            request.httpMethod = "GET"
+//
+//            // networkを通して生成されているあるlogicによって、data, response, errorが生成される
+//            session.dataTask(with: request) { data, response, error in
+//                print((response as! HTTPURLResponse).statusCode)
+//                //dataをimageに変換する
+//                if let hasData = data {
+//                    //⚠️このままだと、errorになる
+//                    // なぜ？: 正常にimageへの変換ができるかどうかは試してみないとわからないので、Optionalになっている
+//                    // そのため、funcのparameterに UIImage?にしておく
+//                    completion(UIImage(data: hasData))
+//                    return
+//                    //‼️closure中で提供する値(data, response, errorのようなもの)は、closureを抜け出す瞬間、値が消えるlife cycleになっている
+//                    // 🔥そのため、escapingする必要がある
+//                    // funcのparameterで　escapingをしておくこと
+//                }
+//                // closureの中でreturnしても、funcのreturnに反映されない
+//                // ->理由: threadが異なる ->そのため、closure をparameterにするなどの工夫が必要
+//            }.resume()
+//            // ❗️delegateやCallbackオブジェクトへの参照をクリアしないとメモリーリークを起こす
+//            // そのため、finishTasksAndInvalidate()を使う
+//            // メモリーリークとは、プログラムが必要としないメモリを占有して続けている現象
+//            session.finishTasksAndInvalidate()
+//        }
+//
+//
+//        // ‼️funcのparameterので定めたclosureは、呼び出されなかったら、このfuncはずっとメモリのどこかを占めることになる
+//        // そのため、urlへの変換やimageへの変換(上記で記入したコード)で失敗したとき(if let の中を通さずにここにくるとき)に備えて、completionに(nil)を格納したまま返す作業をする
+//        completion(nil)
+//    }
     
-    
-    // ⭐️network 呼び出し    重要度: Very Important🔥
-    // Open Source を使わずにした方法
-    // cocoapod , alamofireなど
+    //MARK: DataModelを分離した方法
     func requestMovieAPI() {
-        let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig)
-        
-        // 基本的に使おうとするURLのDomain
-        // Optional 値
-        var components = URLComponents(string: "https://itunes.apple.com/search")
-        
         //Query Stringを使って、target要素を指定
         let term = URLQueryItem(name: "term", value: term)
         let media = URLQueryItem(name: "media", value: "movie")
+        let querys = [term, media]
         
-        // queryItemsは、配列型である [URLQueryItem]
-        components?.queryItems = [term, media]
-        
-        guard let url = components?.url else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        // Readをする場合: httpMethod: "GET"
-        // Read, Writeをする場合: httpMethod: "POST"
-        // POSTもread可能
-        request.httpMethod = "GET"
-        
-        //dataTask: data, response, errorをhandlingするclosure
-        // data, response, error　全部optional値である
-        let task = session.dataTask(with: request) { data, response, error in
-            // statusCode: 開発者が必ず知っておくべき httpの状態code
-            // 2xx: 成功に関するstatus
-            // 3xx: redirection: pageが他のところにアクセスして可能とすること
-            // 4xx: requestのerror
-            // 5xx: server自体に問題があるとき, networkに問題があるとき
-            
-            // 200: 成功
-            
-            // ここでは、強制typeCastingをしたが、Optional Unwrappingの方がおすすめ
-            print((response as! HTTPURLResponse).statusCode)
-            // ⚠️response: iron manm harry porter でない
-            
-            //ここで、作ったととしても、自動的にアプリに更新されるわけではない
-            // -> delegate, datasourceの方で処理のlogicを実装する必要がある
-            
-            //⁉️自動に更新させるのは、Bindingになっているとき
-            // Bindingをするという概念は、Rx style (RxSwift)
-            // modelに変化があるとき、自動に更新される
-            // ここでは、根本となるprogramming codeで再現した
+        networkLayer.request(type: .searchMovie(querys: querys)) { data, response, error in
             
             if let hasData = data {
-                //Decoding: 人がわかるような表記にする処理
-                // すなわち、扱う言語として変換させる処理ということ
-                // decode(どんなtypeにdecodingするの？, どんなdataをdecodingしたいの？)
-                // decodeは　throwになっているメソッドである
-                // そのため、do (try) catch 文を用いてerror処理をしないといけない
+                
                 do {
                     self.movieModel = try JSONDecoder().decode(MovieModel.self, from: hasData)
-                    print(self.movieModel ?? "No Data")
-                    //JSON Parsingをして、正しくデータを持ってくることができたら、ここで次の処理が行われる
-                    
-//                    // movieTableViewを改めて読み込んでね！
-//                    self.movieTableView.reloadData()
-                    //‼️しかし、このままだと、errorになってしまう
-                    // 🔥‼️画面のUIの変化に関わる全てのものは、main threadでやらなきゃいけない！
-                    // closureの中で書いたコードは、main threadではないため、直接dispatchQueue.mainがやるよう！というコードを書く必要がある
                     
                     DispatchQueue.main.async {
                         self.movieTableView.reloadData()
                     }
                     
                 } catch {
-                    // catchの方にerrorの時の処理をthrowするね！
-                    // tryを試したときの失敗したケースをここで、知らせる
                     print(error)
                 }
-                
             }
-            
-            
-            
         }
-        
-        // dataTask.resume() : 実際に実行する
-        task.resume()
-        // 実行終了させる
-        session.finishTasksAndInvalidate()
-        
     }
-
-
+    
+    
+    // MARK: DataModelを分類しない方法
+//    // ⭐️network 呼び出し    重要度: Very Important🔥
+//    // Open Source を使わずにした方法
+//    // cocoapod , alamofireなど
+//    func requestMovieAPI() {
+//        let sessionConfig = URLSessionConfiguration.default
+//        let session = URLSession(configuration: sessionConfig)
+//
+//        // 基本的に使おうとするURLのDomain
+//        // Optional 値
+//        var components = URLComponents(string: "https://itunes.apple.com/search")
+//
+//        //Query Stringを使って、target要素を指定
+//        let term = URLQueryItem(name: "term", value: term)
+//        let media = URLQueryItem(name: "media", value: "movie")
+////        // 読み込むデータの国の設定
+////        let country = URLQueryItem(name: "country", value: "JP")
+////        // 表示させる言語の設定
+////        let language = URLQueryItem(name: "lang", value: "ja_jp")
+//
+//        // queryItemsは、配列型である [URLQueryItem]
+//        components?.queryItems = [term, media]
+//
+//        guard let url = components?.url else {
+//            return
+//        }
+//
+//        var request = URLRequest(url: url)
+//        // Readをする場合: httpMethod: "GET"
+//        // Read, Writeをする場合: httpMethod: "POST"
+//        // POSTもread可能
+//        request.httpMethod = "GET"
+//
+//        //dataTask: data, response, errorをhandlingするclosure
+//        // data, response, error　全部optional値である
+//        let task = session.dataTask(with: request) { data, response, error in
+//            // statusCode: 開発者が必ず知っておくべき httpの状態code
+//            // 2xx: 成功に関するstatus
+//            // 3xx: redirection: pageが他のところにアクセスして可能とすること
+//            // 4xx: requestのerror
+//            // 5xx: server自体に問題があるとき, networkに問題があるとき
+//
+//            // 200: 成功
+//
+//            // ここでは、強制typeCastingをしたが、Optional Unwrappingの方がおすすめ
+//            print((response as! HTTPURLResponse).statusCode)
+//            // ⚠️response: iron manm harry porter でない
+//
+//            //ここで、作ったととしても、自動的にアプリに更新されるわけではない
+//            // -> delegate, datasourceの方で処理のlogicを実装する必要がある
+//
+//            //⁉️自動に更新させるのは、Bindingになっているとき
+//            // Bindingをするという概念は、Rx style (RxSwift)
+//            // modelに変化があるとき、自動に更新される
+//            // ここでは、根本となるprogramming codeで再現した
+//
+//            if let hasData = data {
+//                //Decoding: 人がわかるような表記にする処理
+//                // すなわち、扱う言語として変換させる処理ということ
+//                // decode(どんなtypeにdecodingするの？, どんなdataをdecodingしたいの？)
+//                // decodeは　throwになっているメソッドである
+//                // そのため、do (try) catch 文を用いてerror処理をしないといけない
+//                do {
+//                    self.movieModel = try JSONDecoder().decode(MovieModel.self, from: hasData)
+//                    print(self.movieModel ?? "No Data")
+//                    //JSON Parsingをして、正しくデータを持ってくることができたら、ここで次の処理が行われる
+//
+////                    // movieTableViewを改めて読み込んでね！
+////                    self.movieTableView.reloadData()
+//                    //‼️しかし、このままだと、errorになってしまう
+//                    // 🔥‼️画面のUIの変化に関わる全てのものは、main threadでやらなきゃいけない！
+//                    // closureの中で書いたコードは、main threadではないため、直接dispatchQueue.mainがやるよう！というコードを書く必要がある
+//
+//                    DispatchQueue.main.async {
+//                        self.movieTableView.reloadData()
+//                    }
+//
+//                } catch {
+//                    // catchの方にerrorの時の処理をthrowするね！
+//                    // tryを試したときの失敗したケースをここで、知らせる
+//                    print(error)
+//                }
+//
+//            }
+//
+//
+//
+//        }
+//
+//        // dataTask.resume() : 実際に実行する
+//        task.resume()
+//        // 実行終了させる
+//        session.finishTasksAndInvalidate()
+//
+//    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -258,7 +318,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let currency = self.movieModel?.results[indexPath.row].currency ?? ""
         
         //他のtypeの変数は、descriptionを通して、String型に変換してくれる
-        let price = self.movieModel?.results[indexPath.row].trackPrice.description ?? ""
+        let price = self.movieModel?.results[indexPath.row].trackPrice?.description ?? ""
         
        
         cell.priceLabel.text = currency + price

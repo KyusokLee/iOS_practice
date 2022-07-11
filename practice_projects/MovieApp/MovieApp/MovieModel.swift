@@ -21,14 +21,16 @@ struct MovieModel: Codable {
 }
 
 struct MovieResult: Codable {
-    let trackName: String
-    let previewUrl: String
-    let image: String
+    // ⚠️バックエンドのサーバーがデータを必ずしも引き渡すという保証はないため、求めるデータがないときのエラーを防ぐようなコード作成が必要 -> Optional Typeにする❗️
+    let trackName: String?
+    let previewUrl: String?
+    let image: String?
     let shortDescription: String?
-    let longDescription: String
-    let trackPrice: Double
-    let currency: String
-    let releaseDate: String
+    let longDescription: String?
+    let trackPrice: Double?
+    let currency: String?
+    let releaseDate: String?
+//    let country: String
     
     // URL Requestから得られたkeyをそのまま使うのではなく、変更して使いたい!
     // その場合は、CodingKeyを使って、名前を変更できる
@@ -42,5 +44,6 @@ struct MovieResult: Codable {
         case trackPrice
         case currency
         case releaseDate
+//        case country
     }
 }
