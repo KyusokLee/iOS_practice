@@ -7,68 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94DC309E2884429200174192 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC309D2884429200174192 /* AppDelegate.swift */; };
-		94DC30A02884429200174192 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC309F2884429200174192 /* SceneDelegate.swift */; };
-		94DC30A22884429200174192 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC30A12884429200174192 /* ViewController.swift */; };
-		94DC30A52884429200174192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DC30A32884429200174192 /* Main.storyboard */; };
-		94DC30A72884429400174192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DC30A62884429400174192 /* Assets.xcassets */; };
-		94DC30AA2884429400174192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DC30A82884429400174192 /* LaunchScreen.storyboard */; };
-		94DC30B52884429400174192 /* Custom_rotate_buttonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC30B42884429400174192 /* Custom_rotate_buttonTests.swift */; };
-		94DC30BF2884429400174192 /* Custom_rotate_buttonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC30BE2884429400174192 /* Custom_rotate_buttonUITests.swift */; };
-		94DC30C12884429400174192 /* Custom_rotate_buttonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC30C02884429400174192 /* Custom_rotate_buttonUITestsLaunchTests.swift */; };
-		94DC30CE2884438E00174192 /* RotateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC30CD2884438E00174192 /* RotateButton.swift */; };
+		94F9D26B288562BA0068B0A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9D26A288562BA0068B0A8 /* AppDelegate.swift */; };
+		94F9D26D288562BA0068B0A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9D26C288562BA0068B0A8 /* SceneDelegate.swift */; };
+		94F9D26F288562BA0068B0A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9D26E288562BA0068B0A8 /* ViewController.swift */; };
+		94F9D272288562BA0068B0A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F9D270288562BA0068B0A8 /* Main.storyboard */; };
+		94F9D274288562BC0068B0A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94F9D273288562BC0068B0A8 /* Assets.xcassets */; };
+		94F9D277288562BC0068B0A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F9D275288562BC0068B0A8 /* LaunchScreen.storyboard */; };
+		94F9D282288562BC0068B0A8 /* Custon_Floating_buttonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9D281288562BC0068B0A8 /* Custon_Floating_buttonTests.swift */; };
+		94F9D28C288562BC0068B0A8 /* Custon_Floating_buttonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9D28B288562BC0068B0A8 /* Custon_Floating_buttonUITests.swift */; };
+		94F9D28E288562BC0068B0A8 /* Custon_Floating_buttonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9D28D288562BC0068B0A8 /* Custon_Floating_buttonUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		94DC30B12884429400174192 /* PBXContainerItemProxy */ = {
+		94F9D27E288562BC0068B0A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 94DC30922884429200174192 /* Project object */;
+			containerPortal = 94F9D25F288562BA0068B0A8 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94DC30992884429200174192;
-			remoteInfo = Custom_rotate_button;
+			remoteGlobalIDString = 94F9D266288562BA0068B0A8;
+			remoteInfo = Custon_Floating_button;
 		};
-		94DC30BB2884429400174192 /* PBXContainerItemProxy */ = {
+		94F9D288288562BC0068B0A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 94DC30922884429200174192 /* Project object */;
+			containerPortal = 94F9D25F288562BA0068B0A8 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94DC30992884429200174192;
-			remoteInfo = Custom_rotate_button;
+			remoteGlobalIDString = 94F9D266288562BA0068B0A8;
+			remoteInfo = Custon_Floating_button;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		94DC309A2884429200174192 /* Custom_rotate_button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Custom_rotate_button.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		94DC309D2884429200174192 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94DC309F2884429200174192 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		94DC30A12884429200174192 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		94DC30A42884429200174192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		94DC30A62884429400174192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		94DC30A92884429400174192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		94DC30AB2884429400174192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94DC30B02884429400174192 /* Custom_rotate_buttonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Custom_rotate_buttonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94DC30B42884429400174192 /* Custom_rotate_buttonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_rotate_buttonTests.swift; sourceTree = "<group>"; };
-		94DC30BA2884429400174192 /* Custom_rotate_buttonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Custom_rotate_buttonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94DC30BE2884429400174192 /* Custom_rotate_buttonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_rotate_buttonUITests.swift; sourceTree = "<group>"; };
-		94DC30C02884429400174192 /* Custom_rotate_buttonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_rotate_buttonUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		94DC30CD2884438E00174192 /* RotateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateButton.swift; sourceTree = "<group>"; };
+		94F9D267288562BA0068B0A8 /* Custon_Floating_button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Custon_Floating_button.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F9D26A288562BA0068B0A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94F9D26C288562BA0068B0A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		94F9D26E288562BA0068B0A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94F9D271288562BA0068B0A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94F9D273288562BC0068B0A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94F9D276288562BC0068B0A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94F9D278288562BC0068B0A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F9D27D288562BC0068B0A8 /* Custon_Floating_buttonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Custon_Floating_buttonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F9D281288562BC0068B0A8 /* Custon_Floating_buttonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custon_Floating_buttonTests.swift; sourceTree = "<group>"; };
+		94F9D287288562BC0068B0A8 /* Custon_Floating_buttonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Custon_Floating_buttonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F9D28B288562BC0068B0A8 /* Custon_Floating_buttonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custon_Floating_buttonUITests.swift; sourceTree = "<group>"; };
+		94F9D28D288562BC0068B0A8 /* Custon_Floating_buttonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custon_Floating_buttonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		94DC30972884429200174192 /* Frameworks */ = {
+		94F9D264288562BA0068B0A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94DC30AD2884429400174192 /* Frameworks */ = {
+		94F9D27A288562BC0068B0A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94DC30B72884429400174192 /* Frameworks */ = {
+		94F9D284288562BC0068B0A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,138 +76,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		94DC30912884429200174192 = {
+		94F9D25E288562BA0068B0A8 = {
 			isa = PBXGroup;
 			children = (
-				94DC309C2884429200174192 /* Custom_rotate_button */,
-				94DC30B32884429400174192 /* Custom_rotate_buttonTests */,
-				94DC30BD2884429400174192 /* Custom_rotate_buttonUITests */,
-				94DC309B2884429200174192 /* Products */,
+				94F9D269288562BA0068B0A8 /* Custon_Floating_button */,
+				94F9D280288562BC0068B0A8 /* Custon_Floating_buttonTests */,
+				94F9D28A288562BC0068B0A8 /* Custon_Floating_buttonUITests */,
+				94F9D268288562BA0068B0A8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		94DC309B2884429200174192 /* Products */ = {
+		94F9D268288562BA0068B0A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94DC309A2884429200174192 /* Custom_rotate_button.app */,
-				94DC30B02884429400174192 /* Custom_rotate_buttonTests.xctest */,
-				94DC30BA2884429400174192 /* Custom_rotate_buttonUITests.xctest */,
+				94F9D267288562BA0068B0A8 /* Custon_Floating_button.app */,
+				94F9D27D288562BC0068B0A8 /* Custon_Floating_buttonTests.xctest */,
+				94F9D287288562BC0068B0A8 /* Custon_Floating_buttonUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		94DC309C2884429200174192 /* Custom_rotate_button */ = {
+		94F9D269288562BA0068B0A8 /* Custon_Floating_button */ = {
 			isa = PBXGroup;
 			children = (
-				94DC309D2884429200174192 /* AppDelegate.swift */,
-				94DC309F2884429200174192 /* SceneDelegate.swift */,
-				94DC30A12884429200174192 /* ViewController.swift */,
-				94DC30CD2884438E00174192 /* RotateButton.swift */,
-				94DC30A32884429200174192 /* Main.storyboard */,
-				94DC30A62884429400174192 /* Assets.xcassets */,
-				94DC30A82884429400174192 /* LaunchScreen.storyboard */,
-				94DC30AB2884429400174192 /* Info.plist */,
+				94F9D26A288562BA0068B0A8 /* AppDelegate.swift */,
+				94F9D26C288562BA0068B0A8 /* SceneDelegate.swift */,
+				94F9D26E288562BA0068B0A8 /* ViewController.swift */,
+				94F9D270288562BA0068B0A8 /* Main.storyboard */,
+				94F9D273288562BC0068B0A8 /* Assets.xcassets */,
+				94F9D275288562BC0068B0A8 /* LaunchScreen.storyboard */,
+				94F9D278288562BC0068B0A8 /* Info.plist */,
 			);
-			path = Custom_rotate_button;
+			path = Custon_Floating_button;
 			sourceTree = "<group>";
 		};
-		94DC30B32884429400174192 /* Custom_rotate_buttonTests */ = {
+		94F9D280288562BC0068B0A8 /* Custon_Floating_buttonTests */ = {
 			isa = PBXGroup;
 			children = (
-				94DC30B42884429400174192 /* Custom_rotate_buttonTests.swift */,
+				94F9D281288562BC0068B0A8 /* Custon_Floating_buttonTests.swift */,
 			);
-			path = Custom_rotate_buttonTests;
+			path = Custon_Floating_buttonTests;
 			sourceTree = "<group>";
 		};
-		94DC30BD2884429400174192 /* Custom_rotate_buttonUITests */ = {
+		94F9D28A288562BC0068B0A8 /* Custon_Floating_buttonUITests */ = {
 			isa = PBXGroup;
 			children = (
-				94DC30BE2884429400174192 /* Custom_rotate_buttonUITests.swift */,
-				94DC30C02884429400174192 /* Custom_rotate_buttonUITestsLaunchTests.swift */,
+				94F9D28B288562BC0068B0A8 /* Custon_Floating_buttonUITests.swift */,
+				94F9D28D288562BC0068B0A8 /* Custon_Floating_buttonUITestsLaunchTests.swift */,
 			);
-			path = Custom_rotate_buttonUITests;
+			path = Custon_Floating_buttonUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94DC30992884429200174192 /* Custom_rotate_button */ = {
+		94F9D266288562BA0068B0A8 /* Custon_Floating_button */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94DC30C42884429400174192 /* Build configuration list for PBXNativeTarget "Custom_rotate_button" */;
+			buildConfigurationList = 94F9D291288562BC0068B0A8 /* Build configuration list for PBXNativeTarget "Custon_Floating_button" */;
 			buildPhases = (
-				94DC30962884429200174192 /* Sources */,
-				94DC30972884429200174192 /* Frameworks */,
-				94DC30982884429200174192 /* Resources */,
+				94F9D263288562BA0068B0A8 /* Sources */,
+				94F9D264288562BA0068B0A8 /* Frameworks */,
+				94F9D265288562BA0068B0A8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Custom_rotate_button;
-			productName = Custom_rotate_button;
-			productReference = 94DC309A2884429200174192 /* Custom_rotate_button.app */;
+			name = Custon_Floating_button;
+			productName = Custon_Floating_button;
+			productReference = 94F9D267288562BA0068B0A8 /* Custon_Floating_button.app */;
 			productType = "com.apple.product-type.application";
 		};
-		94DC30AF2884429400174192 /* Custom_rotate_buttonTests */ = {
+		94F9D27C288562BC0068B0A8 /* Custon_Floating_buttonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94DC30C72884429400174192 /* Build configuration list for PBXNativeTarget "Custom_rotate_buttonTests" */;
+			buildConfigurationList = 94F9D294288562BC0068B0A8 /* Build configuration list for PBXNativeTarget "Custon_Floating_buttonTests" */;
 			buildPhases = (
-				94DC30AC2884429400174192 /* Sources */,
-				94DC30AD2884429400174192 /* Frameworks */,
-				94DC30AE2884429400174192 /* Resources */,
+				94F9D279288562BC0068B0A8 /* Sources */,
+				94F9D27A288562BC0068B0A8 /* Frameworks */,
+				94F9D27B288562BC0068B0A8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94DC30B22884429400174192 /* PBXTargetDependency */,
+				94F9D27F288562BC0068B0A8 /* PBXTargetDependency */,
 			);
-			name = Custom_rotate_buttonTests;
-			productName = Custom_rotate_buttonTests;
-			productReference = 94DC30B02884429400174192 /* Custom_rotate_buttonTests.xctest */;
+			name = Custon_Floating_buttonTests;
+			productName = Custon_Floating_buttonTests;
+			productReference = 94F9D27D288562BC0068B0A8 /* Custon_Floating_buttonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		94DC30B92884429400174192 /* Custom_rotate_buttonUITests */ = {
+		94F9D286288562BC0068B0A8 /* Custon_Floating_buttonUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94DC30CA2884429400174192 /* Build configuration list for PBXNativeTarget "Custom_rotate_buttonUITests" */;
+			buildConfigurationList = 94F9D297288562BC0068B0A8 /* Build configuration list for PBXNativeTarget "Custon_Floating_buttonUITests" */;
 			buildPhases = (
-				94DC30B62884429400174192 /* Sources */,
-				94DC30B72884429400174192 /* Frameworks */,
-				94DC30B82884429400174192 /* Resources */,
+				94F9D283288562BC0068B0A8 /* Sources */,
+				94F9D284288562BC0068B0A8 /* Frameworks */,
+				94F9D285288562BC0068B0A8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94DC30BC2884429400174192 /* PBXTargetDependency */,
+				94F9D289288562BC0068B0A8 /* PBXTargetDependency */,
 			);
-			name = Custom_rotate_buttonUITests;
-			productName = Custom_rotate_buttonUITests;
-			productReference = 94DC30BA2884429400174192 /* Custom_rotate_buttonUITests.xctest */;
+			name = Custon_Floating_buttonUITests;
+			productName = Custon_Floating_buttonUITests;
+			productReference = 94F9D287288562BC0068B0A8 /* Custon_Floating_buttonUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		94DC30922884429200174192 /* Project object */ = {
+		94F9D25F288562BA0068B0A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					94DC30992884429200174192 = {
+					94F9D266288562BA0068B0A8 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					94DC30AF2884429400174192 = {
+					94F9D27C288562BC0068B0A8 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = 94DC30992884429200174192;
+						TestTargetID = 94F9D266288562BA0068B0A8;
 					};
-					94DC30B92884429400174192 = {
+					94F9D286288562BC0068B0A8 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = 94DC30992884429200174192;
+						TestTargetID = 94F9D266288562BA0068B0A8;
 					};
 				};
 			};
-			buildConfigurationList = 94DC30952884429200174192 /* Build configuration list for PBXProject "Custom_rotate_button" */;
+			buildConfigurationList = 94F9D262288562BA0068B0A8 /* Build configuration list for PBXProject "Custon_Floating_button" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -217,37 +214,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 94DC30912884429200174192;
-			productRefGroup = 94DC309B2884429200174192 /* Products */;
+			mainGroup = 94F9D25E288562BA0068B0A8;
+			productRefGroup = 94F9D268288562BA0068B0A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94DC30992884429200174192 /* Custom_rotate_button */,
-				94DC30AF2884429400174192 /* Custom_rotate_buttonTests */,
-				94DC30B92884429400174192 /* Custom_rotate_buttonUITests */,
+				94F9D266288562BA0068B0A8 /* Custon_Floating_button */,
+				94F9D27C288562BC0068B0A8 /* Custon_Floating_buttonTests */,
+				94F9D286288562BC0068B0A8 /* Custon_Floating_buttonUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		94DC30982884429200174192 /* Resources */ = {
+		94F9D265288562BA0068B0A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94DC30AA2884429400174192 /* LaunchScreen.storyboard in Resources */,
-				94DC30A72884429400174192 /* Assets.xcassets in Resources */,
-				94DC30A52884429200174192 /* Main.storyboard in Resources */,
+				94F9D277288562BC0068B0A8 /* LaunchScreen.storyboard in Resources */,
+				94F9D274288562BC0068B0A8 /* Assets.xcassets in Resources */,
+				94F9D272288562BA0068B0A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94DC30AE2884429400174192 /* Resources */ = {
+		94F9D27B288562BC0068B0A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94DC30B82884429400174192 /* Resources */ = {
+		94F9D285288562BC0068B0A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,62 +254,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		94DC30962884429200174192 /* Sources */ = {
+		94F9D263288562BA0068B0A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94DC30CE2884438E00174192 /* RotateButton.swift in Sources */,
-				94DC30A22884429200174192 /* ViewController.swift in Sources */,
-				94DC309E2884429200174192 /* AppDelegate.swift in Sources */,
-				94DC30A02884429200174192 /* SceneDelegate.swift in Sources */,
+				94F9D26F288562BA0068B0A8 /* ViewController.swift in Sources */,
+				94F9D26B288562BA0068B0A8 /* AppDelegate.swift in Sources */,
+				94F9D26D288562BA0068B0A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94DC30AC2884429400174192 /* Sources */ = {
+		94F9D279288562BC0068B0A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94DC30B52884429400174192 /* Custom_rotate_buttonTests.swift in Sources */,
+				94F9D282288562BC0068B0A8 /* Custon_Floating_buttonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94DC30B62884429400174192 /* Sources */ = {
+		94F9D283288562BC0068B0A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94DC30C12884429400174192 /* Custom_rotate_buttonUITestsLaunchTests.swift in Sources */,
-				94DC30BF2884429400174192 /* Custom_rotate_buttonUITests.swift in Sources */,
+				94F9D28E288562BC0068B0A8 /* Custon_Floating_buttonUITestsLaunchTests.swift in Sources */,
+				94F9D28C288562BC0068B0A8 /* Custon_Floating_buttonUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		94DC30B22884429400174192 /* PBXTargetDependency */ = {
+		94F9D27F288562BC0068B0A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94DC30992884429200174192 /* Custom_rotate_button */;
-			targetProxy = 94DC30B12884429400174192 /* PBXContainerItemProxy */;
+			target = 94F9D266288562BA0068B0A8 /* Custon_Floating_button */;
+			targetProxy = 94F9D27E288562BC0068B0A8 /* PBXContainerItemProxy */;
 		};
-		94DC30BC2884429400174192 /* PBXTargetDependency */ = {
+		94F9D289288562BC0068B0A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94DC30992884429200174192 /* Custom_rotate_button */;
-			targetProxy = 94DC30BB2884429400174192 /* PBXContainerItemProxy */;
+			target = 94F9D266288562BA0068B0A8 /* Custon_Floating_button */;
+			targetProxy = 94F9D288288562BC0068B0A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		94DC30A32884429200174192 /* Main.storyboard */ = {
+		94F9D270288562BA0068B0A8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				94DC30A42884429200174192 /* Base */,
+				94F9D271288562BA0068B0A8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		94DC30A82884429400174192 /* LaunchScreen.storyboard */ = {
+		94F9D275288562BC0068B0A8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				94DC30A92884429400174192 /* Base */,
+				94F9D276288562BC0068B0A8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -320,7 +316,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		94DC30C22884429400174192 /* Debug */ = {
+		94F9D28F288562BC0068B0A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -380,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		94DC30C32884429400174192 /* Release */ = {
+		94F9D290288562BC0068B0A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -434,7 +430,7 @@
 			};
 			name = Release;
 		};
-		94DC30C52884429400174192 /* Debug */ = {
+		94F9D292288562BC0068B0A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -443,7 +439,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Custom_rotate_button/Info.plist;
+				INFOPLIST_FILE = Custon_Floating_button/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -454,15 +450,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custom-rotate-button";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custon-Floating-button";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		94DC30C62884429400174192 /* Release */ = {
+		94F9D293288562BC0068B0A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -471,7 +467,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Custom_rotate_button/Info.plist;
+				INFOPLIST_FILE = Custon_Floating_button/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -482,15 +478,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custom-rotate-button";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custon-Floating-button";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		94DC30C82884429400174192 /* Debug */ = {
+		94F9D295288562BC0068B0A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -501,16 +497,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custom-rotate-buttonTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custon-Floating-buttonTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custom_rotate_button.app/Custom_rotate_button";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custon_Floating_button.app/Custon_Floating_button";
 			};
 			name = Debug;
 		};
-		94DC30C92884429400174192 /* Release */ = {
+		94F9D296288562BC0068B0A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -521,16 +517,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custom-rotate-buttonTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custon-Floating-buttonTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custom_rotate_button.app/Custom_rotate_button";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Custon_Floating_button.app/Custon_Floating_button";
 			};
 			name = Release;
 		};
-		94DC30CB2884429400174192 /* Debug */ = {
+		94F9D298288562BC0068B0A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -539,16 +535,16 @@
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custom-rotate-buttonUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custon-Floating-buttonUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Custom_rotate_button;
+				TEST_TARGET_NAME = Custon_Floating_button;
 			};
 			name = Debug;
 		};
-		94DC30CC2884429400174192 /* Release */ = {
+		94F9D299288562BC0068B0A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -557,55 +553,55 @@
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custom-rotate-buttonUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Custon-Floating-buttonUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Custom_rotate_button;
+				TEST_TARGET_NAME = Custon_Floating_button;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94DC30952884429200174192 /* Build configuration list for PBXProject "Custom_rotate_button" */ = {
+		94F9D262288562BA0068B0A8 /* Build configuration list for PBXProject "Custon_Floating_button" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94DC30C22884429400174192 /* Debug */,
-				94DC30C32884429400174192 /* Release */,
+				94F9D28F288562BC0068B0A8 /* Debug */,
+				94F9D290288562BC0068B0A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94DC30C42884429400174192 /* Build configuration list for PBXNativeTarget "Custom_rotate_button" */ = {
+		94F9D291288562BC0068B0A8 /* Build configuration list for PBXNativeTarget "Custon_Floating_button" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94DC30C52884429400174192 /* Debug */,
-				94DC30C62884429400174192 /* Release */,
+				94F9D292288562BC0068B0A8 /* Debug */,
+				94F9D293288562BC0068B0A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94DC30C72884429400174192 /* Build configuration list for PBXNativeTarget "Custom_rotate_buttonTests" */ = {
+		94F9D294288562BC0068B0A8 /* Build configuration list for PBXNativeTarget "Custon_Floating_buttonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94DC30C82884429400174192 /* Debug */,
-				94DC30C92884429400174192 /* Release */,
+				94F9D295288562BC0068B0A8 /* Debug */,
+				94F9D296288562BC0068B0A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94DC30CA2884429400174192 /* Build configuration list for PBXNativeTarget "Custom_rotate_buttonUITests" */ = {
+		94F9D297288562BC0068B0A8 /* Build configuration list for PBXNativeTarget "Custon_Floating_buttonUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94DC30CB2884429400174192 /* Debug */,
-				94DC30CC2884429400174192 /* Release */,
+				94F9D298288562BC0068B0A8 /* Debug */,
+				94F9D299288562BC0068B0A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 94DC30922884429200174192 /* Project object */;
+	rootObject = 94F9D25F288562BA0068B0A8 /* Project object */;
 }
