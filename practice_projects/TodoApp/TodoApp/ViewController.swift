@@ -7,6 +7,16 @@
 
 import UIKit
 
+//必要なlogic
+// Navigation Controllerの barItemを用いて、内容追加
+// アプリを終了しても、そのデータが消えずに残るように、CoreData(Local DB)を使う
+// 追加した内容を、tableViewの　cellに表示
+// 機能: Todoの内容の追加、削除、更新を可能とする
+// 表示させたいUIを考慮する
+
+// ⚠️Not Yet: 追加したい機能
+// CalendarView, Alarm機能も追加する予定
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var toDoTableView: UITableView!
