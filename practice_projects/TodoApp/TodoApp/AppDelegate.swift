@@ -8,6 +8,9 @@
 import UIKit
 import CoreData
 
+// CoreDataは、デバイスに何かを永久的にデータを保存することを支援するFrameWorkである。
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

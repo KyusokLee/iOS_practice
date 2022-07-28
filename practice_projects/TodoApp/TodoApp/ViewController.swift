@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 //必要なlogic
 // Navigation Controllerの barItemを用いて、内容追加
@@ -21,6 +22,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var toDoTableView: UITableView!
     
+    //MARK: AppDelegateへアクセスするlogic
+    // single tone用いて、appdelegateのものを持ってくる
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var todoList = [TodoList]()
     
     
     override func viewDidLoad() {
@@ -31,6 +37,22 @@ class ViewController: UIViewController {
         toDoTableView.delegate = self
         toDoTableView.dataSource = self
         
+        fetchData()
+    }
+    
+    // 最初にデータを読み込む間数
+    // localDataModelファイルで生成したentityをrequest
+    func fetchData() {
+        let fetchRequest: NSFetchRequest<TodoList> = TodoList.fetchRequest()
+        
+        let context = appdelegate.persistentContainer.viewContext
+        
+        do {
+            self.todoList = try context.fetch(fetchRequest)
+            
+        } catch {
+            print(error)
+        }
         
     }
     
