@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94987CED2893AB440084805E /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94987CEB2893AB440084805E /* TodoDetailViewController.swift */; };
+		94987CEE2893AB440084805E /* TodoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94987CEC2893AB440084805E /* TodoDetailViewController.xib */; };
 		94FB0A582886DB78003E651B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB0A572886DB78003E651B /* AppDelegate.swift */; };
 		94FB0A5A2886DB78003E651B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB0A592886DB78003E651B /* SceneDelegate.swift */; };
 		94FB0A5C2886DB78003E651B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB0A5B2886DB78003E651B /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94987CEB2893AB440084805E /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
+		94987CEC2893AB440084805E /* TodoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoDetailViewController.xib; sourceTree = "<group>"; };
 		94FB0A542886DB78003E651B /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FB0A572886DB78003E651B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94FB0A592886DB78003E651B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				94FB0A572886DB78003E651B /* AppDelegate.swift */,
 				94FB0A592886DB78003E651B /* SceneDelegate.swift */,
 				94FB0A5B2886DB78003E651B /* ViewController.swift */,
+				94987CEB2893AB440084805E /* TodoDetailViewController.swift */,
+				94987CEC2893AB440084805E /* TodoDetailViewController.xib */,
 				94FB0A8C2886E328003E651B /* ToDoCell.swift */,
 				94FB0A5D2886DB78003E651B /* Main.storyboard */,
 				94FB0A632886DB7A003E651B /* Assets.xcassets */,
@@ -238,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94FB0A672886DB7A003E651B /* LaunchScreen.storyboard in Resources */,
+				94987CEE2893AB440084805E /* TodoDetailViewController.xib in Resources */,
 				94FB0A642886DB7A003E651B /* Assets.xcassets in Resources */,
 				94FB0A5F2886DB78003E651B /* Main.storyboard in Resources */,
 			);
@@ -269,6 +276,7 @@
 				94FB0A5A2886DB78003E651B /* SceneDelegate.swift in Sources */,
 				94FB0A622886DB78003E651B /* TodoApp.xcdatamodeld in Sources */,
 				94FB0A8D2886E328003E651B /* ToDoCell.swift in Sources */,
+				94987CED2893AB440084805E /* TodoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
