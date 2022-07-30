@@ -8,6 +8,9 @@
 import UIKit
 import CoreData
 
+// NSPredicate: CoreDataの条件文
+// 役割: SQL文の WHERE文と同様の条件文 -> 検索条件の指定
+
 //protocolを用いて画面を更新するdelegateを作成
 protocol TodoDetailViewControllerDelegate: AnyObject {
     func didFinishSaveData()
@@ -26,12 +29,46 @@ class TodoDetailViewController: UIViewController {
     
     @IBOutlet weak var highButton: UIButton!
     
+    
+    @IBOutlet weak var saveButton: UIButton!
+    
+    
+    // 既存のデータがないときに、deleteボタンは要らないため、既存のデータがあるときだけ、このボタンが表示されるように設定する
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    
     var priority: PriorityLevel?
+    var selectedTodoList: TodoList?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // dataがあるかどうかのcheckをする
+        // このcheck作業が終わってからviewDidLoadにつながるlife Cycle
+        if let hasData = selectedTodoList {
+            titleTextField.text = hasData.title
+            priority = PriorityLevel(rawValue: hasData.prorityLevel)
+            makePriorityButtonDesign()
+            
+            // dataがあるときだけ、deleteボタンが表示される
+            // UIButtonの隠し: isHidden
+            deleteButton.isHidden = false
+            
+            // dataがあるときに、dataを持ってくるのは、"update"という文字が表示されるように
+            saveButton.setTitle("Update", for: .normal)
+            
+        } else {
+            deleteButton.isHidden = true
+            saveButton.setTitle("Save", for: .normal)
+        }
+        
     }
     
     // ボタンを丸くする -> cornerRadius
@@ -56,21 +93,47 @@ class TodoDetailViewController: UIViewController {
     }
     
     @IBAction func setPriority(_ sender: UIButton) {
-        
-        lowButton.backgroundColor = .clear
-        normalButton.backgroundColor = .clear
-        highButton.backgroundColor = .clear
-        
+        // priorityを確認して、layout designが決まるように、designの部分を他の間数で管理するようなコードを作成する
+//        switch sender.tag {
+//        case 1:
+//            priority = .level1
+//            lowButton.backgroundColor = priority?.color
+//        case 2:
+//            priority = .level2
+//            normalButton.backgroundColor = priority?.color
+//        case 3:
+//            priority = .level3
+//            highButton.backgroundColor = priority?.color
+//        default:
+//            break
+//        }
         
         switch sender.tag {
         case 1:
             priority = .level1
-            lowButton.backgroundColor = priority?.color
         case 2:
             priority = .level2
-            normalButton.backgroundColor = priority?.color
         case 3:
             priority = .level3
+        default:
+            break
+        }
+        
+        makePriorityButtonDesign()
+    }
+    
+    // layout design設定の間数
+    func makePriorityButtonDesign() {
+        lowButton.backgroundColor = .clear
+        normalButton.backgroundColor = .clear
+        highButton.backgroundColor = .clear
+        
+        switch self.priority {
+        case .level1:
+            lowButton.backgroundColor = priority?.color
+        case .level2:
+            normalButton.backgroundColor = priority?.color
+        case .level3:
             highButton.backgroundColor = priority?.color
         default:
             break
@@ -84,9 +147,20 @@ class TodoDetailViewController: UIViewController {
     
     
     @IBAction func saveTodo(_ sender: Any) {
-        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-        let context = appDelegate.persistentContainer.viewContext
+        // save と updateの分岐点を指定
+        if selectedTodoList != nil {
+            updateTodo()
+        } else {
+            saveToDo()
+        }
+        // save 後、tableViewの画面を更新する
+        delegate?.didFinishSaveData()
         
+        // presentで画面を表示させるから
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func saveToDo() {
         guard let entityDescription = NSEntityDescription.entity(forEntityName: "TodoList", in: context) else {
             return
         }
@@ -107,19 +181,80 @@ class TodoDetailViewController: UIViewController {
         object.prorityLevel = priority?.rawValue ?? PriorityLevel.level1.rawValue
         
         // save処理
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
         appDelegate.saveContext()
+    }
+    
+    func updateTodo() {
+        guard let hasData = selectedTodoList else {
+            return
+        }
         
-        // save 後、tableViewの画面を更新する
-        delegate?.didFinishSaveData()
+        let fetchRequest: NSFetchRequest<TodoList> = TodoList.fetchRequest()
         
-        // presentで画面を表示させるから
-        self.dismiss(animated: true, completion: nil)
-        
-        
-        
-        
+        // uuidがないときもあるから、あろときだけ、以下の処理を進めるようにする
+        guard let hasUUID = hasData.uuid else {
+            return
+        }
+        // selectしたものだけを読み込む
+        // uuid Type: CVarArg
+        // Type Castingが必須である
+        // %@: 文字列の指定
+        fetchRequest.predicate = NSPredicate(format: "uuid = %@", hasUUID as CVarArg)
+        do {
+            //当てはまるものだけ、持ってくる
+            let loadedData = try context.fetch(fetchRequest)
+            
+            // 当てはまるuuidが複数ある可能性もあるため、loadedData は、配列型の[TodoList]を返す。
+            // そのため、loadedDataの配列の最初の値を扱うとし、firstを入れるのである
+            loadedData.first?.title = titleTextField.text
+            // Date()のdefault値は、現在のdateである。
+            loadedData.first?.date = Date()
+            // もし、priorityを指定せずに、saveしたのであれば、default値としてpriorityLevel1にする (優先度: 低め low)
+            loadedData.first?.prorityLevel = self.priority?.rawValue ?? PriorityLevel.level1.rawValue
+            
+            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+            appDelegate.saveContext()
+            
+        } catch {
+            print(error)
+        }
         
     }
+    
+    @IBAction func deleteTodo(_ sender: UIButton) {
+        guard let hasData = selectedTodoList else {
+            return
+        }
+        
+        guard let hasUUID = hasData.uuid else {
+            return
+        }
+        
+        let fetchRequest: NSFetchRequest<TodoList> = TodoList.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(format: "uuid = %@", hasUUID as CVarArg)
+        
+        do {
+            let loadedData = try context.fetch(fetchRequest)
+            
+            if let loadFirstData = loadedData.first {
+                context.delete(loadFirstData)
+                
+                //⚠️以下のコードを書かないと、appを再起動すると、deleteしたものが反映されず、また表示されてしまう。
+                let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                appDelegate.saveContext()
+            }
+            
+            
+        } catch {
+            print(error)
+        }
+        
+        delegate?.didFinishSaveData()
+        self.dismiss(animated: true)
+    }
+    
     
 
 }

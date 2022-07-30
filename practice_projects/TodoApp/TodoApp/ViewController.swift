@@ -157,6 +157,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // cellをクリックすることに関するメソッド (didSelectRowAt)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailVC = TodoDetailViewController.init(nibName: "TodoDetailViewController", bundle: nil)
+        detailVC.delegate = self
+        detailVC.selectedTodoList = todoList[indexPath.row]
+        
+        
+        self.present(detailVC, animated: true, completion: nil)
+    }
+    
 }
 
 extension ViewController: TodoDetailViewControllerDelegate {
