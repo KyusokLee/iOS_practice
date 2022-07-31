@@ -7,15 +7,28 @@
 
 import UIKit
 
+// SceneDelegate: 共通で使う Single Ton概念
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    //　画面の最も基本となるベースである。つまり、空の用紙だと思えばいい
     var window: UIWindow?
-
-
+    
+    var statusBarView = UIView()
+    
+    // 画面が連動して始まる部分は、この willConnetToパラメータがある scene間数である。
+    // 最初に画面がつながるようになる部分
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        statusBarView.frame = window?.windowScene?.statusBarManager?.statusBarFrame ?? .zero
+        // 画面の生成時にaddSubviewをしてしまうと、VCに隠れて我々が見る画面には反映されないようになる
+//        window?.addSubview(statusBarView)
+        
+        
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

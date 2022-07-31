@@ -19,6 +19,7 @@
 		94EB2B702896695D00E96DBA /* logoSample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94EB2B6F2896695D00E96DBA /* logoSample.jpg */; };
 		94EB2B722896726C00E96DBA /* blueCircleArrowR.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EB2B712896726C00E96DBA /* blueCircleArrowR.png */; };
 		94EB2B742896776700E96DBA /* arrowR@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94EB2B732896776700E96DBA /* arrowR@3x.png */; };
+		94EB2B7628969DCF00E96DBA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB2B7528969DCF00E96DBA /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		94EB2B6F2896695D00E96DBA /* logoSample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logoSample.jpg; path = "../../../../Lecture Images/logoSample.jpg"; sourceTree = "<group>"; };
 		94EB2B712896726C00E96DBA /* blueCircleArrowR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueCircleArrowR.png; path = "../../../../Lecture Images/blueCircleArrowR.png"; sourceTree = "<group>"; };
 		94EB2B732896776700E96DBA /* arrowR@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowR@3x.png"; sourceTree = "<group>"; };
+		94EB2B7528969DCF00E96DBA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				94EB2B3F289667FF00E96DBA /* AppDelegate.swift */,
 				94EB2B41289667FF00E96DBA /* SceneDelegate.swift */,
 				94EB2B43289667FF00E96DBA /* ViewController.swift */,
+				94EB2B7528969DCF00E96DBA /* DetailViewController.swift */,
 				94EB2B45289667FF00E96DBA /* Main.storyboard */,
 				94EB2B482896680000E96DBA /* Assets.xcassets */,
 				94EB2B4A2896680000E96DBA /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 				94EB2B44289667FF00E96DBA /* ViewController.swift in Sources */,
 				94EB2B40289667FF00E96DBA /* AppDelegate.swift in Sources */,
 				94EB2B42289667FF00E96DBA /* SceneDelegate.swift in Sources */,
+				94EB2B7628969DCF00E96DBA /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
