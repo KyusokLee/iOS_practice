@@ -127,6 +127,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // typeCasting
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
         
+        // cell自体の枠設定
+        // ❗️cellとcontentviewは違うものである。
+        cell.contentView.layer.cornerRadius = 15
+        cell.contentView.layer.masksToBounds = true
+        cell.backgroundColor = .white
+        
+        
         // cellのtoptitleLabelの文字を表示
         cell.topTitleLabel.text = todoList[indexPath.row].title
         
@@ -159,6 +166,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     // cellをクリックすることに関するメソッド (didSelectRowAt)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        // ボタンが押されたとたんに、クリックされているactionを解除したい
+//        tableView.deselectRow(at: indexPath, animated: true)
         
         let detailVC = TodoDetailViewController.init(nibName: "TodoDetailViewController", bundle: nil)
         detailVC.delegate = self
