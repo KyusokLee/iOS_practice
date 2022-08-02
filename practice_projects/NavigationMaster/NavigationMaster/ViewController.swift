@@ -27,17 +27,25 @@ class ViewController: UIViewController {
         // scroll中の色 : scrollEdgeAppearance
         // ⚠️注意: scrollEdgeとstandardの色を同じ色に設定しなきゃいけない
         
+        // Pastel Tone Colorの設定:
+        // 方法1. barAppearanceを用いた方法
 //        let navigationBarAppearance = UINavigationBarAppearance()
-//        navigationBarAppearance.configureWithDefaultBackground()
+//        // ⚠️Paste Toneの色が反映されない件について..
+//        //🌈:backgroundEffectを設定するか否かによって、表示される色も異なるので、適切に設定すること
+//        navigationBarAppearance.backgroundEffect = .init(style: .light)
+////        navigationBarAppearance.configureWithDefaultBackground()
+//
+//
 //        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
 //        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
 //        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         
-        self.navigationController?.navigationBar.backgroundColor = .red
+        self.navigationController?.navigationBar.backgroundColor = .red.withAlphaComponent(0.3)
         
 //        // status 領域とnavigation領域の色を別々に設定する
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.statusBar?.backgroundColor = .red
+        // 方法2. withAlphaComponentの設定で、pastel tone colorの実現可能
+        self.statusBar?.backgroundColor = .red.withAlphaComponent(0.3)
     }
     
     

@@ -8,15 +8,15 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.backgroundColor = .yellow
+        // withAlphaComponentの値の設定で、透明度を調節可能
+        self.navigationController?.navigationBar.backgroundColor = .yellow.withAlphaComponent(0.3)
         
-        self.statusBar?.backgroundColor = .yellow
+        
+        self.statusBar?.backgroundColor = .yellow.withAlphaComponent(0.3)
         
         
     }
