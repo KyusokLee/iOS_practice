@@ -14,12 +14,70 @@ class ViewController: UIViewController {
         
         setNaviTitleImage()
         makeBackButton()
+        makeRightAlarmButton()
     }
     
     // 画面が表示されるたびに、新しく実行されるメソッド
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         naviBackgroundDesign()
+    }
+    
+    func makeRightAlarmButton() {
+//        // これだけだと、imageの色が元の色とは違うように見える
+//        // ❗️解決: -> withRenderingMode(.alwaysOriginal)
+//        // AlarmButton
+//        let rightButtonImage = UIImage(systemName: "alarm.fill")?.withRenderingMode(.alwaysOriginal)
+//        let rightItem = UIBarButtonItem(image: rightButtonImage, style: .plain, target: self, action: #selector(rightItemClick))
+//
+//        // Button2
+//        let rightButtonImage2 = UIImage(systemName: "alarm")?.withRenderingMode(.alwaysOriginal)
+//        let rightItem2 = UIBarButtonItem(image: rightButtonImage2, style: .plain, target: self, action: #selector(rightItemClick2))
+//
+//        // 考察: rightItem2とrightItemとのspace(間隔)を縮めたい!
+//        // Way1: imageInsets
+//        rightItem2.imageInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: -20)
+//        // Way1. navigationItemに BarButtonItemsを用いて配列として配置させる方法
+//        // 順番は、最初の要素が最も右のところに配置される流れ
+//        self.navigationItem.rightBarButtonItems = [rightItem, rightItem2]
+        
+        // SystemImageの大きさを決めるOption: imageを読み込むとき、大きさを調整して持ってくるようにするコード
+        // font, size, style, weight調整可能
+        // pointSize: imageのsizeを調整
+        let config = UIImage.SymbolConfiguration(pointSize: 40)
+        
+        // Way2. customViewを用いたNavigationItemの配置方法
+        let button1 = UIButton()
+        button1.setImage(UIImage(systemName: "alarm.fill", withConfiguration: config)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button1.addTarget(self, action: #selector(rightItemClick), for: .touchUpInside)
+        //imageの大きさの調節
+        
+        let button2 = UIButton()
+        button2.setImage(UIImage(systemName: "alarm", withConfiguration: config)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button2.addTarget(self, action: #selector(rightItemClick2), for: .touchUpInside)
+        
+        let stackView = UIStackView(arrangedSubviews: [button1, button2])
+        // .axis: stackViewの方向を設定
+        //   .horizontal: 格納した要素が横軸に並ぶ形
+        //   .vertical: 格納した要素が縦軸に並ぶ形
+        stackView.axis = .horizontal
+        // UIStackViewに格納した要素間の間隔の設定
+        stackView.spacing = 10
+        // .distribution: StackViewの軸(axis)に従い、並べたviewの大きさと位置を定義する
+        // .equalSpacing: 均等な間隔の配置をさせる
+        stackView.distribution = .equalSpacing
+        
+        let customItem = UIBarButtonItem(customView: stackView)
+        self.navigationItem.rightBarButtonItem = customItem
+        
+    }
+    
+    @objc func rightItemClick() {
+        print("Right Item Click")
+    }
+    
+    @objc func rightItemClick2() {
+        print("Right Item2 Click")
     }
     
     func naviBackgroundDesign() {
