@@ -58,19 +58,22 @@
                                             <constraint firstAttribute="height" constant="90" id="P0W-nc-FRJ"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done_check_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="3h4-XG-4MW">
-                                        <rect key="frame" x="157.5" y="-50" width="100" height="100"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCU-fW-ZIf">
+                                        <rect key="frame" x="-25" y="-25" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="QgO-cT-oaa"/>
-                                            <constraint firstAttribute="width" constant="100" id="T3W-kI-E0Z"/>
+                                            <constraint firstAttribute="height" constant="50" id="IZW-GL-iQV"/>
+                                            <constraint firstAttribute="width" constant="50" id="Qda-cb-Xny"/>
                                         </constraints>
-                                    </imageView>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="gray_circle_x.png"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="GqV-rN-ONv" secondAttribute="trailing" constant="20" id="2H0-6d-Z1S"/>
                                     <constraint firstAttribute="bottom" secondItem="T35-DK-5i6" secondAttribute="bottom" constant="20" id="4HU-FR-4DD"/>
                                     <constraint firstItem="myS-0Q-AKk" firstAttribute="centerY" secondItem="T35-DK-5i6" secondAttribute="centerY" id="5Xh-OP-71d"/>
+                                    <constraint firstItem="jCU-fW-ZIf" firstAttribute="centerX" secondItem="BCv-XX-eUC" secondAttribute="leading" id="9zx-KQ-gRd"/>
                                     <constraint firstItem="4d2-9f-SUx" firstAttribute="centerX" secondItem="BCv-XX-eUC" secondAttribute="centerX" id="EON-H5-NtN"/>
                                     <constraint firstItem="T35-DK-5i6" firstAttribute="width" secondItem="myS-0Q-AKk" secondAttribute="width" id="JCT-gD-yB3"/>
                                     <constraint firstItem="myS-0Q-AKk" firstAttribute="leading" secondItem="T35-DK-5i6" secondAttribute="trailing" constant="10" id="JG3-5H-r8N"/>
@@ -81,20 +84,33 @@
                                     <constraint firstItem="1wh-Ie-NYA" firstAttribute="leading" secondItem="BCv-XX-eUC" secondAttribute="leading" constant="20" id="eWE-36-wfv"/>
                                     <constraint firstAttribute="trailing" secondItem="TpX-9c-83J" secondAttribute="trailing" id="fon-2k-F9r"/>
                                     <constraint firstItem="TpX-9c-83J" firstAttribute="leading" secondItem="BCv-XX-eUC" secondAttribute="leading" id="gNh-qx-JEs"/>
+                                    <constraint firstItem="jCU-fW-ZIf" firstAttribute="centerY" secondItem="BCv-XX-eUC" secondAttribute="top" id="hkK-sp-zBZ"/>
                                     <constraint firstItem="GqV-rN-ONv" firstAttribute="top" secondItem="1wh-Ie-NYA" secondAttribute="bottom" constant="20" id="n5k-xP-Utq"/>
-                                    <constraint firstItem="3h4-XG-4MW" firstAttribute="centerY" secondItem="BCv-XX-eUC" secondAttribute="top" id="nXO-ey-0MM"/>
                                     <constraint firstItem="GqV-rN-ONv" firstAttribute="leading" secondItem="BCv-XX-eUC" secondAttribute="leading" constant="20" id="rh3-x1-W2G"/>
                                     <constraint firstItem="TpX-9c-83J" firstAttribute="top" secondItem="BCv-XX-eUC" secondAttribute="top" id="tpF-9e-jFj"/>
                                     <constraint firstItem="4d2-9f-SUx" firstAttribute="centerY" secondItem="BCv-XX-eUC" secondAttribute="top" id="uQ8-Vz-XDZ"/>
                                     <constraint firstItem="T35-DK-5i6" firstAttribute="top" secondItem="GqV-rN-ONv" secondAttribute="bottom" constant="20" id="wDP-GG-RwL"/>
-                                    <constraint firstAttribute="trailing" secondItem="3h4-XG-4MW" secondAttribute="centerX" id="xgi-gz-tiP"/>
                                     <constraint firstItem="1wh-Ie-NYA" firstAttribute="top" secondItem="TpX-9c-83J" secondAttribute="bottom" constant="20" id="xnx-a6-ZEE"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-AN-xOT">
+                                <rect key="frame" x="286" y="220" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="se9-Be-cSa"/>
+                                    <constraint firstAttribute="width" constant="50" id="yvE-rD-cOm"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="done_check_icon.png"/>
+                                <connections>
+                                    <action selector="doneAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vIa-7J-gUD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="0.32163182947019869" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gTV-AN-xOT" firstAttribute="centerY" secondItem="BCv-XX-eUC" secondAttribute="top" id="KgI-pI-7hp"/>
+                            <constraint firstItem="gTV-AN-xOT" firstAttribute="centerX" secondItem="BCv-XX-eUC" secondAttribute="trailing" id="OeK-47-8FE"/>
                             <constraint firstItem="BCv-XX-eUC" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" multiplier="90%" id="Tpq-yF-hgp"/>
                             <constraint firstItem="BCv-XX-eUC" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="c3t-gG-pEV"/>
                         </constraints>
@@ -109,6 +125,7 @@
         <image name="balloon_3.png" width="282.72000122070312" height="418.55999755859375"/>
         <image name="bg5.png" width="585" height="366"/>
         <image name="done_check_icon.png" width="512" height="512"/>
+        <image name="gray_circle_x.png" width="200" height="200"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
