@@ -7,13 +7,11 @@
 
 import UIKit
 
-enum ButtonState {
-    case presentFloating
-    case dismissFloating
-}
-
 class FloatingButtonListViewController: UIViewController {
     
+//    // Buttonの回転状態を入れた変数
+//    // segueを通した表示されたから、ここのviewが表示される時点で、rotate はtrueになっている
+//    var isRotated: Bool = true
     
     @IBOutlet weak var btn1CenterY: NSLayoutConstraint!
     
@@ -67,12 +65,24 @@ class FloatingButtonListViewController: UIViewController {
 //
 //        rotateButton.layer.add(rotationAnimation, forKey: "rotationAnimation")
     
-        // 90度の場合、正常動作の確認ができた
-        UIView.animate(withDuration: 0.3) {
-            self.rotateButton.imageView?.transform = CGAffineTransform(rotationAngle: .pi / 2)
-
-        }
+//        // 90度の場合、正常動作の確認ができた
+//        UIView.animate(withDuration: 0.3) {
+//            self.rotateButton.imageView?.transform = CGAffineTransform(rotationAngle: .pi / 2)
+//
+//        }
         
+//        // 🌈 Error 解決: Core Animation効果で解決できる
+        let rotation = CABasicAnimation(keyPath: "transform.rotation")
+        rotation.fromValue = 0
+        rotation.toValue = Double.pi / 4 //45度
+        rotation.duration = 0.2
+        // MARK: 🔥以下の fillMode と isRemovedOnCompletionを設定しないと、Core Animationは、UIKitとは違って元々の状態に戻ってしまう。
+        // fillmode: duration（animationの持続時間）が終わったら、そのまま固定させるか、除去するかを決める
+        // .forwards: animationがcompletedされた状態を保つように
+        // isRemovedOnCompletion: completionのとき、Animationが対象のlayerのanimationから除去されるかどうかを決める -> animationが終わった後の形を保ちたいのであれば、falseに
+        rotation.fillMode = .forwards
+        rotation.isRemovedOnCompletion = false
+        rotateButton.layer.add(rotation, forKey: "rotationAnimation")
         
         
         // 揺れるようなanimation (usingSpringWithDamping)
@@ -92,10 +102,15 @@ class FloatingButtonListViewController: UIViewController {
     }
 
     @IBAction func dismissFloating(_ sender: Any) {
-        UIView.animate(withDuration: 0.3) {
-            self.rotateButton.imageView?.transform = .identity
-        }
-        
+        let rotation = CABasicAnimation(keyPath: "transform.rotation")
+        // viewDidAppearで書いた設定値と逆にする
+
+        rotation.fromValue = Double.pi / 4 //45度
+        rotation.toValue = 0
+        rotation.duration = 0.2
+        rotation.fillMode = .forwards
+        rotation.isRemovedOnCompletion = false
+        rotateButton.layer.add(rotation, forKey: "rotationAnimation")
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: UIView.AnimationOptions.curveEaseOut) {
             self.btn1CenterY.constant = 0
