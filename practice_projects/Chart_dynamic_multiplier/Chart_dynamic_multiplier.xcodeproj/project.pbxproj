@@ -7,70 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94BD355F28A0F262000BEC94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD355E28A0F262000BEC94 /* AppDelegate.swift */; };
-		94BD356128A0F262000BEC94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD356028A0F262000BEC94 /* SceneDelegate.swift */; };
-		94BD356328A0F262000BEC94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD356228A0F262000BEC94 /* ViewController.swift */; };
-		94BD356628A0F262000BEC94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BD356428A0F262000BEC94 /* Main.storyboard */; };
-		94BD356828A0F263000BEC94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BD356728A0F263000BEC94 /* Assets.xcassets */; };
-		94BD356B28A0F263000BEC94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BD356928A0F263000BEC94 /* LaunchScreen.storyboard */; };
-		94BD357628A0F263000BEC94 /* ExpandCell_pracTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD357528A0F263000BEC94 /* ExpandCell_pracTests.swift */; };
-		94BD358028A0F263000BEC94 /* ExpandCell_pracUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD357F28A0F263000BEC94 /* ExpandCell_pracUITests.swift */; };
-		94BD358228A0F263000BEC94 /* ExpandCell_pracUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD358128A0F263000BEC94 /* ExpandCell_pracUITestsLaunchTests.swift */; };
-		94BD35CF28A12C0D000BEC94 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 94BD35CE28A12C0D000BEC94 /* girl.png */; };
-		94BD35D128A12E4B000BEC94 /* ExpandCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD35D028A12E4B000BEC94 /* ExpandCellTableViewCell.swift */; };
+		943887C828A267580001E705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943887C728A267580001E705 /* AppDelegate.swift */; };
+		943887CA28A267580001E705 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943887C928A267580001E705 /* SceneDelegate.swift */; };
+		943887CC28A267580001E705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943887CB28A267580001E705 /* ViewController.swift */; };
+		943887CF28A267580001E705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943887CD28A267580001E705 /* Main.storyboard */; };
+		943887D128A2675A0001E705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943887D028A2675A0001E705 /* Assets.xcassets */; };
+		943887D428A2675A0001E705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943887D228A2675A0001E705 /* LaunchScreen.storyboard */; };
+		943887DF28A2675B0001E705 /* Chart_dynamic_multiplierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943887DE28A2675B0001E705 /* Chart_dynamic_multiplierTests.swift */; };
+		943887E928A2675B0001E705 /* Chart_dynamic_multiplierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943887E828A2675B0001E705 /* Chart_dynamic_multiplierUITests.swift */; };
+		943887EB28A2675B0001E705 /* Chart_dynamic_multiplierUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943887EA28A2675B0001E705 /* Chart_dynamic_multiplierUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		94BD357228A0F263000BEC94 /* PBXContainerItemProxy */ = {
+		943887DB28A2675B0001E705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 94BD355328A0F262000BEC94 /* Project object */;
+			containerPortal = 943887BC28A267580001E705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94BD355A28A0F262000BEC94;
-			remoteInfo = ExpandCell_prac;
+			remoteGlobalIDString = 943887C328A267580001E705;
+			remoteInfo = Chart_dynamic_multiplier;
 		};
-		94BD357C28A0F263000BEC94 /* PBXContainerItemProxy */ = {
+		943887E528A2675B0001E705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 94BD355328A0F262000BEC94 /* Project object */;
+			containerPortal = 943887BC28A267580001E705 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94BD355A28A0F262000BEC94;
-			remoteInfo = ExpandCell_prac;
+			remoteGlobalIDString = 943887C328A267580001E705;
+			remoteInfo = Chart_dynamic_multiplier;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		94BD355B28A0F262000BEC94 /* ExpandCell_prac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandCell_prac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		94BD355E28A0F262000BEC94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94BD356028A0F262000BEC94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		94BD356228A0F262000BEC94 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		94BD356528A0F262000BEC94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		94BD356728A0F263000BEC94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		94BD356A28A0F263000BEC94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		94BD356C28A0F263000BEC94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94BD357128A0F263000BEC94 /* ExpandCell_pracTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpandCell_pracTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94BD357528A0F263000BEC94 /* ExpandCell_pracTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCell_pracTests.swift; sourceTree = "<group>"; };
-		94BD357B28A0F263000BEC94 /* ExpandCell_pracUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpandCell_pracUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94BD357F28A0F263000BEC94 /* ExpandCell_pracUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCell_pracUITests.swift; sourceTree = "<group>"; };
-		94BD358128A0F263000BEC94 /* ExpandCell_pracUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCell_pracUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		94BD35CE28A12C0D000BEC94 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
-		94BD35D028A12E4B000BEC94 /* ExpandCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCellTableViewCell.swift; sourceTree = "<group>"; };
+		943887C428A267580001E705 /* Chart_dynamic_multiplier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chart_dynamic_multiplier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		943887C728A267580001E705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		943887C928A267580001E705 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		943887CB28A267580001E705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		943887CE28A267580001E705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		943887D028A2675A0001E705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		943887D328A2675A0001E705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		943887D528A2675B0001E705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		943887DA28A2675B0001E705 /* Chart_dynamic_multiplierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Chart_dynamic_multiplierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		943887DE28A2675B0001E705 /* Chart_dynamic_multiplierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart_dynamic_multiplierTests.swift; sourceTree = "<group>"; };
+		943887E428A2675B0001E705 /* Chart_dynamic_multiplierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Chart_dynamic_multiplierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		943887E828A2675B0001E705 /* Chart_dynamic_multiplierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart_dynamic_multiplierUITests.swift; sourceTree = "<group>"; };
+		943887EA28A2675B0001E705 /* Chart_dynamic_multiplierUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart_dynamic_multiplierUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		94BD355828A0F262000BEC94 /* Frameworks */ = {
+		943887C128A267580001E705 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94BD356E28A0F263000BEC94 /* Frameworks */ = {
+		943887D728A2675B0001E705 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94BD357828A0F263000BEC94 /* Frameworks */ = {
+		943887E128A2675B0001E705 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,139 +76,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		94BD355228A0F262000BEC94 = {
+		943887BB28A267580001E705 = {
 			isa = PBXGroup;
 			children = (
-				94BD355D28A0F262000BEC94 /* ExpandCell_prac */,
-				94BD357428A0F263000BEC94 /* ExpandCell_pracTests */,
-				94BD357E28A0F263000BEC94 /* ExpandCell_pracUITests */,
-				94BD355C28A0F262000BEC94 /* Products */,
+				943887C628A267580001E705 /* Chart_dynamic_multiplier */,
+				943887DD28A2675B0001E705 /* Chart_dynamic_multiplierTests */,
+				943887E728A2675B0001E705 /* Chart_dynamic_multiplierUITests */,
+				943887C528A267580001E705 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		94BD355C28A0F262000BEC94 /* Products */ = {
+		943887C528A267580001E705 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94BD355B28A0F262000BEC94 /* ExpandCell_prac.app */,
-				94BD357128A0F263000BEC94 /* ExpandCell_pracTests.xctest */,
-				94BD357B28A0F263000BEC94 /* ExpandCell_pracUITests.xctest */,
+				943887C428A267580001E705 /* Chart_dynamic_multiplier.app */,
+				943887DA28A2675B0001E705 /* Chart_dynamic_multiplierTests.xctest */,
+				943887E428A2675B0001E705 /* Chart_dynamic_multiplierUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		94BD355D28A0F262000BEC94 /* ExpandCell_prac */ = {
+		943887C628A267580001E705 /* Chart_dynamic_multiplier */ = {
 			isa = PBXGroup;
 			children = (
-				94BD355E28A0F262000BEC94 /* AppDelegate.swift */,
-				94BD356028A0F262000BEC94 /* SceneDelegate.swift */,
-				94BD356228A0F262000BEC94 /* ViewController.swift */,
-				94BD35D028A12E4B000BEC94 /* ExpandCellTableViewCell.swift */,
-				94BD356428A0F262000BEC94 /* Main.storyboard */,
-				94BD356728A0F263000BEC94 /* Assets.xcassets */,
-				94BD356928A0F263000BEC94 /* LaunchScreen.storyboard */,
-				94BD35CE28A12C0D000BEC94 /* girl.png */,
-				94BD356C28A0F263000BEC94 /* Info.plist */,
+				943887C728A267580001E705 /* AppDelegate.swift */,
+				943887C928A267580001E705 /* SceneDelegate.swift */,
+				943887CB28A267580001E705 /* ViewController.swift */,
+				943887CD28A267580001E705 /* Main.storyboard */,
+				943887D028A2675A0001E705 /* Assets.xcassets */,
+				943887D228A2675A0001E705 /* LaunchScreen.storyboard */,
+				943887D528A2675B0001E705 /* Info.plist */,
 			);
-			path = ExpandCell_prac;
+			path = Chart_dynamic_multiplier;
 			sourceTree = "<group>";
 		};
-		94BD357428A0F263000BEC94 /* ExpandCell_pracTests */ = {
+		943887DD28A2675B0001E705 /* Chart_dynamic_multiplierTests */ = {
 			isa = PBXGroup;
 			children = (
-				94BD357528A0F263000BEC94 /* ExpandCell_pracTests.swift */,
+				943887DE28A2675B0001E705 /* Chart_dynamic_multiplierTests.swift */,
 			);
-			path = ExpandCell_pracTests;
+			path = Chart_dynamic_multiplierTests;
 			sourceTree = "<group>";
 		};
-		94BD357E28A0F263000BEC94 /* ExpandCell_pracUITests */ = {
+		943887E728A2675B0001E705 /* Chart_dynamic_multiplierUITests */ = {
 			isa = PBXGroup;
 			children = (
-				94BD357F28A0F263000BEC94 /* ExpandCell_pracUITests.swift */,
-				94BD358128A0F263000BEC94 /* ExpandCell_pracUITestsLaunchTests.swift */,
+				943887E828A2675B0001E705 /* Chart_dynamic_multiplierUITests.swift */,
+				943887EA28A2675B0001E705 /* Chart_dynamic_multiplierUITestsLaunchTests.swift */,
 			);
-			path = ExpandCell_pracUITests;
+			path = Chart_dynamic_multiplierUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94BD355A28A0F262000BEC94 /* ExpandCell_prac */ = {
+		943887C328A267580001E705 /* Chart_dynamic_multiplier */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94BD358528A0F263000BEC94 /* Build configuration list for PBXNativeTarget "ExpandCell_prac" */;
+			buildConfigurationList = 943887EE28A2675B0001E705 /* Build configuration list for PBXNativeTarget "Chart_dynamic_multiplier" */;
 			buildPhases = (
-				94BD355728A0F262000BEC94 /* Sources */,
-				94BD355828A0F262000BEC94 /* Frameworks */,
-				94BD355928A0F262000BEC94 /* Resources */,
+				943887C028A267580001E705 /* Sources */,
+				943887C128A267580001E705 /* Frameworks */,
+				943887C228A267580001E705 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ExpandCell_prac;
-			productName = ExpandCell_prac;
-			productReference = 94BD355B28A0F262000BEC94 /* ExpandCell_prac.app */;
+			name = Chart_dynamic_multiplier;
+			productName = Chart_dynamic_multiplier;
+			productReference = 943887C428A267580001E705 /* Chart_dynamic_multiplier.app */;
 			productType = "com.apple.product-type.application";
 		};
-		94BD357028A0F263000BEC94 /* ExpandCell_pracTests */ = {
+		943887D928A2675B0001E705 /* Chart_dynamic_multiplierTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94BD358828A0F263000BEC94 /* Build configuration list for PBXNativeTarget "ExpandCell_pracTests" */;
+			buildConfigurationList = 943887F128A2675B0001E705 /* Build configuration list for PBXNativeTarget "Chart_dynamic_multiplierTests" */;
 			buildPhases = (
-				94BD356D28A0F263000BEC94 /* Sources */,
-				94BD356E28A0F263000BEC94 /* Frameworks */,
-				94BD356F28A0F263000BEC94 /* Resources */,
+				943887D628A2675B0001E705 /* Sources */,
+				943887D728A2675B0001E705 /* Frameworks */,
+				943887D828A2675B0001E705 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94BD357328A0F263000BEC94 /* PBXTargetDependency */,
+				943887DC28A2675B0001E705 /* PBXTargetDependency */,
 			);
-			name = ExpandCell_pracTests;
-			productName = ExpandCell_pracTests;
-			productReference = 94BD357128A0F263000BEC94 /* ExpandCell_pracTests.xctest */;
+			name = Chart_dynamic_multiplierTests;
+			productName = Chart_dynamic_multiplierTests;
+			productReference = 943887DA28A2675B0001E705 /* Chart_dynamic_multiplierTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		94BD357A28A0F263000BEC94 /* ExpandCell_pracUITests */ = {
+		943887E328A2675B0001E705 /* Chart_dynamic_multiplierUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94BD358B28A0F263000BEC94 /* Build configuration list for PBXNativeTarget "ExpandCell_pracUITests" */;
+			buildConfigurationList = 943887F428A2675B0001E705 /* Build configuration list for PBXNativeTarget "Chart_dynamic_multiplierUITests" */;
 			buildPhases = (
-				94BD357728A0F263000BEC94 /* Sources */,
-				94BD357828A0F263000BEC94 /* Frameworks */,
-				94BD357928A0F263000BEC94 /* Resources */,
+				943887E028A2675B0001E705 /* Sources */,
+				943887E128A2675B0001E705 /* Frameworks */,
+				943887E228A2675B0001E705 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94BD357D28A0F263000BEC94 /* PBXTargetDependency */,
+				943887E628A2675B0001E705 /* PBXTargetDependency */,
 			);
-			name = ExpandCell_pracUITests;
-			productName = ExpandCell_pracUITests;
-			productReference = 94BD357B28A0F263000BEC94 /* ExpandCell_pracUITests.xctest */;
+			name = Chart_dynamic_multiplierUITests;
+			productName = Chart_dynamic_multiplierUITests;
+			productReference = 943887E428A2675B0001E705 /* Chart_dynamic_multiplierUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		94BD355328A0F262000BEC94 /* Project object */ = {
+		943887BC28A267580001E705 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					94BD355A28A0F262000BEC94 = {
+					943887C328A267580001E705 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					94BD357028A0F263000BEC94 = {
+					943887D928A2675B0001E705 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = 94BD355A28A0F262000BEC94;
+						TestTargetID = 943887C328A267580001E705;
 					};
-					94BD357A28A0F263000BEC94 = {
+					943887E328A2675B0001E705 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = 94BD355A28A0F262000BEC94;
+						TestTargetID = 943887C328A267580001E705;
 					};
 				};
 			};
-			buildConfigurationList = 94BD355628A0F262000BEC94 /* Build configuration list for PBXProject "ExpandCell_prac" */;
+			buildConfigurationList = 943887BF28A267580001E705 /* Build configuration list for PBXProject "Chart_dynamic_multiplier" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,38 +214,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 94BD355228A0F262000BEC94;
-			productRefGroup = 94BD355C28A0F262000BEC94 /* Products */;
+			mainGroup = 943887BB28A267580001E705;
+			productRefGroup = 943887C528A267580001E705 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94BD355A28A0F262000BEC94 /* ExpandCell_prac */,
-				94BD357028A0F263000BEC94 /* ExpandCell_pracTests */,
-				94BD357A28A0F263000BEC94 /* ExpandCell_pracUITests */,
+				943887C328A267580001E705 /* Chart_dynamic_multiplier */,
+				943887D928A2675B0001E705 /* Chart_dynamic_multiplierTests */,
+				943887E328A2675B0001E705 /* Chart_dynamic_multiplierUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		94BD355928A0F262000BEC94 /* Resources */ = {
+		943887C228A267580001E705 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BD356B28A0F263000BEC94 /* LaunchScreen.storyboard in Resources */,
-				94BD35CF28A12C0D000BEC94 /* girl.png in Resources */,
-				94BD356828A0F263000BEC94 /* Assets.xcassets in Resources */,
-				94BD356628A0F262000BEC94 /* Main.storyboard in Resources */,
+				943887D428A2675A0001E705 /* LaunchScreen.storyboard in Resources */,
+				943887D128A2675A0001E705 /* Assets.xcassets in Resources */,
+				943887CF28A267580001E705 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94BD356F28A0F263000BEC94 /* Resources */ = {
+		943887D828A2675B0001E705 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94BD357928A0F263000BEC94 /* Resources */ = {
+		943887E228A2675B0001E705 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,62 +254,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		94BD355728A0F262000BEC94 /* Sources */ = {
+		943887C028A267580001E705 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BD356328A0F262000BEC94 /* ViewController.swift in Sources */,
-				94BD355F28A0F262000BEC94 /* AppDelegate.swift in Sources */,
-				94BD356128A0F262000BEC94 /* SceneDelegate.swift in Sources */,
-				94BD35D128A12E4B000BEC94 /* ExpandCellTableViewCell.swift in Sources */,
+				943887CC28A267580001E705 /* ViewController.swift in Sources */,
+				943887C828A267580001E705 /* AppDelegate.swift in Sources */,
+				943887CA28A267580001E705 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94BD356D28A0F263000BEC94 /* Sources */ = {
+		943887D628A2675B0001E705 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BD357628A0F263000BEC94 /* ExpandCell_pracTests.swift in Sources */,
+				943887DF28A2675B0001E705 /* Chart_dynamic_multiplierTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94BD357728A0F263000BEC94 /* Sources */ = {
+		943887E028A2675B0001E705 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BD358228A0F263000BEC94 /* ExpandCell_pracUITestsLaunchTests.swift in Sources */,
-				94BD358028A0F263000BEC94 /* ExpandCell_pracUITests.swift in Sources */,
+				943887EB28A2675B0001E705 /* Chart_dynamic_multiplierUITestsLaunchTests.swift in Sources */,
+				943887E928A2675B0001E705 /* Chart_dynamic_multiplierUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		94BD357328A0F263000BEC94 /* PBXTargetDependency */ = {
+		943887DC28A2675B0001E705 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94BD355A28A0F262000BEC94 /* ExpandCell_prac */;
-			targetProxy = 94BD357228A0F263000BEC94 /* PBXContainerItemProxy */;
+			target = 943887C328A267580001E705 /* Chart_dynamic_multiplier */;
+			targetProxy = 943887DB28A2675B0001E705 /* PBXContainerItemProxy */;
 		};
-		94BD357D28A0F263000BEC94 /* PBXTargetDependency */ = {
+		943887E628A2675B0001E705 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94BD355A28A0F262000BEC94 /* ExpandCell_prac */;
-			targetProxy = 94BD357C28A0F263000BEC94 /* PBXContainerItemProxy */;
+			target = 943887C328A267580001E705 /* Chart_dynamic_multiplier */;
+			targetProxy = 943887E528A2675B0001E705 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		94BD356428A0F262000BEC94 /* Main.storyboard */ = {
+		943887CD28A267580001E705 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				94BD356528A0F262000BEC94 /* Base */,
+				943887CE28A267580001E705 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		94BD356928A0F263000BEC94 /* LaunchScreen.storyboard */ = {
+		943887D228A2675A0001E705 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				94BD356A28A0F263000BEC94 /* Base */,
+				943887D328A2675A0001E705 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -324,7 +316,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		94BD358328A0F263000BEC94 /* Debug */ = {
+		943887EC28A2675B0001E705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -384,7 +376,7 @@
 			};
 			name = Debug;
 		};
-		94BD358428A0F263000BEC94 /* Release */ = {
+		943887ED28A2675B0001E705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -438,7 +430,7 @@
 			};
 			name = Release;
 		};
-		94BD358628A0F263000BEC94 /* Debug */ = {
+		943887EF28A2675B0001E705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -447,7 +439,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExpandCell_prac/Info.plist;
+				INFOPLIST_FILE = Chart_dynamic_multiplier/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -459,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.ExpandCell-prac";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Chart-dynamic-multiplier";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -467,7 +459,7 @@
 			};
 			name = Debug;
 		};
-		94BD358728A0F263000BEC94 /* Release */ = {
+		943887F028A2675B0001E705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -476,7 +468,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExpandCell_prac/Info.plist;
+				INFOPLIST_FILE = Chart_dynamic_multiplier/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -488,7 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.ExpandCell-prac";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Chart-dynamic-multiplier";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -496,7 +488,7 @@
 			};
 			name = Release;
 		};
-		94BD358928A0F263000BEC94 /* Debug */ = {
+		943887F228A2675B0001E705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -507,16 +499,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.ExpandCell-pracTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Chart-dynamic-multiplierTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpandCell_prac.app/ExpandCell_prac";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chart_dynamic_multiplier.app/Chart_dynamic_multiplier";
 			};
 			name = Debug;
 		};
-		94BD358A28A0F263000BEC94 /* Release */ = {
+		943887F328A2675B0001E705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -527,16 +519,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.ExpandCell-pracTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Chart-dynamic-multiplierTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpandCell_prac.app/ExpandCell_prac";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chart_dynamic_multiplier.app/Chart_dynamic_multiplier";
 			};
 			name = Release;
 		};
-		94BD358C28A0F263000BEC94 /* Debug */ = {
+		943887F528A2675B0001E705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -545,16 +537,16 @@
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.ExpandCell-pracUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Chart-dynamic-multiplierUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ExpandCell_prac;
+				TEST_TARGET_NAME = Chart_dynamic_multiplier;
 			};
 			name = Debug;
 		};
-		94BD358D28A0F263000BEC94 /* Release */ = {
+		943887F628A2675B0001E705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -563,55 +555,55 @@
 				DEVELOPMENT_TEAM = UNTPRP3C66;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.ExpandCell-pracUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.jp.kyulee.Chart-dynamic-multiplierUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ExpandCell_prac;
+				TEST_TARGET_NAME = Chart_dynamic_multiplier;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94BD355628A0F262000BEC94 /* Build configuration list for PBXProject "ExpandCell_prac" */ = {
+		943887BF28A267580001E705 /* Build configuration list for PBXProject "Chart_dynamic_multiplier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94BD358328A0F263000BEC94 /* Debug */,
-				94BD358428A0F263000BEC94 /* Release */,
+				943887EC28A2675B0001E705 /* Debug */,
+				943887ED28A2675B0001E705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94BD358528A0F263000BEC94 /* Build configuration list for PBXNativeTarget "ExpandCell_prac" */ = {
+		943887EE28A2675B0001E705 /* Build configuration list for PBXNativeTarget "Chart_dynamic_multiplier" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94BD358628A0F263000BEC94 /* Debug */,
-				94BD358728A0F263000BEC94 /* Release */,
+				943887EF28A2675B0001E705 /* Debug */,
+				943887F028A2675B0001E705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94BD358828A0F263000BEC94 /* Build configuration list for PBXNativeTarget "ExpandCell_pracTests" */ = {
+		943887F128A2675B0001E705 /* Build configuration list for PBXNativeTarget "Chart_dynamic_multiplierTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94BD358928A0F263000BEC94 /* Debug */,
-				94BD358A28A0F263000BEC94 /* Release */,
+				943887F228A2675B0001E705 /* Debug */,
+				943887F328A2675B0001E705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94BD358B28A0F263000BEC94 /* Build configuration list for PBXNativeTarget "ExpandCell_pracUITests" */ = {
+		943887F428A2675B0001E705 /* Build configuration list for PBXNativeTarget "Chart_dynamic_multiplierUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94BD358C28A0F263000BEC94 /* Debug */,
-				94BD358D28A0F263000BEC94 /* Release */,
+				943887F528A2675B0001E705 /* Debug */,
+				943887F628A2675B0001E705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 94BD355328A0F262000BEC94 /* Project object */;
+	rootObject = 943887BC28A267580001E705 /* Project object */;
 }
