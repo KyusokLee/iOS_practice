@@ -23,9 +23,6 @@ class ViewController: UIViewController {
     
     var dataModelArray = [ExpandDataModel]()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         expandTableView.delegate = self
@@ -41,7 +38,6 @@ class ViewController: UIViewController {
         for (_, value) in textArray.enumerated() {
             dataModelArray.append(ExpandDataModel.init(description: value, isExpand: false))
         }
-        
         
     }
 
@@ -103,6 +99,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //        tableView.reloadRows(at: [indexPath], with: .none)
 //        UIView.setAnimationsEnabled(true)
         
+        // Animation効果を与え、自然にcellのheightを変えるように
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
