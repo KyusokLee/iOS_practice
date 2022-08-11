@@ -19,6 +19,8 @@
 		949451CD28A3CC8900026C3C /* signInSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949451CC28A3CC8900026C3C /* signInSuccessViewController.swift */; };
 		949451CF28A3CFAF00026C3C /* signInSuccessViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949451CE28A3CFAF00026C3C /* signInSuccessViewController.storyboard */; };
 		949451D128A3D07A00026C3C /* done_check_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 949451D028A3D07A00026C3C /* done_check_icon.png */; };
+		94AF9F1C28A4E94800418742 /* SuccessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF9F1B28A4E94800418742 /* SuccessPageViewController.swift */; };
+		94AF9F1E28A4E9CF00418742 /* SuccessPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AF9F1D28A4E9CF00418742 /* SuccessPageViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		949451CC28A3CC8900026C3C /* signInSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInSuccessViewController.swift; sourceTree = "<group>"; };
 		949451CE28A3CFAF00026C3C /* signInSuccessViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = signInSuccessViewController.storyboard; sourceTree = "<group>"; };
 		949451D028A3D07A00026C3C /* done_check_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_check_icon.png; sourceTree = "<group>"; };
+		94AF9F1B28A4E94800418742 /* SuccessPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPageViewController.swift; sourceTree = "<group>"; };
+		94AF9F1D28A4E9CF00418742 /* SuccessPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuccessPageViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				9475D68D28A2E1CA008A6439 /* ViewController.swift */,
 				949451CC28A3CC8900026C3C /* signInSuccessViewController.swift */,
 				949451CE28A3CFAF00026C3C /* signInSuccessViewController.storyboard */,
+				94AF9F1B28A4E94800418742 /* SuccessPageViewController.swift */,
+				94AF9F1D28A4E9CF00418742 /* SuccessPageViewController.storyboard */,
 				9475D68F28A2E1CA008A6439 /* Main.storyboard */,
 				9475D69228A2E1CB008A6439 /* Assets.xcassets */,
 				9475D69428A2E1CB008A6439 /* LaunchScreen.storyboard */,
@@ -242,6 +248,7 @@
 			files = (
 				949451D128A3D07A00026C3C /* done_check_icon.png in Resources */,
 				9475D69628A2E1CB008A6439 /* LaunchScreen.storyboard in Resources */,
+				94AF9F1E28A4E9CF00418742 /* SuccessPageViewController.storyboard in Resources */,
 				9475D69328A2E1CB008A6439 /* Assets.xcassets in Resources */,
 				9475D69128A2E1CA008A6439 /* Main.storyboard in Resources */,
 				949451CF28A3CFAF00026C3C /* signInSuccessViewController.storyboard in Resources */,
@@ -272,6 +279,7 @@
 				949451CD28A3CC8900026C3C /* signInSuccessViewController.swift in Sources */,
 				9475D68E28A2E1CA008A6439 /* ViewController.swift in Sources */,
 				9475D68A28A2E1CA008A6439 /* AppDelegate.swift in Sources */,
+				94AF9F1C28A4E94800418742 /* SuccessPageViewController.swift in Sources */,
 				9475D68C28A2E1CA008A6439 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

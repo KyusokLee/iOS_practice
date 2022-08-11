@@ -20,7 +20,7 @@ class signInSuccessViewController: UIViewController {
     @IBOutlet weak var popupView: UIView! {
         didSet {
             // popupViewのborderを丸くする
-            popupView.layer.cornerRadius = 60
+            popupView.layer.cornerRadius = 30
             // popupViewのborderの太さを設定
             popupView.layer.borderWidth = 1
             // popupViewのborderの色を設定
@@ -60,14 +60,17 @@ class signInSuccessViewController: UIViewController {
         imageYrotation.repeatDuration = 3
         imageYrotation.repeatCount = 2
         imageYrotation.fillMode = .forwards
-        imageYrotation.isRemovedOnCompletion = false
+        imageYrotation.delegate = self
+//        imageYrotation.isRemovedOnCompletion = false
         successImage.layer.add(imageYrotation, forKey: "rotationAnimation")
-        
         // MARK: 回転のanimationが終わってからdismissするようにしたい
         
-        if !successImage.isAnimating {
-            completeRotate = true
-        }
+        // ⚠️Error: Animationが実行されている途中に completeRotate -> trueになる
+        // 🌈 Solution: animationDidStopを使ってみよう
+//        if !successImage.isAnimating {
+//            completeRotate = true
+//            print(completeRotate)
+//        }
         
         
     }
@@ -76,14 +79,14 @@ class signInSuccessViewController: UIViewController {
         
     }
     
-    func dismissVC() {
-        UIView.animate(withDuration: 7) {
-            self.dismiss(animated: true, completion: nil)
-        }
+    
+    
+    
+    
+}
+
+extension signInSuccessViewController: CAAnimationDelegate {
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
 }

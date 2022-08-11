@@ -34,17 +34,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func signInPresentPopup(_ sender: Any) {
-        
-        
-        // 作ったstoryboard fileの名前を入力
-        let storyboard = UIStoryboard.init(name: "signInSuccessViewController", bundle: nil)
-        // Idenfier を入力
-        let popupVC = storyboard.instantiateViewController(withIdentifier: "signInSuccessViewControllerID")
-        
-        popupVC.modalPresentationStyle = .overCurrentContext
-        popupVC.modalTransitionStyle = .crossDissolve
-        
-        self.present(popupVC, animated: true, completion: nil)
+        pushSuccessVC()
+        presentPopupVC()
     }
     
     
@@ -161,6 +152,25 @@ class ViewController: UIViewController {
             signInButton.isUserInteractionEnabled = false
             signInButton.backgroundColor = .lightGray
         }
+    }
+    
+    func presentPopupVC() {
+        // 作ったstoryboard fileの名前を入力
+        let storyboard = UIStoryboard.init(name: "signInSuccessViewController", bundle: nil)
+        // Idenfier を入力
+        let popupVC = storyboard.instantiateViewController(withIdentifier: "signInSuccessViewControllerID")
+        
+        popupVC.modalPresentationStyle = .overCurrentContext
+        popupVC.modalTransitionStyle = .crossDissolve
+        
+        self.present(popupVC, animated: true, completion: nil)
+    }
+    
+    func pushSuccessVC() {
+        // navigation Controllerでembeded in しないと、push できない
+        let storyboard = UIStoryboard.init(name: "SuccessPageViewController", bundle: nil)
+        let successPageVC = storyboard.instantiateViewController(withIdentifier: "SuccessPageVCID")
+        self.navigationController?.pushViewController(successPageVC, animated: true)
     }
 
 
