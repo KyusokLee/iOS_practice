@@ -12,15 +12,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            // 入力したPasswordが表示されないように
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
     
     // email, Pw Errorは、動的に表示されるようにする必要がある
     @IBOutlet weak var emailErrorMsg: UILabel!
     
     @IBOutlet weak var passwordErrorMsg: UILabel!
     
+    @IBOutlet weak var signInButton: UIButton! {
+        didSet {
+            // buttonの生成時点で、角を丸くする
+            signInButton.layer.cornerRadius = signInButton.bounds.height / 2
+            
+        }
+    }
+    
+    
     @IBAction func signInPresentPopup(_ sender: Any) {
         
+        
+        // 作ったstoryboard fileの名前を入力
+        let storyboard = UIStoryboard.init(name: "signInSuccessViewController", bundle: nil)
+        // Idenfier を入力
+        let popupVC = storyboard.instantiateViewController(withIdentifier: "signInSuccessViewControllerID")
+        
+        popupVC.modalPresentationStyle = .overCurrentContext
+        popupVC.modalTransitionStyle = .crossDissolve
+        
+        self.present(popupVC, animated: true, completion: nil)
     }
     
     
@@ -28,6 +52,10 @@ class ViewController: UIViewController {
     var emailErrorHeight: NSLayoutConstraint!
     // passwordのheight Constraint
     var passwordErrorHeight: NSLayoutConstraint!
+    
+    // 全域変数にすることで、変更される値をずっと保持するように
+    var emailValid: Bool = false
+    var pwValid: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +68,13 @@ class ViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldEdited), for: .editingChanged)
         emailErrorHeight = emailErrorMsg.heightAnchor.constraint(equalToConstant: 0)
+        emailErrorHeight.isActive = true
         passwordErrorHeight = passwordErrorMsg.heightAnchor.constraint(equalToConstant: 0)
+        passwordErrorHeight.isActive = true
         
+        // emailとpasswordが入力されないとbuttonが活性化されないように
+        // background: light Grayに
+        self.completionButton(isOn: false)
     }
     
     @objc func textFieldEdited(textField: UITextField) {
@@ -57,12 +90,14 @@ class ViewController: UIViewController {
                 // 全域変数にして、共有するsingle tone patternにする
 //                let emailErrorHeight = emailErrorMsg.heightAnchor.constraint(equalToConstant: 0)
 //                emailErrorHeight.isActive = true
+                emailValid = true
                 emailErrorHeight.isActive = true
                 
             } else {
                 // falseのとき -> Error　表示!
                 // ⚠️しかし、こうやってheightのconstraintを errorのときとerrorじゃないときの値を異なって設定すると、constraintsが二つできちゃって、constraintsの衝突になる
 //                emailErrorMsg.heightAnchor.constraint(equalToConstant: 16).isActive = true
+                emailValid = false
                 emailErrorHeight.isActive = false
             }
         } else if textField == passwordTextField {
@@ -70,11 +105,17 @@ class ViewController: UIViewController {
             print("Password Text Field: \(textField.text ?? "Blank")")
             if isValidPassword(pw: textField.text) {
                 // true
+                pwValid = true
                 passwordErrorHeight.isActive = true
             } else {
                 // false
+                pwValid = false
                 passwordErrorHeight.isActive = false
             }
+        }
+        
+        if emailValid && pwValid {
+            self.completionButton(isOn: true)
         }
         
         // Animationの効果を与える
@@ -108,6 +149,18 @@ class ViewController: UIViewController {
         }
         
         return true
+    }
+    
+    // buttonのactive statusに応じて、buttonの色を変え、活性化する
+    func completionButton(isOn: Bool) {
+        switch isOn {
+        case true:
+            signInButton.isUserInteractionEnabled = true
+            signInButton.backgroundColor = .systemBlue
+        case false:
+            signInButton.isUserInteractionEnabled = false
+            signInButton.backgroundColor = .lightGray
+        }
     }
 
 

@@ -70,7 +70,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Hf7-nV-hdV" firstAttribute="top" secondItem="Dgf-5k-3SA" secondAttribute="bottom" constant="40" id="3F3-st-K7Y"/>
                             <constraint firstItem="F3R-la-hqV" firstAttribute="top" secondItem="NuE-H7-JaB" secondAttribute="bottom" constant="50" id="6HA-fQ-3qc"/>
@@ -103,11 +103,12 @@
                         <outlet property="emailTextField" destination="0EZ-OP-hEK" id="R62-P0-eEr"/>
                         <outlet property="passwordErrorMsg" destination="NuE-H7-JaB" id="uXu-39-YH2"/>
                         <outlet property="passwordTextField" destination="ZVX-lt-Pdw" id="7A4-iI-zIV"/>
+                        <outlet property="signInButton" destination="F3R-la-hqV" id="xew-Ho-rRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89.855072463768124" y="84.375"/>
+            <point key="canvasLocation" x="180" y="69"/>
         </scene>
     </scenes>
     <resources>
