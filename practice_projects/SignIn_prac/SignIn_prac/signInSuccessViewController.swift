@@ -58,7 +58,7 @@ class signInSuccessViewController: UIViewController {
         // 2回転するように
         imageYrotation.toValue = Double.pi * 2
         imageYrotation.repeatDuration = 3
-        imageYrotation.repeatCount = 2
+        imageYrotation.repeatCount = 3
         imageYrotation.fillMode = .forwards
         imageYrotation.delegate = self
 //        imageYrotation.isRemovedOnCompletion = false

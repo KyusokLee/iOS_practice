@@ -41,11 +41,16 @@ class ViewController: UIViewController {
 //          // 1秒後、実行されるように
 //            self.pushSuccessVC()
 //        }
-        DispatchQueue.main.async {
-            self.pushSuccessVC()
+//        DispatchQueue.main.async {
+//            self.presentPopupVC()
 //            self.pushSuccessVC()
-            self.presentPopupVC()
-//            self.view.window?.rootViewController?.presentedViewController
+////            self.view.window?.rootViewController?.presentedViewController
+//        }
+        
+        //🌈solution: これは、このように書いて　popUpVCのところで、animation.repeatcountを多くすると同時に見れるようにできる
+        presentPopupVC()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.pushSuccessVC()
         }
     }
     
