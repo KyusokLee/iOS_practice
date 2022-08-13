@@ -88,5 +88,6 @@ class signInSuccessViewController: UIViewController {
 extension signInSuccessViewController: CAAnimationDelegate {
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         self.dismiss(animated: true, completion: nil)
+        print("dismiss - signInSuccessVC")
     }
 }

@@ -10,8 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
-    
-    
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             // 入力したPasswordが表示されないように
@@ -21,7 +19,6 @@ class ViewController: UIViewController {
     
     // email, Pw Errorは、動的に表示されるようにする必要がある
     @IBOutlet weak var emailErrorMsg: UILabel!
-    
     @IBOutlet weak var passwordErrorMsg: UILabel!
     
     @IBOutlet weak var signInButton: UIButton! {
@@ -32,10 +29,24 @@ class ViewController: UIViewController {
         }
     }
     
+    //⚠️Error: Presenting view controller ~ from detached view controller ~ is discouraged.
+    // navigation controller でmodalすることで、生じるエラーである
+    // 🌈solution:
+    
+    // 考えられるsolution: pushSuccessVCの中で、presentPopupVCを実装するように？
     
     @IBAction func signInPresentPopup(_ sender: Any) {
-        pushSuccessVC()
-        presentPopupVC()
+//        //指定した?秒後にコードが実行されるように
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+//          // 1秒後、実行されるように
+//            self.pushSuccessVC()
+//        }
+        DispatchQueue.main.async {
+            self.pushSuccessVC()
+//            self.pushSuccessVC()
+            self.presentPopupVC()
+//            self.view.window?.rootViewController?.presentedViewController
+        }
     }
     
     
