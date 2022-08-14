@@ -48,7 +48,7 @@ class ToDoCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10))
     }
     
     // ⚠️Error: contentView.frame.insetで、topの部分を6以上に設定すると、topTitleLabelが隠れるerrorが起きた

@@ -65,6 +65,11 @@ class ViewController: UIViewController {
         toDoTableView.delegate = self
         toDoTableView.dataSource = self
         
+        toDoTableView.estimatedRowHeight = 100
+        toDoTableView.rowHeight = UITableView.automaticDimension
+//        toDoTableView.estimatedRowHeight = UITableView.automaticDimension
+//        toDoTableView.autoresizesSubviews = true
+        
         fetchData()
         // tableViewで全体のcell,sectionをupdate(更新)するのは、reloadData()メソッド
         // dataを読み込んで、画面に表示させる
@@ -112,7 +117,6 @@ class ViewController: UIViewController {
         detailVC.delegate = self
         self.present(detailVC, animated: true, completion: nil)
     }
-    
     
 
 
@@ -178,6 +182,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         self.present(detailVC, animated: true, completion: nil)
     }
     
+    //Cellの高さを可変にする
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        return UITableView.automaticDimension
+    }
+    
 }
 
 extension ViewController: TodoDetailViewControllerDelegate {
@@ -185,5 +195,6 @@ extension ViewController: TodoDetailViewControllerDelegate {
         //データを読み込んだ後、更新しなければいけない
         self.fetchData()
         self.toDoTableView.reloadData()
+        updateViewConstraints()
     }
 }
