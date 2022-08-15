@@ -8,6 +8,13 @@
 import UIKit
 
 class CustomCell: UITableViewCell {
+    
+    @IBOutlet weak var myTextView: UITextView! {
+        didSet {
+            myTextView.isEditable = false
+        }
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

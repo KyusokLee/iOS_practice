@@ -9,6 +9,15 @@ import UIKit
 
 class YourBubbleCell: UITableViewCell {
 
+    @IBOutlet weak var yourTextView: UITextView! {
+        didSet {
+            // 一度入力された後は、該当のcellのtextViewは編集不可にする
+            // CustomCellのtextViewも同様な処理をする
+            yourTextView.isEditable = false
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

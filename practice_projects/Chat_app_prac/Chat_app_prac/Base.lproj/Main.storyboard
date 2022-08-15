@@ -71,6 +71,7 @@
                     <connections>
                         <outlet property="chatTableView" destination="PPo-rb-vjS" id="JBY-3F-dZF"/>
                         <outlet property="inputTextView" destination="e4f-sm-czS" id="Z9n-tF-5zX"/>
+                        <outlet property="inputTextViewHeight" destination="FHU-2R-a7u" id="cg9-Fg-KmA"/>
                         <outlet property="inputViewBottomMargin" destination="78p-fa-Q5t" id="wT6-bb-3BZ"/>
                     </connections>
                 </viewController>
