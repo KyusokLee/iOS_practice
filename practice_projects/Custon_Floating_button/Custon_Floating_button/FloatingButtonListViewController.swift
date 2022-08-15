@@ -74,7 +74,8 @@ class FloatingButtonListViewController: UIViewController {
 //        // 🌈 Error 解決: Core Animation効果で解決できる
         let rotation = CABasicAnimation(keyPath: "transform.rotation")
         rotation.fromValue = 0
-        rotation.toValue = Double.pi / 4 //45度
+//        rotation.toValue = (Double.pi / 4) //時計周りに45度回転
+        rotation.toValue = -(Double.pi / 4) // 逆時計回りに45度回転
         rotation.duration = 0.2
         // MARK: 🔥以下の fillMode と isRemovedOnCompletionを設定しないと、Core Animationは、UIKitとは違って元々の状態に戻ってしまう。
         // fillmode: duration（animationの持続時間）が終わったら、そのまま固定させるか、除去するかを決める
@@ -105,7 +106,7 @@ class FloatingButtonListViewController: UIViewController {
         let rotation = CABasicAnimation(keyPath: "transform.rotation")
         // viewDidAppearで書いた設定値と逆にする
 
-        rotation.fromValue = Double.pi / 4 //45度
+        rotation.fromValue = -(Double.pi / 4) //逆時計周り45度からstart
         rotation.toValue = 0
         rotation.duration = 0.2
         rotation.fillMode = .forwards

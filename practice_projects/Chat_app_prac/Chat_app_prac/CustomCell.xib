@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyBubbleCellID" rowHeight="128" id="KGk-i7-Jjw" customClass="CustomCell" customModule="Chat_app_prac" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meBubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xup-5C-tap">
+                        <rect key="frame" x="312" y="10" width="35" height="108"/>
+                        <rect key="contentStretch" x="0.5" y="0.5" width="0.0" height="0.0"/>
+                    </imageView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="755" verticalHuggingPriority="755" scrollEnabled="NO" text="s" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sBi-Dl-TYX">
+                        <rect key="frame" x="317" y="15" width="17.5" height="98"/>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.8.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww1-9g-tly">
+                        <rect key="frame" x="260.5" y="106" width="46.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Xup-5C-tap" secondAttribute="bottom" constant="10" id="7lX-d4-lAb"/>
+                    <constraint firstItem="Xup-5C-tap" firstAttribute="bottom" secondItem="Ww1-9g-tly" secondAttribute="bottom" id="N9I-nc-AMe"/>
+                    <constraint firstItem="Xup-5C-tap" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="SWr-TG-264"/>
+                    <constraint firstItem="sBi-Dl-TYX" firstAttribute="top" secondItem="Xup-5C-tap" secondAttribute="top" constant="5" id="WA7-z8-pkf"/>
+                    <constraint firstItem="sBi-Dl-TYX" firstAttribute="leading" secondItem="Xup-5C-tap" secondAttribute="leading" constant="5" id="bkd-mN-Qt8"/>
+                    <constraint firstItem="sBi-Dl-TYX" firstAttribute="trailing" secondItem="Xup-5C-tap" secondAttribute="trailing" constant="-12.5" id="eVZ-eG-J3z"/>
+                    <constraint firstItem="Ww1-9g-tly" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="kpF-jZ-UZ6"/>
+                    <constraint firstItem="Xup-5C-tap" firstAttribute="leading" secondItem="Ww1-9g-tly" secondAttribute="trailing" constant="5" id="rkt-rC-atX"/>
+                    <constraint firstAttribute="trailing" secondItem="Xup-5C-tap" secondAttribute="trailing" constant="10" id="ydh-Rd-osz"/>
+                    <constraint firstItem="sBi-Dl-TYX" firstAttribute="bottom" secondItem="Xup-5C-tap" secondAttribute="bottom" constant="-5" id="ziv-h2-c4r"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="164.49275362318841" y="127.23214285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="meBubble.png" width="89" height="74"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
