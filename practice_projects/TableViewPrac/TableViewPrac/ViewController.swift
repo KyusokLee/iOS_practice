@@ -7,6 +7,8 @@
 
 import UIKit
 
+// tableViewの Styleを inset groupにすることで、cell間の間隔を与えることができた
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var customTableView: UITableView!
@@ -19,14 +21,29 @@ class ViewController: UIViewController {
         //nibファイルの場合、TableViewへの登録が必要である
         customTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         customTableView.separatorStyle = .none
+//        // 左と右のmarginを与える
+        customTableView.layoutMargins = .init(top: 0, left: 10, bottom: 0, right: 10)
     }
-
 
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 3
+    }
+//
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 3
+    }
+    
+    // 1つのsectionに1つのrowが入るように
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

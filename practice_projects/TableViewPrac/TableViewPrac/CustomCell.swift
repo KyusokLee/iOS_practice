@@ -29,17 +29,19 @@ class CustomCell: UITableViewCell {
         }
 
     }
+//
+//    //cellの間隔設定
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        // Error: cellの高さが変わらない
+//        // top bottomを変更すると、全てのtextが表示されなくなる
+//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10))
+//
+//
+//    }
     
-    //cellの間隔設定
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        // Error: cellの高さが変わらない
-        // top bottomを変更すると、全てのtextが表示されなくなる
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10))
-
-
-    }
+    
     
     
 }
