@@ -13,6 +13,7 @@ import UIKit
 //　しかし、全体のメッセージTableViewがそのまま、保存されるように
 
 // TODO: Keyboardがまだ、一度も上がってないとき -> 最新にメッセージに合わせて textViewとkeyboardが表示されるように
+// ---> ❗️難しい
 
 
 // ⚠️Error: 送信したBubble中のtextViewに上書きができるようになっている -> コードの訂正する必要がある
@@ -37,8 +38,11 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var inputViewBottomMargin: NSLayoutConstraint!
-    
     @IBOutlet weak var inputTextViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var chatTableViewBottomMargin: NSLayoutConstraint!
+    @IBOutlet weak var inputCustomView: UIView!
+    
+    
     
     
     //DataModelsを設定して、ここの内容がcellに格納されるように
@@ -119,29 +123,98 @@ class ViewController: UIViewController {
         let keyboardFrame = notiInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
         
         // これだけだと、safeAreaのheightも追加されて現れる
-        let height = keyboardFrame.size.height
+        let keyboardHeight = keyboardFrame.size.height
         // safeAreaのbottomのspaceを指定し、この値をheightから引くようにする
         let safeAreaBottom = self.view.safeAreaInsets.bottom
+        
+        let shownKeyboardHeight = keyboardHeight - safeAreaBottom
+//        let contentInset = UIEdgeInsets(top: shownKeyboardHeight, left: 0, bottom: 0, right: 0)
+        var moveY = -(shownKeyboardHeight - chatTableView.contentOffset.y)
+        
+        if chatTableView.contentOffset.y != -60 {
+            moveY += 60
+        }
         
         //keyboardが現れる時間を指定
         let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         
-        //自然なanimation効果を与える
+//        chatTableView.contentInset = contentInset
+//        chatTableView.scrollIndicatorInsets = contentInset
+        //chatTableView.contentOffset = CGPoint(x: 0, y: moveY)
+        
+        
+        
+//        let tableViewHeight = chatTableView.contentSize.height
+ 
+        
+//        //自然なanimation効果を与える
+//        UIView.animate(withDuration: animationDuration) {
+//            // 値は、　constant
+//            self.inputViewBottomMargin.constant = height - safeAreaBottom
+//            // できなかった方法
+////            self.chatTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
+//            //self.chatTableView.frame.size.height -= height
+//
+////            self.chatTableView.layoutIfNeeded()
+//
+////            self.chatTableView.bottomAnchor.constraint(equalTo: self.inputCustomView.topAnchor).isActive = true
+////
+////            self.chatTableView.contentInset = newInsets
+////            self.chatTableView.scrollIndicatorInsets = newInsets
+//
+//            // animationの時間に合わせて細かく分けて、更新し続けるコード
+//            if self.chatDatas.count > 0 {
+//                self.chatTableView.scrollToRow(at: IndexPath(item: self.chatDatas.count - 1, section: 0), at: UITableView.ScrollPosition.bottom, animated: true)
+//            }
+//
+//            self.view.layoutIfNeeded()
+//        }
+        
+//        // MARK: keyboardが上がるとき、chatの内容を一番下のものを表示する (Scrollになっている)
+//        UIView.animate(withDuration: animationDuration, animations: {
+//            self.inputViewBottomMargin.constant = height - safeAreaBottom
+//            self.view.layoutIfNeeded()
+//        }) { (complete) in
+//            if self.chatDatas.count > 0 {
+//                self.chatTableView.scrollToRow(at: IndexPath(item: self.chatDatas.count - 1, section: 0), at: UITableView.ScrollPosition.bottom, animated: true)
+//                self.view.layoutIfNeeded()
+//            }
+//        }
         UIView.animate(withDuration: animationDuration) {
-            // 値は、　constant
-            self.inputViewBottomMargin.constant = height - safeAreaBottom
-            // animationの時間に合わせて細かく分けて、更新し続けるコード
+            self.inputViewBottomMargin.constant = shownKeyboardHeight
+            print("contentOffset.y: ", self.chatTableView.contentOffset.y)
+            self.chatTableView.contentOffset = CGPoint(x: 0, y: -shownKeyboardHeight)
+            print("contentOffset.y: ", self.chatTableView.contentOffset.y)
+
             self.view.layoutIfNeeded()
         }
+        
+//        self.chatTableView.autoresizingMask = .flexibleHeight
+
         
     }
     
     @objc func keyboardWillHide(noti: Notification) {
         let notiInfo = noti.userInfo!
         let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let keyboardFrame = notiInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardHeight = keyboardFrame.size.height
+         //safeAreaのbottomのspaceを指定し、この値をheightから引くようにする
+        let safeAreaBottom = self.view.safeAreaInsets.bottom
+        let shownKeyboardHeight = keyboardHeight - safeAreaBottom
+        let moveY = -(shownKeyboardHeight - chatTableView.contentOffset.y)
         
         UIView.animate(withDuration: animationDuration) {
             self.inputViewBottomMargin.constant = .zero
+            print("contentOffset.y: ", self.chatTableView.contentOffset.y)
+//            self.chatTableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            self.chatTableView.contentOffset = CGPoint(x: 0, y: +shownKeyboardHeight)
+//            self.chatTableView.contentOffset = .zero
+            // できなかった方法
+//            self.chatTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            //self.chatTableView.frame.size.height += height
+            
+//            self.chatTableView.layoutIfNeeded()
             self.view.layoutIfNeeded()
         }
         
