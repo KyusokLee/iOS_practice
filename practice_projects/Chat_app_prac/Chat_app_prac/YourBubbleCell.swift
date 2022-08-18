@@ -17,6 +17,9 @@ class YourBubbleCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var date: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
