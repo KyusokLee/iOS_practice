@@ -7,14 +7,39 @@
 
 import UIKit
 
+enum isSelected {
+    case selected
+    case normal
+}
+
 class CustomCell: UITableViewCell {
     
+    private var hartButtonState: isSelected = .normal
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var hartButton: UIButton! {
+        didSet {
+            configureAppearance()
+        }
+    }
+    
+    private var bounceAnimation: CAKeyframeAnimation = {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = [1.0, 1.5, 0.9, 1.02, 1.0]
+        bounceAnimation.duration = TimeInterval(0.3)
+        bounceAnimation.calculationMode = .cubic
+        return bounceAnimation
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // cellの間にある、lineを消す
+        self.selectionStyle = .none
+        
+        self.contentView.layer.cornerRadius = 20
+        self.contentView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,17 +54,34 @@ class CustomCell: UITableViewCell {
         }
 
     }
-//
-//    //cellの間隔設定
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        // Error: cellの高さが変わらない
-//        // top bottomを変更すると、全てのtextが表示されなくなる
-//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10))
-//
-//
-//    }
+    
+    @IBAction func selectHartButton(_ sender: UIButton!) {
+        if hartButtonState == .normal {
+            hartButtonState = .selected
+            print("normal -> select")
+        } else {
+            hartButtonState = .normal
+            print("select -> normal")
+        }
+        
+        configureAppearance()
+    }
+    
+    
+    private func configureAppearance() {
+        if hartButtonState == .normal {
+            print("it is normal")
+            let normalImage = UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
+            hartButton.setImage(normalImage, for: .normal)
+        } else {
+            print("it is selected")
+            let selectedImage = UIImage(systemName: "heart.fill")?.withRenderingMode(.alwaysTemplate)
+            hartButton.setImage(selectedImage, for: .normal)
+        }
+       
+        hartButton.tintColor = .systemRed
+        hartButton.layer.add(bounceAnimation, forKey: nil)
+    }
     
     
     

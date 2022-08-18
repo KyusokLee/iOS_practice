@@ -10,9 +10,26 @@ import UIKit
 // tableViewの Styleを inset groupにすることで、cell間の間隔を与えることができた
 
 class ViewController: UIViewController {
+    var term = ""
+    let dataModels: [String] = ["Go to Library",
+                                "Go to School",
+                                "Have a breakfast",
+                                "Just have a break time",
+                                "Practice_longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong",
+                                "Finish",
+                                "Prepare for Next Day"]
     
     @IBOutlet weak var customTableView: UITableView!
-
+    
+    @IBOutlet weak var customTabbar: UITabBar!
+    
+    @IBOutlet weak var customSearchBar: UISearchBar! {
+        didSet {
+            customSearchBar.placeholder = "Search"
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customTableView.delegate = self
@@ -23,22 +40,48 @@ class ViewController: UIViewController {
         customTableView.separatorStyle = .none
 //        // 左と右のmarginを与える
         customTableView.layoutMargins = .init(top: 0, left: 10, bottom: 0, right: 10)
+        addNotification()
+        searchBarConfigure()
+        customSearchBar.delegate = self
     }
+    
+    func searchBarConfigure() {
+        let cancel = UIBarButtonItem(systemItem: .cancel, primaryAction: UIAction(handler: { _ in
+            print("cancel SearchBar")
+        }), menu: nil)
+        
+        self.navigationItem.rightBarButtonItem = cancel
+    }
+    
+    func addNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(noti: Notification) {
+        
+    }
+    
+    @objc func keyboardWillHide(noti: Notification) {
+        
+    }
+    
+    
 
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return dataModels.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 3
+        return 5
     }
 //
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 3
+        return 5
     }
     
     // 1つのsectionに1つのrowが入るように
@@ -49,12 +92,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
-        // cellの間にある、lineを消す
-        cell.selectionStyle = .none
-        
-        cell.contentView.layer.cornerRadius = 20
-        cell.contentView.layer.masksToBounds = true
-        
+        cell.titleLabel.text = dataModels[indexPath.section]
         return cell
     }
     
@@ -70,3 +108,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let hasText = searchBar.text else {
+            return
+        }
+        
+        term = hasText
+        self.view.endEditing(true)
+        
+    }
+}
