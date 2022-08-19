@@ -21,15 +21,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var customTableView: UITableView!
     
-    @IBOutlet weak var customTabbar: UITabBar!
-    
-    @IBOutlet weak var customSearchBar: UISearchBar! {
-        didSet {
-            customSearchBar.placeholder = "Search"
-        }
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         customTableView.delegate = self
@@ -40,25 +31,50 @@ class ViewController: UIViewController {
         customTableView.separatorStyle = .none
 //        // 左と右のmarginを与える
         customTableView.layoutMargins = .init(top: 0, left: 10, bottom: 0, right: 10)
-        addNotification()
+        // searchBar を作って入れる方法
+//        let searchBar = UISearchBar()
+//        searchBar.placeholder = "Search"
+//        self.navigationItem.titleView = searchBar
+        
         searchBarConfigure()
-        customSearchBar.delegate = self
+        addNotification()
     }
     
+    
+    
     func searchBarConfigure() {
-        let cancel = UIBarButtonItem(systemItem: .cancel, primaryAction: UIAction(handler: { _ in
-            print("cancel SearchBar")
-        }), menu: nil)
+        // searchController の中にSearch Barがある
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Search"
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.automaticallyShowsCancelButton = true
+        searchController.searchResultsUpdater = self
+        self.navigationItem.searchController = searchController
+        self.navigationItem.title = "Search"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+//        let cancel = UIBarButtonItem(systemItem: .cancel, primaryAction: UIAction(handler: { _ in
+//            print("Cancel SearchBar")
+//        }), menu: nil)
+//
+//        self.navigationItem.rightBarButtonItem = cancel
         
-        self.navigationItem.rightBarButtonItem = cancel
+//        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 280, height: 0))
+//        searchBar.placeholder = "Search"
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: searchBar)
     }
     
     func addNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     @objc func keyboardWillShow(noti: Notification) {
+        
+        
+        
+        
         
     }
     
@@ -108,14 +124,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension ViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let hasText = searchBar.text else {
-            return
-        }
-        
-        term = hasText
-        self.view.endEditing(true)
-        
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        dump(searchController.searchBar.text)
     }
+    
+    
 }
