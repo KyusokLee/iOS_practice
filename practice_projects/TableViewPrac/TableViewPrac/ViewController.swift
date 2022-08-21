@@ -131,3 +131,11 @@ extension ViewController: UISearchResultsUpdating {
     
     
 }
+
+extension ViewController: CustomCellDelegate {
+    func hartButtonClicked(for index: Int, like: Bool) {
+        
+    }
+    
+    
+}

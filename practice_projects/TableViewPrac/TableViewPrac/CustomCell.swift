@@ -12,9 +12,16 @@ enum isSelected {
     case normal
 }
 
+protocol CustomCellDelegate {
+    func hartButtonClicked(for index: Int, like: Bool)
+}
+
 class CustomCell: UITableViewCell {
     
     private var hartButtonState: isSelected = .normal
+    var delegate: CustomCellDelegate?
+    var index: Int?
+    
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -55,7 +62,11 @@ class CustomCell: UITableViewCell {
 
     }
     
-    @IBAction func selectHartButton(_ sender: UIButton!) {
+    @IBAction func selectHartButton(_ sender: UIButton) {
+        guard let hasIndex = index else {
+            print("Error fail to get index: ")
+            return
+        }
         if hartButtonState == .normal {
             hartButtonState = .selected
             print("normal -> select")
