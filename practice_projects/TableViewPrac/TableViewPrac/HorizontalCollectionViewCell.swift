@@ -7,6 +7,8 @@
 
 import UIKit
 
+// 横scrollができるCell
+
 class HorizontalCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
