@@ -41,6 +41,37 @@
             </objects>
             <point key="canvasLocation" x="3864" y="534"/>
         </scene>
+        <!--Music View Controller-->
+        <scene sceneID="1yi-rd-DuI">
+            <objects>
+                <viewController storyboardIdentifier="MusicVCID" id="fHk-me-wDi" customClass="MusicViewController" customModule="TableViewPrac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1TS-nL-e4k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sd9-co-ds8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VKT-cf-ggz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sd9-co-ds8" firstAttribute="top" secondItem="VKT-cf-ggz" secondAttribute="top" id="do5-cT-qMm"/>
+                            <constraint firstItem="VKT-cf-ggz" firstAttribute="bottom" secondItem="sd9-co-ds8" secondAttribute="bottom" id="enb-nZ-Sfc"/>
+                            <constraint firstItem="VKT-cf-ggz" firstAttribute="trailing" secondItem="sd9-co-ds8" secondAttribute="trailing" id="gnS-Nx-IYd"/>
+                            <constraint firstItem="sd9-co-ds8" firstAttribute="leading" secondItem="VKT-cf-ggz" secondAttribute="leading" id="ouV-Gg-OCG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ojg-AZ-sfv"/>
+                    <connections>
+                        <outlet property="musicTableView" destination="sd9-co-ds8" id="PTK-HV-EAa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xd4-nZ-9yA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3864" y="1449"/>
+        </scene>
         <!--SearchVC-->
         <scene sceneID="efO-jL-LmU">
             <objects>
@@ -86,6 +117,7 @@
                     <connections>
                         <segue destination="S6O-gI-R4t" kind="relationship" relationship="viewControllers" id="aba-og-tku"/>
                         <segue destination="zfr-XC-GrQ" kind="relationship" relationship="viewControllers" id="UDb-Dl-tv8"/>
+                        <segue destination="TQG-od-VZn" kind="relationship" relationship="viewControllers" id="2vh-2f-pRc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4o3-ug-hOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,9 +167,31 @@
             </objects>
             <point key="canvasLocation" x="2439" y="534"/>
         </scene>
+        <!--Music-->
+        <scene sceneID="oVh-cf-Go5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TQG-od-VZn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Music" id="jC6-2F-4pL">
+                        <imageReference key="image" image="music.note" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AM5-in-X9I">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fHk-me-wDi" kind="relationship" relationship="rootViewController" id="8be-20-i4f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3y9-D7-FBo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2438" y="1423"/>
+        </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

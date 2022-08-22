@@ -7,30 +7,22 @@
 
 import UIKit
 
+// selected caseの定義
 enum isSelected {
     case selected
     case normal
 }
 
-protocol CustomCellDelegate {
-    func hartButtonClicked(for index: Int, like: Bool)
-}
+//protocol CustomCellDelegate {
+//    func hartButtonClicked(for index: Int, like: Bool)
+//}
+
+// TODO: delegate patternにRefactoring 途中
 
 class CustomCell: UITableViewCell {
-    
     private var hartButtonState: isSelected = .normal
-    var delegate: CustomCellDelegate?
-    var index: Int?
-    
-    @IBOutlet weak var checkImage: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var hartButton: UIButton! {
-        didSet {
-            configureAppearance()
-        }
-    }
-    
+//    var delegate: CustomCellDelegate?
+//    var index: Int?
     private var bounceAnimation: CAKeyframeAnimation = {
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         bounceAnimation.values = [1.0, 1.5, 0.9, 1.02, 1.0]
@@ -39,12 +31,22 @@ class CustomCell: UITableViewCell {
         return bounceAnimation
     }()
     
+    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var hartButton: UIButton! {
+        didSet {
+            configureAppearance()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupCellLayout()
+    }
+    
+    func setupCellLayout() {
         // cellの間にある、lineを消す
         self.selectionStyle = .none
-        
         self.contentView.layer.cornerRadius = 20
         self.contentView.layer.masksToBounds = true
     }
@@ -63,10 +65,23 @@ class CustomCell: UITableViewCell {
     }
     
     @IBAction func selectHartButton(_ sender: UIButton) {
-        guard let hasIndex = index else {
-            print("Error fail to get index: ")
-            return
-        }
+//        guard let hasIndex = index else {
+//            print("Error fail to get index: ")
+//            return
+//        }
+        
+//        if sender.isSelected {
+//            checkButtonState()
+//            delegate?.hartButtonClicked(for: hasIndex, like: true)
+//        } else {
+//            checkButtonState()
+//            delegate?.hartButtonClicked(for: hasIndex, like: false)
+//        }
+        checkButtonState()
+        configureAppearance()
+    }
+    
+    func checkButtonState() {
         if hartButtonState == .normal {
             hartButtonState = .selected
             print("normal -> select")
@@ -74,10 +89,7 @@ class CustomCell: UITableViewCell {
             hartButtonState = .normal
             print("select -> normal")
         }
-        
-        configureAppearance()
     }
-    
     
     private func configureAppearance() {
         if hartButtonState == .normal {
@@ -91,10 +103,10 @@ class CustomCell: UITableViewCell {
         }
        
         hartButton.tintColor = .systemRed
+//        // Click Eventのときだけ、animation layerをaddしたいな。。
+//        hartButton.layer.add(bounceAnimation, forKey: nil)
+
         hartButton.layer.add(bounceAnimation, forKey: nil)
+        
     }
-    
-    
-    
-    
 }

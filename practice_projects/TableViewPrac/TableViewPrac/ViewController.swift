@@ -10,6 +10,7 @@ import UIKit
 // tableViewの Styleを inset groupにすることで、cell間の間隔を与えることができた
 
 class ViewController: UIViewController {
+//    var likesState = [Int]()
     var term = ""
     let dataModels: [String] = ["Go to Library",
                                 "Go to School",
@@ -108,6 +109,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
+//        cell.delegate = self
+//        cell.index = indexPath.row
+        
+        
         cell.titleLabel.text = dataModels[indexPath.section]
         return cell
     }
@@ -128,14 +133,14 @@ extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         dump(searchController.searchBar.text)
     }
-    
-    
 }
 
-extension ViewController: CustomCellDelegate {
-    func hartButtonClicked(for index: Int, like: Bool) {
-        
-    }
-    
-    
-}
+//extension ViewController: CustomCellDelegate {
+//    func hartButtonClicked(for index: Int, like: Bool) {
+//        if like == true {
+//
+//        } else {
+//
+//        }
+//    }
+//}

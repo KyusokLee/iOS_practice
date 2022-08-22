@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9418790628B3AF790021C524 /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9418790428B3AF790021C524 /* MusicCell.swift */; };
+		9418790728B3AF790021C524 /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9418790528B3AF790021C524 /* MusicCell.xib */; };
+		9418790A28B3B2A40021C524 /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9418790828B3B2A40021C524 /* HorizontalCollectionViewCell.swift */; };
+		9418790B28B3B2A40021C524 /* HorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9418790928B3B2A40021C524 /* HorizontalCollectionViewCell.xib */; };
 		945ECB7A28AF8AD8004605B1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945ECB7928AF8AD8004605B1 /* SearchVC.swift */; };
 		945ECB7D28AF8B3B004605B1 /* searchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945ECB7C28AF8B3B004605B1 /* searchModel.swift */; };
 		945ECB8228AF9292004605B1 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945ECB8028AF9292004605B1 /* SearchResultCell.swift */; };
 		945ECB8328AF9292004605B1 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945ECB8128AF9292004605B1 /* SearchResultCell.xib */; };
+		947EB22428B3A5AF00E1BDA2 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947EB22328B3A5AF00E1BDA2 /* MusicViewController.swift */; };
 		94F9046B28A8E1C400CF2643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046A28A8E1C400CF2643 /* AppDelegate.swift */; };
 		94F9046D28A8E1C400CF2643 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046C28A8E1C400CF2643 /* SceneDelegate.swift */; };
 		94F9046F28A8E1C400CF2643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046E28A8E1C400CF2643 /* ViewController.swift */; };
@@ -42,10 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9418790428B3AF790021C524 /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
+		9418790528B3AF790021C524 /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
+		9418790828B3B2A40021C524 /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
+		9418790928B3B2A40021C524 /* HorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
 		945ECB7928AF8AD8004605B1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		945ECB7C28AF8B3B004605B1 /* searchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchModel.swift; sourceTree = "<group>"; };
 		945ECB8028AF9292004605B1 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		945ECB8128AF9292004605B1 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		947EB22328B3A5AF00E1BDA2 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		94F9046728A8E1C400CF2643 /* TableViewPrac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewPrac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F9046A28A8E1C400CF2643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94F9046C28A8E1C400CF2643 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +139,11 @@
 				945ECB7928AF8AD8004605B1 /* SearchVC.swift */,
 				945ECB8028AF9292004605B1 /* SearchResultCell.swift */,
 				945ECB8128AF9292004605B1 /* SearchResultCell.xib */,
+				947EB22328B3A5AF00E1BDA2 /* MusicViewController.swift */,
+				9418790428B3AF790021C524 /* MusicCell.swift */,
+				9418790528B3AF790021C524 /* MusicCell.xib */,
+				9418790828B3B2A40021C524 /* HorizontalCollectionViewCell.swift */,
+				9418790928B3B2A40021C524 /* HorizontalCollectionViewCell.xib */,
 				94F9047328A8E1C500CF2643 /* Assets.xcassets */,
 				94F9047528A8E1C500CF2643 /* LaunchScreen.storyboard */,
 				94F9047828A8E1C500CF2643 /* Info.plist */,
@@ -260,8 +275,10 @@
 				94F9047728A8E1C500CF2643 /* LaunchScreen.storyboard in Resources */,
 				945ECB8328AF9292004605B1 /* SearchResultCell.xib in Resources */,
 				94F9047428A8E1C500CF2643 /* Assets.xcassets in Resources */,
+				9418790B28B3B2A40021C524 /* HorizontalCollectionViewCell.xib in Resources */,
 				94F9049D28A8E20E00CF2643 /* CustomCell.xib in Resources */,
 				94F9047228A8E1C400CF2643 /* Main.storyboard in Resources */,
+				9418790728B3AF790021C524 /* MusicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,10 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9418790A28B3B2A40021C524 /* HorizontalCollectionViewCell.swift in Sources */,
 				945ECB8228AF9292004605B1 /* SearchResultCell.swift in Sources */,
 				94F9046F28A8E1C400CF2643 /* ViewController.swift in Sources */,
+				9418790628B3AF790021C524 /* MusicCell.swift in Sources */,
 				945ECB7D28AF8B3B004605B1 /* searchModel.swift in Sources */,
 				945ECB7A28AF8AD8004605B1 /* SearchVC.swift in Sources */,
+				947EB22428B3A5AF00E1BDA2 /* MusicViewController.swift in Sources */,
 				94F9046B28A8E1C400CF2643 /* AppDelegate.swift in Sources */,
 				94F9049C28A8E20E00CF2643 /* CustomCell.swift in Sources */,
 				94F9046D28A8E1C400CF2643 /* SceneDelegate.swift in Sources */,
