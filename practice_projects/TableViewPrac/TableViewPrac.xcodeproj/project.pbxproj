@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		9418790A28B3B2A40021C524 /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9418790828B3B2A40021C524 /* HorizontalCollectionViewCell.swift */; };
 		9418790B28B3B2A40021C524 /* HorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9418790928B3B2A40021C524 /* HorizontalCollectionViewCell.xib */; };
+		9419951E28B63507006B7033 /* musicRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9419951C28B63507006B7033 /* musicRankingCell.swift */; };
+		9419951F28B63507006B7033 /* musicRankingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9419951D28B63507006B7033 /* musicRankingCell.xib */; };
+		9419952128B63C17006B7033 /* MusicGenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9419952028B63C17006B7033 /* MusicGenreModel.swift */; };
+		9419952328B64F73006B7033 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9419952228B64F73006B7033 /* Colors.swift */; };
+		9419952828B6523A006B7033 /* BMJUA_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9419952728B6523A006B7033 /* BMJUA_otf.otf */; };
+		9419952A28B6526B006B7033 /* fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9419952928B6526B006B7033 /* fonts.swift */; };
 		945ECB7A28AF8AD8004605B1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945ECB7928AF8AD8004605B1 /* SearchVC.swift */; };
 		945ECB7D28AF8B3B004605B1 /* searchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945ECB7C28AF8B3B004605B1 /* searchModel.swift */; };
 		945ECB8228AF9292004605B1 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945ECB8028AF9292004605B1 /* SearchResultCell.swift */; };
@@ -58,6 +64,12 @@
 /* Begin PBXFileReference section */
 		9418790828B3B2A40021C524 /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		9418790928B3B2A40021C524 /* HorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
+		9419951C28B63507006B7033 /* musicRankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicRankingCell.swift; sourceTree = "<group>"; };
+		9419951D28B63507006B7033 /* musicRankingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = musicRankingCell.xib; sourceTree = "<group>"; };
+		9419952028B63C17006B7033 /* MusicGenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGenreModel.swift; sourceTree = "<group>"; };
+		9419952228B64F73006B7033 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9419952728B6523A006B7033 /* BMJUA_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUA_otf.otf; sourceTree = "<group>"; };
+		9419952928B6526B006B7033 /* fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fonts.swift; sourceTree = "<group>"; };
 		945ECB7928AF8AD8004605B1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		945ECB7C28AF8B3B004605B1 /* searchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchModel.swift; sourceTree = "<group>"; };
 		945ECB8028AF9292004605B1 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
@@ -116,12 +128,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9419952428B6516B006B7033 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9419952928B6526B006B7033 /* fonts.swift */,
+				9419952728B6523A006B7033 /* BMJUA_otf.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		9419952528B65174006B7033 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				9419952228B64F73006B7033 /* Colors.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		9419952628B6517A006B7033 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				94A668DE28B4DC6200D4B57E /* meal1.png */,
+				94A668E028B4DC6900D4B57E /* meal2.png */,
+				94A668E228B4DC6F00D4B57E /* meal3.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		945ECB7B28AF8B18004605B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				945ECB7C28AF8B3B004605B1 /* searchModel.swift */,
 				94A668F528B4F64000D4B57E /* mealModel.swift */,
 				94A668F728B4F64F00D4B57E /* musicModel.swift */,
+				9419952028B63C17006B7033 /* MusicGenreModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +176,7 @@
 				9418790928B3B2A40021C524 /* HorizontalCollectionViewCell.xib */,
 				94A668EE28B4F27600D4B57E /* VerticalTableViewCell.xib */,
 				94A668F228B4F30E00D4B57E /* VerticalCollectionViewCell.xib */,
+				9419951D28B63507006B7033 /* musicRankingCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -149,6 +190,7 @@
 				9418790828B3B2A40021C524 /* HorizontalCollectionViewCell.swift */,
 				94A668ED28B4F27600D4B57E /* VerticalTableViewCell.swift */,
 				94A668F128B4F30E00D4B57E /* VerticalCollectionViewCell.swift */,
+				9419951C28B63507006B7033 /* musicRankingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,9 +208,9 @@
 		94A668EC28B4F18F00D4B57E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				94A668DE28B4DC6200D4B57E /* meal1.png */,
-				94A668E028B4DC6900D4B57E /* meal2.png */,
-				94A668E228B4DC6F00D4B57E /* meal3.png */,
+				9419952628B6517A006B7033 /* Images */,
+				9419952528B65174006B7033 /* Color */,
+				9419952428B6516B006B7033 /* Font */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -335,12 +377,14 @@
 				94F9047728A8E1C500CF2643 /* LaunchScreen.storyboard in Resources */,
 				94A668E328B4DC6F00D4B57E /* meal3.png in Resources */,
 				945ECB8328AF9292004605B1 /* SearchResultCell.xib in Resources */,
+				9419951F28B63507006B7033 /* musicRankingCell.xib in Resources */,
 				94A668E728B4E32400D4B57E /* HorizontalTableViewCell.xib in Resources */,
 				94F9047428A8E1C500CF2643 /* Assets.xcassets in Resources */,
 				9418790B28B3B2A40021C524 /* HorizontalCollectionViewCell.xib in Resources */,
 				94A668F028B4F27600D4B57E /* VerticalTableViewCell.xib in Resources */,
 				94A668F428B4F30E00D4B57E /* VerticalCollectionViewCell.xib in Resources */,
 				94A668DF28B4DC6200D4B57E /* meal1.png in Resources */,
+				9419952828B6523A006B7033 /* BMJUA_otf.otf in Resources */,
 				94F9049D28A8E20E00CF2643 /* CustomCell.xib in Resources */,
 				94F9047228A8E1C400CF2643 /* Main.storyboard in Resources */,
 			);
@@ -370,9 +414,12 @@
 				9418790A28B3B2A40021C524 /* HorizontalCollectionViewCell.swift in Sources */,
 				945ECB8228AF9292004605B1 /* SearchResultCell.swift in Sources */,
 				94F9046F28A8E1C400CF2643 /* ViewController.swift in Sources */,
+				9419952328B64F73006B7033 /* Colors.swift in Sources */,
+				9419952128B63C17006B7033 /* MusicGenreModel.swift in Sources */,
 				945ECB7D28AF8B3B004605B1 /* searchModel.swift in Sources */,
 				94A668F328B4F30E00D4B57E /* VerticalCollectionViewCell.swift in Sources */,
 				94A668F828B4F64F00D4B57E /* musicModel.swift in Sources */,
+				9419951E28B63507006B7033 /* musicRankingCell.swift in Sources */,
 				945ECB7A28AF8AD8004605B1 /* SearchVC.swift in Sources */,
 				947EB22428B3A5AF00E1BDA2 /* MusicViewController.swift in Sources */,
 				94F9046B28A8E1C400CF2643 /* AppDelegate.swift in Sources */,
@@ -380,6 +427,7 @@
 				94F9046D28A8E1C400CF2643 /* SceneDelegate.swift in Sources */,
 				94A668E628B4E32400D4B57E /* HorizontalTableViewCell.swift in Sources */,
 				94A668F628B4F64000D4B57E /* mealModel.swift in Sources */,
+				9419952A28B6526B006B7033 /* fonts.swift in Sources */,
 				94A668EF28B4F27600D4B57E /* VerticalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

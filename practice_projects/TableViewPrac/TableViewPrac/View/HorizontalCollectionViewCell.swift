@@ -24,9 +24,9 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
     
     // 途中の段階
     // data modelを入れる
-    public func configure() {
-        imgView.tintColor = .blue
-        mealLabel.text = "Dinner"
+    public func configure(with model: Meal) {
+        imgView.image = UIImage(named: model.mealImage)
+        mealLabel.text = model.mealType
     }
 
 }

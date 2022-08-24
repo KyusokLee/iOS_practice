@@ -23,10 +23,18 @@ class SearchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpTableView()
+        registerCell()
+        searchBarConfigure()
+    }
+    
+    func setUpTableView() {
         countryTableView.delegate = self
         countryTableView.dataSource = self
+    }
+    
+    func registerCell() {
         countryTableView.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCellID")
-        searchBarConfigure()
     }
     
     func searchBarConfigure() {
