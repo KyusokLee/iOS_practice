@@ -16,7 +16,6 @@ class SearchResultCell: UITableViewCell {
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,5 +26,10 @@ class SearchResultCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        self.layoutIfNeeded()
+//    }
     
 }

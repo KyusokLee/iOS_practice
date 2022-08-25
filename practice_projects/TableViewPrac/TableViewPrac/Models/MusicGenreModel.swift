@@ -42,5 +42,10 @@ let musicGenreModels = [
         genre: "Club Musics",
         description: "元気な時聞く",
         backgroundColor: .black
+    ),
+    MusicGenre(
+        genre: "Rap/Hiphop",
+        description: "週1くらい",
+        backgroundColor: .systemTeal
     )
 ]

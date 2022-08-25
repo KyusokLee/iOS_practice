@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="meal1.png" translatesAutoresizingMaskIntoConstraints="NO" id="pqn-39-2Z1">
-                        <rect key="frame" x="0.0" y="10" width="598" height="294"/>
+                        <rect key="frame" x="0.0" y="0.0" width="598" height="304"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zek-Dp-j5Y">
                         <rect key="frame" x="277" y="314" width="44.5" height="21"/>
@@ -32,7 +32,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="pqn-39-2Z1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DtL-tz-cld"/>
-                <constraint firstItem="pqn-39-2Z1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="bju-bW-wXa"/>
+                <constraint firstItem="pqn-39-2Z1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bju-bW-wXa"/>
                 <constraint firstItem="zek-Dp-j5Y" firstAttribute="top" secondItem="pqn-39-2Z1" secondAttribute="bottom" constant="10" id="f3l-lB-blG"/>
                 <constraint firstAttribute="bottom" secondItem="zek-Dp-j5Y" secondAttribute="bottom" constant="10" id="fIs-BL-jAn"/>
                 <constraint firstAttribute="trailing" secondItem="pqn-39-2Z1" secondAttribute="trailing" id="iGl-ha-IsE"/>

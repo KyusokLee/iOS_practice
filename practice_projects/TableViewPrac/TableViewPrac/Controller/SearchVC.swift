@@ -17,6 +17,7 @@ class SearchVC: UIViewController {
         let searchBarHasText = searchController?.searchBar.text?.isEmpty == false
         return isActive && searchBarHasText
     }
+    var searchController: UISearchController!
     
     @IBOutlet weak var countryTableView: UITableView!
     
@@ -31,15 +32,21 @@ class SearchVC: UIViewController {
     func setUpTableView() {
         countryTableView.delegate = self
         countryTableView.dataSource = self
+        countryTableView.contentInsetAdjustmentBehavior = .never
     }
-    
+        
     func registerCell() {
         countryTableView.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCellID")
     }
     
     func searchBarConfigure() {
+        // 덮길 원하는 뷰 컨트롤러를 지정할 수 있다.
+        definesPresentationContext = true
+        
         // SearchControllerを用いた方法
-        let searchController = UISearchController(searchResultsController: nil)
+        searchController = UISearchController(searchResultsController: nil)
+//        searchController.
+//        searchController.showsSearchResultsController = true
         searchController.searchBar.placeholder = "国名を入力してください"
         
         // searchBarを活性化しても、Navigation Bar Titleを常に表示させるように
@@ -59,6 +66,11 @@ class SearchVC: UIViewController {
         // obscuresBackgroundDuringPresentation: 検索中に背景を暗くするコード
         searchController.obscuresBackgroundDuringPresentation = false
     }
+    
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        self.viewSafeAreaInsetsDidChange()
+//    }
 
 }
 
@@ -83,7 +95,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+        
 }
 
 extension SearchVC: UISearchResultsUpdating {
@@ -97,6 +109,6 @@ extension SearchVC: UISearchResultsUpdating {
         //更新
         self.countryTableView.reloadData()
     }
-
-
+    
+    
 }

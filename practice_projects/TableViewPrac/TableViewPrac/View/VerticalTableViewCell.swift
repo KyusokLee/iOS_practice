@@ -57,8 +57,12 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     // collectionViewに入るcellのsizeの設定
     // sizeが小さかったら、複数の列ができる
     // sizeが大きかったら、一つの列になる
+    // Collection View Cellの spacing調整に成功した
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 150)
+        // 1行に2つのcellを表示するため、collectionView frameのwidthに3を割って、spacingを10ずつ設定した
+        let rowInterval: CGFloat = 10
+        let width: CGFloat = ((collectionView.frame.width - rowInterval) / 2)
+        return CGSize(width: width, height: width)
     }
     
     // vertical scroll -> 上下のcell間のspacing
@@ -66,9 +70,10 @@ extension VerticalTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         return 10
     }
     
+    // ⚠️Error: Sizeを指定したあと、なぜか以下のcell spacingは効かない
     // vertical Scroll -> 左右のcell間のspacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 0.5
     }
     
     

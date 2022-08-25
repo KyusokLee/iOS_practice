@@ -22,6 +22,16 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = 3
+        self.layer.shadowRadius = 10
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 5, height: 10)
+        self.clipsToBounds = false
+        self.layoutIfNeeded()
+    }
+    
     // 途中の段階
     // data modelを入れる
     public func configure(with model: Meal) {

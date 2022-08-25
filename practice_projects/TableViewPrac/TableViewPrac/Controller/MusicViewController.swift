@@ -18,6 +18,8 @@ import UIKit
 // tableViewCell に collection Viewを入れる感じ
 // collectionViewの中に collectionViewCellが入ってる感じ
 
+// sectionごとにtableviewcellを一つずつ入れる感じ
+
 
 class MusicViewController: UIViewController {
     
@@ -25,6 +27,12 @@ class MusicViewController: UIViewController {
     private let mealArray = mealModels
     private let musicGenreArray = musicGenreModels
 //    private let musicGenreArray
+    // section Titleを格納したArray
+    private let sectionTitle: NSArray = [
+        "오늘은 무엇을 드실껀가요?",
+        "Music Genre",
+        "Music Ranking"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +52,24 @@ class MusicViewController: UIViewController {
         musicTableView.register(UINib(nibName: VerticalTableViewCell.className, bundle: nil), forCellReuseIdentifier: VerticalTableViewCell.cellID)
         musicTableView.register(UINib(nibName: musicRankingCell.className, bundle: nil), forCellReuseIdentifier: musicRankingCell.cellID)
     }
+    
+    
 
 }
 
 extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // ✍️該当のfileのpropertyを代入すると、as! castingをしなくてもいいっぽい
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: HorizontalTableViewCell.cellID, for: indexPath) as! HorizontalTableViewCell
             cell.configure(with: mealArray)
@@ -86,17 +100,36 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         let interval: CGFloat = 10
         let width: CGFloat = (UIScreen.main.bounds.width - interval * 2) / 2
         
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             return 250
         case 1:
-            return (width + 40 + interval) * 2
+            return (width + interval * 2) * CGFloat(musicGenreArray.count) / 2
         case 2:
-            return 100
+            return 70
         default:
             return 0
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitle[section] as? String
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        
+        switch section {
+        case 0:
+            return
+        case 1:
+            return
+        case 2:
+            tableView.deselectRow(at: indexPath, animated: true)
+        default:
+            return
+        }
     }
     
     

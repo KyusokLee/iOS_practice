@@ -29,5 +29,15 @@ let mealModels = [
     Meal(
         mealType: "Pasta",
         mealImage: "meal3"
+    ),
+    Meal(
+        mealType: "Korean Food",
+        mealImage: "kfood.jpeg"
+    ),
+    Meal(
+        mealType: "Japanese Food",
+        mealImage: "jfood.jpeg"
     )
 ]
+
+// jpeg ファイルは、拡張子も一緒に書くこと
