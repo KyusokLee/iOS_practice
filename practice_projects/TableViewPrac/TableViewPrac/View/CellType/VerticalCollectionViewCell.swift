@@ -11,8 +11,8 @@ class VerticalCollectionViewCell: UICollectionViewCell {
     
     static let className = "VerticalCollectionViewCell"
     static let cellID = "VerticalCollectionViewCellID"
-    private let customFont = UIFont(name: "BMJUAOTF", size: 20)
-    private let basicFont = UIFont.boldSystemFont(ofSize: 20)
+//    private let customFont = UIFont(name: "BMJUAOTF", size: 20)
+//    private let basicFont = UIFont.boldSystemFont(ofSize: 20)
     
     @IBOutlet weak var genreColorView: UIView!
     @IBOutlet weak var genreLabel: UILabel! {
@@ -39,9 +39,6 @@ class VerticalCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-//        genreColorView.layer.cornerRadius = 10
-//        genreColorView.layer.masksToBounds = true
         setLayerStyle()
     }
     

@@ -8,14 +8,28 @@
 import UIKit
 
 // 横scrollの tableViewCellの設定
+// TODO: carousel effect를 좀 더 부드러운 애니메이션 효과와 스크롤 효과를 곁들여서, 가운데로 오게끔하기
+// logic: Custom flowlayout를 만들어서, collectionView가 있는 파일에, collectionViewlayout을 연동한다.
+
 class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
 
     static let className = "HorizontalTableViewCell"
     static let cellID = "HorizontalTableViewCellID"
+    // collection Viewに配置されるcellたちのサイズ変数
     private let cellWidth: CGFloat = 300
     private let cellHeight: CGFloat = 200
     private let cellSpacing: CGFloat = 15
     private var models = [Meal]()
+    
+    @IBOutlet weak var explainTitleLabel: UILabel! {
+        didSet {
+            if let hasFont = customFont {
+                explainTitleLabel.font = hasFont
+            } else {
+                explainTitleLabel.font = basicFont
+            }
+        }
+    }
     
     @IBOutlet weak var mealCollectionView: UICollectionView!
     
@@ -27,6 +41,7 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
         mealCollectionView.register(UINib(nibName: HorizontalCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: HorizontalCollectionViewCell.cellID)
         //　scrollの反応が速すぎることを防ぐ -> scrollするとき、早く減速するように
         mealCollectionView.decelerationRate = .fast
+//        mealCollectionView.isPagingEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,17 +51,21 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
     }
     
     func setUpCollectionView() {
+        let customFlowLayout = CarouselFlowLayout()
         mealCollectionView.delegate = self
         mealCollectionView.dataSource = self
         // scrollbar を書くす
         mealCollectionView.showsHorizontalScrollIndicator = false
+        // flowLayoutを継承するように
+        mealCollectionView.collectionViewLayout = customFlowLayout
     }
     
-//    // flowlayoutDelegateの継承なしで、cellのflowlayoutの設定を行う方法
+    // flowlayoutDelegateの継承なしで、cellのflowlayoutの設定を行う方法
 //    func setupFlowLayout() {
 //        let flowLayout = UICollectionViewFlowLayout()
 //        flowLayout.scrollDirection = .horizontal
-//        flowLayout.itemSize = CGSize(width: 200, height: 200)
+//        // delegate flowoutではなく、ここでsizeを指定すると、小さいcellになってしまう
+//        flowLayout.itemSize = CGSize(width: 375, height: 250)
 //        flowLayout.minimumLineSpacing = 15
 //    }
     
@@ -56,10 +75,10 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
         mealCollectionView.reloadData()
     }
     
-    // 🌈Corousel effectの実装__scrollの反応が速すぎることを防ぐ
-    // Viewを単位にした1pageのscrollじゃなく、1つのcellを単位にしたpage Scrollにしたい場合
-    // ⚠️ただし、cellの左右spacingがないか、同値でなければ適応されない
-    // ScrollViewWillEndDragging: ユーザーがscrollをする際、deviceのscreenと指が離れたとき、呼び出されるメソッドである
+////     🌈Corousel effectの実装__scrollの反応が速すぎることを防ぐ
+////     Viewを単位にした1pageのscrollじゃなく、1つのcellを単位にしたpage Scrollにしたい場合
+////     ⚠️ただし、cellの左右spacingがないか、同値でなければ適応されない
+////     ScrollViewWillEndDragging: ユーザーがscrollをする際、deviceのscreenと指が離れたとき、呼び出されるメソッドである
 //    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 //        guard let layout = self.mealCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
 //            return
@@ -102,15 +121,22 @@ extension HorizontalTableViewCell: UICollectionViewDelegate, UICollectionViewDat
 
 extension HorizontalTableViewCell: UICollectionViewDelegateFlowLayout {
         // collectionViewのsizeを設定する
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 200)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        // horizontalも同じくrowでcellのindexにアクセスできた
+////        if indexPath.row == 0 {
+////            // この方法だと、naturalなscrollになってない
+////            collectionView.contentInset = UIEdgeInsets(top: 0, left: 100, bottom: 0, right: 0)
+////        }
+//
+//        return CGSize(width: 300, height: 200)
+//    }
 
-    // ✍️横scrollの場合は、cell間の左右spacingを指定する
-    //   縦scrollの場合は、cell間の上下spacingを指定する
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cellSpacing
-    }
+//    // ✍️横scrollの場合は、cell間の左右spacingを指定する
+//    //   縦scrollの場合は、cell間の上下spacingを指定する
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return cellSpacing
+//    }
+    
     //
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 //        let totalCellWidth = cellWidth * CGFloat(models.count)

@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="le2-f9-yil">
-                        <rect key="frame" x="10" y="36" width="293" height="171"/>
+                        <rect key="frame" x="10" y="41" width="293" height="166"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LHE-eA-VbC">
                             <size key="itemSize" width="128" height="128"/>
@@ -40,15 +40,16 @@
                     <constraint firstItem="1eF-lo-qIO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9NI-Na-WDX"/>
                     <constraint firstItem="1eF-lo-qIO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IeV-7R-PMn"/>
                     <constraint firstItem="le2-f9-yil" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Zth-qw-JH6"/>
-                    <constraint firstItem="le2-f9-yil" firstAttribute="top" secondItem="1eF-lo-qIO" secondAttribute="bottom" constant="5" id="f5E-rg-Xij"/>
+                    <constraint firstItem="le2-f9-yil" firstAttribute="top" secondItem="1eF-lo-qIO" secondAttribute="bottom" constant="10" id="f5E-rg-Xij"/>
                     <constraint firstAttribute="bottom" secondItem="le2-f9-yil" secondAttribute="bottom" constant="5" id="zzy-mz-Lju"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="explainTitleLabel" destination="1eF-lo-qIO" id="WRo-xE-9ON"/>
                 <outlet property="musicCollectionView" destination="le2-f9-yil" id="BPH-Ha-sOb"/>
             </connections>
-            <point key="canvasLocation" x="126.81159420289856" y="127.90178571428571"/>
+            <point key="canvasLocation" x="-170" y="103"/>
         </tableViewCell>
     </objects>
     <resources>

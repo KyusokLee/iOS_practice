@@ -26,7 +26,6 @@ class MusicViewController: UIViewController {
     @IBOutlet weak var musicTableView: UITableView!
     private let mealArray = mealModels
     private let musicGenreArray = musicGenreModels
-//    private let musicGenreArray
     // section Titleを格納したArray
     private let sectionTitle: NSArray = [
         "오늘은 무엇을 드실껀가요?",
@@ -43,8 +42,10 @@ class MusicViewController: UIViewController {
     func setUpTableView() {
         musicTableView.delegate = self
         musicTableView.dataSource = self
-        // cell間のlineを無くす
-        musicTableView.separatorStyle = .none
+//        // cell間のlineを無くす
+//        musicTableView.separatorStyle = .none
+        //区分線を見るために、singlelineを一応設定しておいた
+        musicTableView.separatorStyle = .singleLine
     }
     
     func registerCell() {
@@ -58,10 +59,16 @@ class MusicViewController: UIViewController {
 }
 
 extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
+    // sectionごとに入るrowの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 2 {
+            return 3
+        } else {
+            return 1
+        }
     }
     
+    // sectionの数
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -94,17 +101,22 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+    
     // cellのheightの定義が必要
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // ここのintervalは、cell nibファイルで設定したtrailing、leading spaceにする
-        let interval: CGFloat = 10
-        let width: CGFloat = (UIScreen.main.bounds.width - interval * 2) / 2
+//        let interval: CGFloat = 10
+//        let width: CGFloat = (UIScreen.main.bounds.width - interval * 2) / 2
         
         switch indexPath.section {
         case 0:
             return 250
         case 1:
-            return (width + interval * 2) * CGFloat(musicGenreArray.count) / 2
+//            return (width + interval * 2) * CGFloat(musicGenreArray.count) / 2
+            return UITableView.automaticDimension
         case 2:
             return 70
         default:

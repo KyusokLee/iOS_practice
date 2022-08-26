@@ -30,3 +30,6 @@ import UIKit
 //}
 
 // 9. 등록된 font이름을 원하는 곳에서 사용함으로서, 폰트 적용시키기 완료!
+public let customFont = UIFont(name: "BMJUAOTF", size: 20)
+public let basicFont = UIFont.boldSystemFont(ofSize: 20)
+

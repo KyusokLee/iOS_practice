@@ -11,13 +11,21 @@ class VerticalTableViewCell: UITableViewCell {
     static let className = "VerticalTableViewCell"
     static let cellID = "VerticalTableViewCellID"
     private var models = [MusicGenre]()
-
+//    private let customFont = UIFont(name: "BMJUAOTF", size: 20)
+    private let bottomInterval: CGFloat = 10
+    
+    @IBOutlet weak var explainTitleLabel: UILabel! {
+        didSet {
+            explainTitleLabel.font = customFont
+        }
+    }
     @IBOutlet weak var musicCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
         musicCollectionView.register(UINib(nibName: VerticalCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: VerticalCollectionViewCell.cellID)
+        musicCollectionView.isScrollEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,6 +43,18 @@ class VerticalTableViewCell: UITableViewCell {
         // reloadの部分
         self.models = models
         musicCollectionView.reloadData()
+    }
+    
+    // contentViewのlayoutSizeを計算してくれるメッソド
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        // このtableviewcellのsubviewのlayoutを直ちに更新する
+        // これがないと、ちょっと変なlayoutになる
+        self.layoutIfNeeded()
+        
+        // collectionViewのcontentSize
+        let contentSize = self.musicCollectionView.collectionViewLayout.collectionViewContentSize
+        //✍️ heightは、tableViewCellのheightにcontentSizeのheightを足すことで、heightを設定せずにtableViewでautomaticDimensionを使うことができた
+        return CGSize(width: contentSize.width, height: self.frame.height + contentSize.height + bottomInterval)
     }
     
 }

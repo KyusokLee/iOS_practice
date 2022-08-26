@@ -6,3 +6,5 @@
 //
 
 import Foundation
+// itunes APIを用いてみる
+// Spotify apiも可能
