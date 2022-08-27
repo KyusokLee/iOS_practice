@@ -32,6 +32,7 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
         self.layoutIfNeeded()
     }
     
+    
     // 途中の段階
     // data modelを入れる
     public func configure(with model: Meal) {

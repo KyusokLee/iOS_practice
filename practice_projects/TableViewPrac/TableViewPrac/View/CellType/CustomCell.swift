@@ -45,21 +45,22 @@ class CustomCell: UITableViewCell {
     }
     
     func setupCellLayout() {
-        // cellの間にある、lineを消す
+        // selectionされた背景の色がなくなる
         self.selectionStyle = .none
-        self.contentView.layer.cornerRadius = 20
-        self.contentView.layer.masksToBounds = true
+        self.layer.cornerRadius = 20
+        self.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+        // clickすることによる、completion eventを連動させるといい
         if selected {
-            contentView.layer.borderWidth = 2
-            contentView.layer.borderColor = UIColor.blue.cgColor
+            self.layer.borderWidth = 2
+            self.layer.borderColor = UIColor.blue.cgColor
         } else {
-            contentView.layer.borderWidth = 1
-            contentView.layer.borderColor = UIColor.lightGray.cgColor
+            self.layer.borderWidth = 1
+            self.layer.borderColor = UIColor.lightGray.cgColor
         }
 
     }

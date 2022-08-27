@@ -24,14 +24,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customTableView.delegate = self
-        customTableView.dataSource = self
+        setUpTableView()
+        registerNib()
+        setUpLayout()
         
-        //nibファイルの場合、TableViewへの登録が必要である
-        customTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
-        customTableView.separatorStyle = .none
-//        // 左と右のmarginを与える
-        customTableView.layoutMargins = .init(top: 0, left: 10, bottom: 0, right: 10)
         // searchBar を作って入れる方法
 //        let searchBar = UISearchBar()
 //        searchBar.placeholder = "Search"
@@ -39,6 +35,27 @@ class ViewController: UIViewController {
         
         searchBarConfigure()
         addNotification()
+    }
+    
+    func setUpTableView() {
+        customTableView.delegate = self
+        customTableView.dataSource = self
+        // ⚠️このコードでsearch barがnavigation Controllerを隠すlayoutの変化が直ちに反映されるようになった -> でも、naturalじゃない
+        // 解決策: searchbarが活性化になって、navigation barを隠すdurationは、keyboardのappear durationと全く一緒であった！
+        // timerを調整するといいかも！
+        customTableView.layer.needsDisplayOnBoundsChange = true
+        customTableView.reloadData()
+    }
+    
+    func registerNib() {
+        //nibファイルの場合、TableViewへの登録が必要である
+        customTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+    }
+    
+    func setUpLayout() {
+        customTableView.separatorStyle = .none
+//        // 左と右のmarginを与える
+        customTableView.layoutMargins = .init(top: 0, left: 10, bottom: 0, right: 10)
     }
     
     
@@ -87,6 +104,7 @@ class ViewController: UIViewController {
 
 }
 
+//1つのsectionに１つのrowが入るように
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,9 +127,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
-//        cell.delegate = self
-//        cell.index = indexPath.row
-        
         
         cell.titleLabel.text = dataModels[indexPath.section]
         return cell
@@ -121,12 +136,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // clickを２回されるとborderがなくならないようにしたい！
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return UITableView.automaticDimension
     }
-    
-    
 }
 
 extension ViewController: UISearchResultsUpdating {

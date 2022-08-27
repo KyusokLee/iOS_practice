@@ -15,10 +15,10 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
 
     static let className = "HorizontalTableViewCell"
     static let cellID = "HorizontalTableViewCellID"
-    // collection Viewに配置されるcellたちのサイズ変数
-    private let cellWidth: CGFloat = 300
-    private let cellHeight: CGFloat = 200
-    private let cellSpacing: CGFloat = 15
+//    // collection Viewに配置されるcellたちのサイズ変数
+//    private let cellWidth: CGFloat = 300
+//    private let cellHeight: CGFloat = 200
+//    private let cellSpacing: CGFloat = 15
     private var models = [Meal]()
     
     @IBOutlet weak var explainTitleLabel: UILabel! {
@@ -42,6 +42,8 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
         //　scrollの反応が速すぎることを防ぐ -> scrollするとき、早く減速するように
         mealCollectionView.decelerationRate = .fast
 //        mealCollectionView.isPagingEnabled = false
+        print(self.mealCollectionView.frame.width)
+        print(self.mealCollectionView.frame.height)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,13 +53,15 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
     }
     
     func setUpCollectionView() {
-        let customFlowLayout = CarouselFlowLayout()
         mealCollectionView.delegate = self
         mealCollectionView.dataSource = self
-        // scrollbar を書くす
-        mealCollectionView.showsHorizontalScrollIndicator = false
+        
+        let customFlowLayout = CarouselFlowLayout()
         // flowLayoutを継承するように
         mealCollectionView.collectionViewLayout = customFlowLayout
+        
+        // scrollbar を書くす
+        mealCollectionView.showsHorizontalScrollIndicator = false
     }
     
     // flowlayoutDelegateの継承なしで、cellのflowlayoutの設定を行う方法
@@ -119,8 +123,8 @@ extension HorizontalTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     }
 }
 
-extension HorizontalTableViewCell: UICollectionViewDelegateFlowLayout {
-        // collectionViewのsizeを設定する
+//extension HorizontalTableViewCell: UICollectionViewDelegateFlowLayout {
+////         collectionViewのCellのsizeを設定する
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        // horizontalも同じくrowでcellのindexにアクセスできた
 ////        if indexPath.row == 0 {
@@ -130,28 +134,27 @@ extension HorizontalTableViewCell: UICollectionViewDelegateFlowLayout {
 //
 //        return CGSize(width: 300, height: 200)
 //    }
-
-//    // ✍️横scrollの場合は、cell間の左右spacingを指定する
-//    //   縦scrollの場合は、cell間の上下spacingを指定する
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return cellSpacing
-//    }
-    
-    //
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        let totalCellWidth = cellWidth * CGFloat(models.count)
-//        let totalSpacingWidth = cellSpacing * CGFloat(models.count - 1)
-//        let leftInset = (collectionView.frame.width - totalCellWidth + totalSpacingWidth) / 2
-//        let rightInset = leftInset
 //
-//        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+//    // ✍️横scrollの場合は、cell間の左右spacingを指定する
+//    //   縦scrollの場合は、cell間の上下spacingを指定する -> carouselFlowLayoutで設定した
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0
 //    }
-
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+////        let totalCellWidth = cellWidth * CGFloat(models.count)
+////        let totalSpacingWidth = cellSpacing * CGFloat(models.count - 1)
+////        let leftInset = (collectionView.frame.width - totalCellWidth + totalSpacingWidth) / 2
+////        let rightInset = leftInset
+//
+//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+//    }
+//
 //    // ここでは、1行だけのscroll をするので、以下のコードは要らない
 //    //✍️横scrollの場合は、同じ列に属するcell間の上下spacingを指定する
 //    //   縦scrollの場合は、同じ行に配置されたcell間の左右spacingを指定する
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 //        return 0
 //    }
-}
+//}
 

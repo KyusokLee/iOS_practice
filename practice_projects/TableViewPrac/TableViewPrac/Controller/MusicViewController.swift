@@ -46,6 +46,7 @@ class MusicViewController: UIViewController {
 //        musicTableView.separatorStyle = .none
         //区分線を見るために、singlelineを一応設定しておいた
         musicTableView.separatorStyle = .singleLine
+        musicTableView.reloadData()
     }
     
     func registerCell() {
@@ -62,7 +63,7 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
     // sectionごとに入るrowの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 2 {
-            return 3
+            return 10
         } else {
             return 1
         }
@@ -101,9 +102,19 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.section {
+        case 0:
+            return 250
+        case 1:
+            return UITableView.automaticDimension
+        case 2:
+            return UITableView.automaticDimension
+        default:
+            return 0
+        }
+    }
     
     // cellのheightの定義が必要
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,16 +124,17 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
+            // carousel collectionViewのところは、heightSizeを直接与える
             return 250
         case 1:
 //            return (width + interval * 2) * CGFloat(musicGenreArray.count) / 2
+            // ⚠️画面が新しく表示されるたびに、scrollが増えているerror
             return UITableView.automaticDimension
         case 2:
             return 70
         default:
             return 0
         }
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

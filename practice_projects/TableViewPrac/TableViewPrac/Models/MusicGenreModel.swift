@@ -67,6 +67,16 @@ let musicGenreModels = [
         genre: "Electronical",
         description: "たまに聴く",
         backgroundColor: .lightGray
+    ),
+    MusicGenre(
+        genre: "Traditional",
+        description: "きかない",
+        backgroundColor: .brown
+    ),
+    MusicGenre(
+        genre: "Tango",
+        description: "本当に聴かない",
+        backgroundColor: .systemRed
     )
 ]
 // descriptionを長くすると、cellのheightを固定したため、imageviewが小さくなってしまう

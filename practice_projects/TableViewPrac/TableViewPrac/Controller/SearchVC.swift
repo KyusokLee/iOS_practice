@@ -33,6 +33,7 @@ class SearchVC: UIViewController {
         countryTableView.delegate = self
         countryTableView.dataSource = self
         countryTableView.contentInsetAdjustmentBehavior = .never
+        countryTableView.reloadData()
     }
         
     func registerCell() {
@@ -94,6 +95,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+//        print(indexPath.row)
     }
         
 }
@@ -106,8 +108,6 @@ extension SearchVC: UISearchResultsUpdating {
         
         self.filteredArray = self.countryDataModel.filter { $0[0].localizedCaseInsensitiveContains(hasText) }
         dump(filteredArray)
-        //更新
-        self.countryTableView.reloadData()
     }
     
     
