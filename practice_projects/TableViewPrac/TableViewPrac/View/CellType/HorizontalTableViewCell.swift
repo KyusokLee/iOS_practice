@@ -16,9 +16,9 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
     static let className = "HorizontalTableViewCell"
     static let cellID = "HorizontalTableViewCellID"
 //    // collection Viewに配置されるcellたちのサイズ変数
-//    private let cellWidth: CGFloat = 300
-//    private let cellHeight: CGFloat = 200
-//    private let cellSpacing: CGFloat = 15
+    private let cellWidth: Int = 300
+    private let cellHeight: Int = 200
+    private let cellSpacing: Int = 15
     private var models = [Meal]()
     
     @IBOutlet weak var explainTitleLabel: UILabel! {
@@ -37,11 +37,6 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
         super.awakeFromNib()
         // Initialization code
         setUpCollectionView()
-//        setupFlowLayout()
-        mealCollectionView.register(UINib(nibName: HorizontalCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: HorizontalCollectionViewCell.cellID)
-        //　scrollの反応が速すぎることを防ぐ -> scrollするとき、早く減速するように
-        mealCollectionView.decelerationRate = .fast
-//        mealCollectionView.isPagingEnabled = false
         print(self.mealCollectionView.frame.width)
         print(self.mealCollectionView.frame.height)
     }
@@ -53,15 +48,23 @@ class HorizontalTableViewCell: UITableViewCell, UIScrollViewDelegate {
     }
     
     func setUpCollectionView() {
-        mealCollectionView.delegate = self
-        mealCollectionView.dataSource = self
-        
         let customFlowLayout = CarouselFlowLayout()
         // flowLayoutを継承するように
         mealCollectionView.collectionViewLayout = customFlowLayout
+        mealCollectionView.delegate = self
+        mealCollectionView.dataSource = self
+        //　scrollの反応が速すぎることを防ぐ -> scrollするとき、早く減速するように
+        mealCollectionView.decelerationRate = .fast
+        
+        // ❗️하나의 셀들이 중앙에 오게 하는 것은 scroll의 효과를 주기에 비효율적이다.
+        // 즉, scroll로 가운데로 오게 하는 것은 UX적인 측면에서 바람직하지 않음
+        // 이유? -> cell 간의 간격이 너무커서, scroll할때마다 가운데로 오게 하는 것은 좋은 시도일 수 있지만, 간격이 작을 경우 scroll할때마다 가운데로 오게 하는 것은 부드럽지 않음 --> 그럴땐, 그냥 가운데로 정렬을 하지 않는게 좋다.
+        // falseにすると、中央にくるのはなぜだろう
+        mealCollectionView.isPagingEnabled = false
         
         // scrollbar を書くす
         mealCollectionView.showsHorizontalScrollIndicator = false
+        mealCollectionView.register(UINib(nibName: HorizontalCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: HorizontalCollectionViewCell.cellID)
     }
     
     // flowlayoutDelegateの継承なしで、cellのflowlayoutの設定を行う方法
@@ -122,6 +125,23 @@ extension HorizontalTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
 }
+
+//extension HorizontalTableViewCell: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        let totalCellWidth = cellWidth * models.count
+//        let totalSpacingWidth = cellSpacing * (models.count - 1)
+//        let leftInset = (mealCollectionView.frame.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+//        let rightInset = leftInset
+//
+//        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+//    }
+//}
+
+//extension HorizontalTableViewCell: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 300, height: 200)
+//    }
+//}
 
 //extension HorizontalTableViewCell: UICollectionViewDelegateFlowLayout {
 ////         collectionViewのCellのsizeを設定する

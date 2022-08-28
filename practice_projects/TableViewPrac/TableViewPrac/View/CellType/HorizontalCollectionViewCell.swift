@@ -20,19 +20,25 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setUpCellLayout()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = 3
+    func setUpCellLayout() {
+        self.layer.cornerRadius = 10
         self.layer.shadowRadius = 10
         self.layer.shadowOpacity = 0.4
         self.layer.shadowOffset = CGSize(width: 5, height: 10)
         self.clipsToBounds = false
-        self.layoutIfNeeded()
     }
     
-    
+    //　cell の中にあるviewのlayoutを調整する
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imgView.layer.masksToBounds = true
+        imgView.layer.cornerRadius = 10
+        imgView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
+        self.layoutIfNeeded()
+    }
     // 途中の段階
     // data modelを入れる
     public func configure(with model: Meal) {
