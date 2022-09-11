@@ -24,7 +24,6 @@
 		946869BE28BB957A00D9CF73 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 946869BD28BB957A00D9CF73 /* Lottie */; };
 		946869C028BB975800D9CF73 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946869BF28BB975800D9CF73 /* LaunchVC.swift */; };
 		946869C228BB979900D9CF73 /* 6052-checklist.json in Resources */ = {isa = PBXBuildFile; fileRef = 946869C128BB979900D9CF73 /* 6052-checklist.json */; };
-		946869C428BB9EFE00D9CF73 /* CustomLaunchVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946869C328BB9EFE00D9CF73 /* CustomLaunchVC.storyboard */; };
 		947EB22428B3A5AF00E1BDA2 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947EB22328B3A5AF00E1BDA2 /* MusicViewController.swift */; };
 		94894E1B28B76F340092B35F /* kfood.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 94894E1A28B76F340092B35F /* kfood.jpeg */; };
 		94894E1D28B773DB0092B35F /* jfood.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 94894E1C28B773DB0092B35F /* jfood.jpeg */; };
@@ -39,6 +38,10 @@
 		94A668F428B4F30E00D4B57E /* VerticalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94A668F228B4F30E00D4B57E /* VerticalCollectionViewCell.xib */; };
 		94A668F628B4F64000D4B57E /* mealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A668F528B4F64000D4B57E /* mealModel.swift */; };
 		94A668F828B4F64F00D4B57E /* musicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A668F728B4F64F00D4B57E /* musicModel.swift */; };
+		94C463FC28CDBCF40079230D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C463FB28CDBCF40079230D /* APIController.swift */; };
+		94C463FF28CDC4D40079230D /* AnimationTestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C463FE28CDC4D40079230D /* AnimationTestButton.swift */; };
+		94C4640128CDD5260079230D /* CustomAnimationTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C4640028CDD5260079230D /* CustomAnimationTest.storyboard */; };
+		94C4640428CE08850079230D /* CLTypingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C4640328CE08850079230D /* CLTypingLabel.swift */; };
 		94F9046B28A8E1C400CF2643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046A28A8E1C400CF2643 /* AppDelegate.swift */; };
 		94F9046D28A8E1C400CF2643 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046C28A8E1C400CF2643 /* SceneDelegate.swift */; };
 		94F9046F28A8E1C400CF2643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046E28A8E1C400CF2643 /* ViewController.swift */; };
@@ -86,7 +89,6 @@
 		945ECB8128AF9292004605B1 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		946869BF28BB975800D9CF73 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
 		946869C128BB979900D9CF73 /* 6052-checklist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "6052-checklist.json"; sourceTree = "<group>"; };
-		946869C328BB9EFE00D9CF73 /* CustomLaunchVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomLaunchVC.storyboard; sourceTree = "<group>"; };
 		947EB22328B3A5AF00E1BDA2 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		94894E1A28B76F340092B35F /* kfood.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kfood.jpeg; sourceTree = "<group>"; };
 		94894E1C28B773DB0092B35F /* jfood.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jfood.jpeg; sourceTree = "<group>"; };
@@ -101,6 +103,10 @@
 		94A668F228B4F30E00D4B57E /* VerticalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalCollectionViewCell.xib; sourceTree = "<group>"; };
 		94A668F528B4F64000D4B57E /* mealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mealModel.swift; sourceTree = "<group>"; };
 		94A668F728B4F64F00D4B57E /* musicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicModel.swift; sourceTree = "<group>"; };
+		94C463FB28CDBCF40079230D /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		94C463FE28CDC4D40079230D /* AnimationTestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestButton.swift; sourceTree = "<group>"; };
+		94C4640028CDD5260079230D /* CustomAnimationTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAnimationTest.storyboard; sourceTree = "<group>"; };
+		94C4640328CE08850079230D /* CLTypingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
 		94F9046728A8E1C400CF2643 /* TableViewPrac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewPrac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F9046A28A8E1C400CF2643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94F9046C28A8E1C400CF2643 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,7 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				94F9047028A8E1C400CF2643 /* Main.storyboard */,
-				946869C328BB9EFE00D9CF73 /* CustomLaunchVC.storyboard */,
+				94C4640028CDD5260079230D /* CustomAnimationTest.storyboard */,
 				94F9049B28A8E20E00CF2643 /* CustomCell.xib */,
 				945ECB8128AF9292004605B1 /* SearchResultCell.xib */,
 				94A668E528B4E32400D4B57E /* HorizontalTableViewCell.xib */,
@@ -234,6 +240,8 @@
 		94A668E928B4F10F00D4B57E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				94C4640228CE086E0079230D /* Label Type */,
+				94C463FD28CDC4670079230D /* ButtonType */,
 				942B7D1528B8E5BB00AAA0B7 /* HeaderType */,
 				942B7D1428B8E57100AAA0B7 /* CellType */,
 			);
@@ -245,6 +253,7 @@
 			children = (
 				942B7D1828B8F40F00AAA0B7 /* Layouts */,
 				946869BF28BB975800D9CF73 /* LaunchVC.swift */,
+				94C463FB28CDBCF40079230D /* APIController.swift */,
 				945ECB7928AF8AD8004605B1 /* SearchVC.swift */,
 				94F9046E28A8E1C400CF2643 /* ViewController.swift */,
 				947EB22328B3A5AF00E1BDA2 /* MusicViewController.swift */,
@@ -260,6 +269,22 @@
 				9419952428B6516B006B7033 /* Font */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		94C463FD28CDC4670079230D /* ButtonType */ = {
+			isa = PBXGroup;
+			children = (
+				94C463FE28CDC4D40079230D /* AnimationTestButton.swift */,
+			);
+			path = ButtonType;
+			sourceTree = "<group>";
+		};
+		94C4640228CE086E0079230D /* Label Type */ = {
+			isa = PBXGroup;
+			children = (
+				94C4640328CE08850079230D /* CLTypingLabel.swift */,
+			);
+			path = "Label Type";
 			sourceTree = "<group>";
 		};
 		94F9045E28A8E1C400CF2643 = {
@@ -437,10 +462,10 @@
 				94F9047428A8E1C500CF2643 /* Assets.xcassets in Resources */,
 				9418790B28B3B2A40021C524 /* HorizontalCollectionViewCell.xib in Resources */,
 				94A668F028B4F27600D4B57E /* VerticalTableViewCell.xib in Resources */,
-				946869C428BB9EFE00D9CF73 /* CustomLaunchVC.storyboard in Resources */,
 				94894E1B28B76F340092B35F /* kfood.jpeg in Resources */,
 				94A668F428B4F30E00D4B57E /* VerticalCollectionViewCell.xib in Resources */,
 				94A668DF28B4DC6200D4B57E /* meal1.png in Resources */,
+				94C4640128CDD5260079230D /* CustomAnimationTest.storyboard in Resources */,
 				9419952828B6523A006B7033 /* BMJUA_otf.otf in Resources */,
 				94F9049D28A8E20E00CF2643 /* CustomCell.xib in Resources */,
 				94F9047228A8E1C400CF2643 /* Main.storyboard in Resources */,
@@ -468,6 +493,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94C4640428CE08850079230D /* CLTypingLabel.swift in Sources */,
+				94C463FC28CDBCF40079230D /* APIController.swift in Sources */,
 				9418790A28B3B2A40021C524 /* HorizontalCollectionViewCell.swift in Sources */,
 				945ECB8228AF9292004605B1 /* SearchResultCell.swift in Sources */,
 				94F9046F28A8E1C400CF2643 /* ViewController.swift in Sources */,
@@ -478,6 +505,7 @@
 				942B7D1728B8F3FE00AAA0B7 /* CarouselFlowLayout.swift in Sources */,
 				94A668F828B4F64F00D4B57E /* musicModel.swift in Sources */,
 				942B7D1328B8E29400AAA0B7 /* TodoModel.swift in Sources */,
+				94C463FF28CDC4D40079230D /* AnimationTestButton.swift in Sources */,
 				9419951E28B63507006B7033 /* musicRankingCell.swift in Sources */,
 				945ECB7A28AF8AD8004605B1 /* SearchVC.swift in Sources */,
 				947EB22428B3A5AF00E1BDA2 /* MusicViewController.swift in Sources */,

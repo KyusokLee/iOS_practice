@@ -19,11 +19,24 @@ class ViewController: UIViewController {
                                 "Practice_longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong",
                                 "Finish",
                                 "Prepare for Next Day"]
+//    let roundButton: AnimationTestButton = {
+//        var button = AnimationTestButton()
+//        button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+//        button.layer.cornerRadius = button.frame.height / 2
+//        button.tintColor = .blue
+//        // codeで直接constraintsの設定を可能とする
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
     
     @IBOutlet weak var customTableView: UITableView!
     
+    // constraintsの設定は、addSubviewで追加した後に行わないと、errorになっちゃう
+    // 🌈原因: UIの設定がないのに、位置を設定しようとしたため
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        animationTestButton()
         setUpTableView()
         registerNib()
         setUpLayout()
@@ -35,6 +48,34 @@ class ViewController: UIViewController {
         
         searchBarConfigure()
         addNotification()
+    }
+    
+    func animationTestButton() {
+        let button = AnimationTestButton()
+        let btnWidth: CGFloat = 70
+        let btnHeight: CGFloat = 70
+        
+        guard let hasNewImage = button.resizingImage(width: btnWidth, height: btnHeight) else {
+            return
+        }
+        
+        button.frame = CGRect(x: self.view.frame.maxX - 90, y: self.view.frame.maxY - 180, width: btnWidth, height: btnHeight)
+        button.setImage(hasNewImage, for: .normal)
+        button.layer.cornerRadius = button.frame.height / 2
+        button.addTarget(self, action: #selector(presentAnimationView), for: .touchUpInside)
+        self.view.addSubview(button)
+    }
+    
+    // LaunchVCをpresentするよう
+    // storyboardであるため、nilファイルのpresent方法と多少異なる
+    @objc func presentAnimationView() {
+        //storyboard連結
+        let animationStoryboard = UIStoryboard(name: "CustomAnimationTest", bundle: nil)
+        // storyboardと連動しているViewcontrollerの連結
+        let animationVC = animationStoryboard.instantiateViewController(withIdentifier: "LaunchVC") as! LaunchVC
+        
+        self.present(animationVC, animated: true)
+        
     }
     
     func setUpTableView() {
@@ -58,8 +99,6 @@ class ViewController: UIViewController {
         customTableView.layoutMargins = .init(top: 0, left: 10, bottom: 0, right: 10)
     }
     
-    
-    
     func searchBarConfigure() {
         // searchController の中にSearch Barがある
         let searchController = UISearchController(searchResultsController: nil)
@@ -68,7 +107,7 @@ class ViewController: UIViewController {
         searchController.automaticallyShowsCancelButton = true
         searchController.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
-        self.navigationItem.title = "Search"
+        self.navigationItem.title = "To Do"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.hidesSearchBarWhenScrolling = false
 //        let cancel = UIBarButtonItem(systemItem: .cancel, primaryAction: UIAction(handler: { _ in
