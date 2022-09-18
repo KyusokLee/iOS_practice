@@ -10,7 +10,7 @@
 import Foundation
 
 // 必要なAPI
-// 1. Google Map API
+// 1. Google Map API or Apple Map Kit  (なぜかmap kitの方が動きがよかった)
 // 2. ITunes API
 // 3. ??? (必要なもの使う)
 

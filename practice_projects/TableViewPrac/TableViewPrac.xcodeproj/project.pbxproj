@@ -42,6 +42,7 @@
 		94C463FF28CDC4D40079230D /* AnimationTestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C463FE28CDC4D40079230D /* AnimationTestButton.swift */; };
 		94C4640128CDD5260079230D /* CustomAnimationTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C4640028CDD5260079230D /* CustomAnimationTest.storyboard */; };
 		94C4640428CE08850079230D /* CLTypingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C4640328CE08850079230D /* CLTypingLabel.swift */; };
+		94E2DBA528D7636C00B19E0C /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E2DBA428D7636C00B19E0C /* NetworkLayer.swift */; };
 		94F9046B28A8E1C400CF2643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046A28A8E1C400CF2643 /* AppDelegate.swift */; };
 		94F9046D28A8E1C400CF2643 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046C28A8E1C400CF2643 /* SceneDelegate.swift */; };
 		94F9046F28A8E1C400CF2643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9046E28A8E1C400CF2643 /* ViewController.swift */; };
@@ -107,6 +108,7 @@
 		94C463FE28CDC4D40079230D /* AnimationTestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestButton.swift; sourceTree = "<group>"; };
 		94C4640028CDD5260079230D /* CustomAnimationTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomAnimationTest.storyboard; sourceTree = "<group>"; };
 		94C4640328CE08850079230D /* CLTypingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
+		94E2DBA428D7636C00B19E0C /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		94F9046728A8E1C400CF2643 /* TableViewPrac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewPrac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F9046A28A8E1C400CF2643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94F9046C28A8E1C400CF2643 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				945ECB7928AF8AD8004605B1 /* SearchVC.swift */,
 				94F9046E28A8E1C400CF2643 /* ViewController.swift */,
 				947EB22328B3A5AF00E1BDA2 /* MusicViewController.swift */,
+				94E2DBA428D7636C00B19E0C /* NetworkLayer.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				9419952328B64F73006B7033 /* Colors.swift in Sources */,
 				9419952128B63C17006B7033 /* MusicGenreModel.swift in Sources */,
 				945ECB7D28AF8B3B004605B1 /* searchModel.swift in Sources */,
+				94E2DBA528D7636C00B19E0C /* NetworkLayer.swift in Sources */,
 				94A668F328B4F30E00D4B57E /* VerticalCollectionViewCell.swift in Sources */,
 				942B7D1728B8F3FE00AAA0B7 /* CarouselFlowLayout.swift in Sources */,
 				94A668F828B4F64F00D4B57E /* musicModel.swift in Sources */,
