@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+// CoreDateのCRUD
+
 // priorityごとの色の設定model
 enum PriorityLevel: Int64 {
     case level1
