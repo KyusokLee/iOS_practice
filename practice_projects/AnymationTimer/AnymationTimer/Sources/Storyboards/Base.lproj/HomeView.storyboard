@@ -35,11 +35,15 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKh-VA-sSV">
                                 <rect key="frame" x="0.0" y="361" width="393" height="216"/>
                             </datePicker>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-Eb-o7P">
-                                <rect key="frame" x="24" y="488.66666666666669" width="345" height="14"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="JBJ-Eb-o7P">
+                                <rect key="frame" x="24" y="488.66666666666669" width="345" height="45.000000000000057"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5QC-Pe-jlL">
-                                        <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="14"/>
+                                        <rect key="frame" x="0.0" y="2.3333333333333144" width="132.66666666666666" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="J12-h6-1pR"/>
+                                            <constraint firstAttribute="height" constant="40" id="VaT-LI-EUj"/>
+                                        </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
@@ -48,7 +52,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj9-6v-00I">
-                                        <rect key="frame" x="212.66666666666663" y="0.0" width="132.33333333333337" height="14"/>
+                                        <rect key="frame" x="212.66666666666663" y="2.3333333333333144" width="132.33333333333337" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="1Jo-fQ-sgf"/>
+                                            <constraint firstAttribute="height" constant="40" id="sLA-pJ-KNi"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
@@ -56,6 +64,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ix6-EJ-7s3"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

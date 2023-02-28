@@ -91,8 +91,8 @@ class HomeViewController: UIViewController {
     }
     
     func setPlayButton() {
-        // let imageConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .light)
-        guard let playImage = UIImage(named: "play.circle") else { return }
+        guard let playImage = UIImage(systemName: "play.circle") else { return }
+        let playImageConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .light)
         self.playButton.setImage(
             playImage.withTintColor(
                 UIColor.blue.withAlphaComponent(0.7),
@@ -101,7 +101,8 @@ class HomeViewController: UIViewController {
             for: .normal
         )
         
-        guard let pauseImage = UIImage(named: "pause.circle") else { return }
+        guard let pauseImage = UIImage(systemName: "pause.circle") else { return }
+        let pauseImageConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .light)
         self.playButton.setImage(
             pauseImage.withTintColor(
                 UIColor.blue.withAlphaComponent(0.7),
@@ -112,11 +113,16 @@ class HomeViewController: UIViewController {
     }
     
     func setCancelButton() {
-        guard let image = UIImage(named: "stop.circle") else { return }
-        self.cancelButton.setImage(image.withTintColor(UIColor.red.withAlphaComponent(0.7), renderingMode: .alwaysOriginal), for: .normal)
+        guard let image = UIImage(systemName: "stop.circle") else { return }
+        self.cancelButton.setImage(
+            image.withTintColor(
+                UIColor.red.withAlphaComponent(0.7),
+                renderingMode: .alwaysOriginal
+            ),
+            for: .normal
+        )
         // playButtonが押されてない初期のときは、enabledをfalseにする
         self.cancelButton.isEnabled = false
-        
     }
     
     // animate 再生に関するボタン
